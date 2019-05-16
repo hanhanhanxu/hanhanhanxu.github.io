@@ -114,7 +114,9 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/15/E7cctO.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/15/E7cghD.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/15/E7cR9e.md.png">
-<meta property="og:updated_time" content="2019-05-15T13:59:11.817Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/16/EHxCz4.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/16/EHxEe1.png">
+<meta property="og:updated_time" content="2019-05-16T12:15:24.107Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot入门第一节">
 <meta name="twitter:description" content="SpringBoot官方网站  一、什么是Spring Boot用一些固定的方式来构建生产级别的Spring应用。  Spring Boot推崇“约定”&amp;gt;“配置”的方式，以便于你能够尽可能快速的启动并运行程序。  人们把Spring Boot成为搭建程序的脚手架。其最主要的作用就是帮我们快速的构建庞大的Spring项目，并尽可能的减少一切xml配置，做到开箱即用，迅速上手，让程序员关注业务而">
@@ -432,7 +434,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.6k
+                  2k
                 </span>
               
 
@@ -448,7 +450,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  8
                 </span>
               
             </div>
@@ -563,7 +565,7 @@ public class HelloController {
 <p><strong>A:</strong> springboot项目中默认采用servlet版本是3.0版本，3.0版本后不需要web.xml，可以用纯注解。</p>
 <p><strong>Q:</strong> 为什么没有Spring的ApplicationContext.xml了？</p>
 <p><strong>A:</strong> 不用这个xml了，SpringBoot已经默认帮我们配置了以前Spring的配置文件里需要配置的所有东西。但是SpringBoot不能帮你把全世界所有框架都配好，所以SpringBoot帮你配置的框架、东西是有限的。当我们需要用到SpringBoot没有帮我们配置的东西的时候，就需要自己去配置。</p>
-<h1 id="六、普通方式java配置"><a href="#六、普通方式java配置" class="headerlink" title="六、普通方式java配置"></a>六、普通方式java配置</h1><p>用java类+注解配置数据库连接池</p>
+<h1 id="六、Spring的java配置方式，普通方式java配置"><a href="#六、Spring的java配置方式，普通方式java配置" class="headerlink" title="六、Spring的java配置方式，普通方式java配置"></a>六、Spring的java配置方式，普通方式java配置</h1><p>用java类+注解配置数据库连接池</p>
 <p><strong>结构：</strong></p>
 <p><img src="https://s2.ax1x.com/2019/05/15/E7cctO.png" alt title="结构说明"> </p>
 <p>先向pom里面添加druid依赖</p>
@@ -629,7 +631,86 @@ public class HelloController {
 </code></pre><p><strong>刷新浏览器 </strong></p>
 <p><img src="https://s2.ax1x.com/2019/05/15/E7cghD.png" alt title="刷新浏览器"> </p>
 <p><img src="https://s2.ax1x.com/2019/05/15/E7cR9e.md.png" alt title="查看dataSource是否注入成功"> </p>
-<h1 id="每日注解"><a href="#每日注解" class="headerlink" title="每日注解"></a>每日注解</h1><ol>
+<p>繁琐</p>
+<h1 id="七、SpringBoot提供的属性注入方式"><a href="#七、SpringBoot提供的属性注入方式" class="headerlink" title="七、SpringBoot提供的属性注入方式"></a>七、SpringBoot提供的属性注入方式</h1><h2 id="7-1第一种"><a href="#7-1第一种" class="headerlink" title="7.1第一种"></a>7.1第一种</h2><p><strong>配置文件:application.properties(resources目录下)</strong></p>
+<pre><code>jdbc.driver=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3306/test
+jdbc.username=root
+jdbc.password=root
+</code></pre><p><strong>配置属性类：JdbcProperties.java</strong></p>
+<pre><code>//配置属性类  前缀是jdbc
+@ConfigurationProperties(prefix = &quot;jdbc&quot;)
+@Data
+public class JdbcProperties {
+    String driver;
+    String url;
+    String username;
+    String password;
+}
+</code></pre><p><strong>配置类：JdbcConfig.java</strong></p>
+<pre><code>//表明这是一个配置类
+@Configuration
+//启用配置属性类
+@EnableConfigurationProperties(JdbcProperties.class)
+public class JdbcConfig {
+
+    //Spring调用，Spring注入
+    @Bean
+    public DataSource dataSource(JdbcProperties properties){
+        DruidDataSource dataSource = new DruidDataSource();
+        dataSource.setDriverClassName(properties.getDriver());
+        dataSource.setUrl(properties.getUrl());
+        dataSource.setUsername(properties.getUsername());
+        dataSource.setPassword(properties.getPassword());
+        return dataSource;
+    }
+}
+</code></pre><p><strong>实践部分，直接注入@Autowired(任何其他部分想要注入都可以直接注入使用)</strong></p>
+<pre><code>@RestController
+public class HelloController {
+
+   @Autowired
+   private DataSource dataSource;
+
+    @GetMapping(&quot;hello&quot;)
+    public String hello(){
+        return &quot;hello SpringBoot&quot;;
+    }
+}
+</code></pre><p><a href="https://imgchr.com/i/EHxCz4" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/16/EHxCz4.md.png" alt="EHxCz4.md.png"></a></p>
+<p>类结构：</p>
+<p><img src="https://s2.ax1x.com/2019/05/16/EHxEe1.png" alt="EHxEe1.png"></p>
+<h2 id="7-1第二种"><a href="#7-1第二种" class="headerlink" title="7.1第二种"></a>7.1第二种</h2><p>配置文件：application.properties</p>
+<pre><code>jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3306/test
+jdbc.username=root
+jdbc.password=root
+</code></pre><p>配置类：JdbcConfig.java</p>
+<pre><code>//标识这是一个配置类
+@Configuration
+public class JdbcConfig {
+
+    @Bean
+    //Spring调用的时候直接去application.properties里找能set到DataSource里属性，且前缀是jdbc
+    @ConfigurationProperties(prefix = &quot;jdbc&quot;)
+    public DataSource dataSource(){
+        DruidDataSource dataSource = new DruidDataSource();
+        return dataSource;
+    }
+}
+</code></pre><p>实践部分，直接 @Autowired注入使用：</p>
+<pre><code>@RestController
+public class HelloController {
+
+   @Autowired
+   private DataSource dataSource;
+
+    @GetMapping(&quot;hello&quot;)
+    public String hello(){
+        return &quot;hello SpringBoot&quot;;
+    }
+}
+</code></pre><h1 id="每日注解"><a href="#每日注解" class="headerlink" title="每日注解"></a>每日注解</h1><ol>
 <li><p>@RestController </p>
 <p> @RestController注解相当于@ResponseBody ＋ @Controller合在一起的作用。 </p>
 </li>
@@ -646,6 +727,10 @@ public class HelloController {
 <li><p>@Value：属性注入</p>
 </li>
 <li><p>@PropertySource：指定外部属性文件。  </p>
+</li>
+<li><p>@ConfigurationProperties(prefix = “”)配置属性注解，标识在类上，自动去匹配application配置文件里的相关属性注入到类的同名属性中</p>
+</li>
+<li><p>@EnableConfigurationProperties(xxx.class)启用配置属性类，和上面的连用</p>
 </li>
 </ol>
 
@@ -944,7 +1029,7 @@ public class HelloController {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、什么是Spring-Boot"><span class="nav-number">1.</span> <span class="nav-text">一、什么是Spring Boot</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、为什么要用Spring-Boot"><span class="nav-number">2.</span> <span class="nav-text">二、为什么要用Spring Boot</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、Spring-Boot的特点"><span class="nav-number">3.</span> <span class="nav-text">三、Spring Boot的特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、怎样用Spring-Boot"><span class="nav-number">4.</span> <span class="nav-text">四、怎样用Spring Boot</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-第一步，创建一个Maven项目。"><span class="nav-number">4.1.</span> <span class="nav-text">1. 第一步，创建一个Maven项目。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-我们要使我们的普通maven项目变为SpringBoot项目"><span class="nav-number">4.2.</span> <span class="nav-text">2.我们要使我们的普通maven项目变为SpringBoot项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-快速使用springboot"><span class="nav-number">4.3.</span> <span class="nav-text">3.快速使用springboot</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、答疑"><span class="nav-number">5.</span> <span class="nav-text">五、答疑</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、普通方式java配置"><span class="nav-number">6.</span> <span class="nav-text">六、普通方式java配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#每日注解"><span class="nav-number">7.</span> <span class="nav-text">每日注解</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、什么是Spring-Boot"><span class="nav-number">1.</span> <span class="nav-text">一、什么是Spring Boot</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、为什么要用Spring-Boot"><span class="nav-number">2.</span> <span class="nav-text">二、为什么要用Spring Boot</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、Spring-Boot的特点"><span class="nav-number">3.</span> <span class="nav-text">三、Spring Boot的特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、怎样用Spring-Boot"><span class="nav-number">4.</span> <span class="nav-text">四、怎样用Spring Boot</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-第一步，创建一个Maven项目。"><span class="nav-number">4.1.</span> <span class="nav-text">1. 第一步，创建一个Maven项目。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-我们要使我们的普通maven项目变为SpringBoot项目"><span class="nav-number">4.2.</span> <span class="nav-text">2.我们要使我们的普通maven项目变为SpringBoot项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-快速使用springboot"><span class="nav-number">4.3.</span> <span class="nav-text">3.快速使用springboot</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、答疑"><span class="nav-number">5.</span> <span class="nav-text">五、答疑</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、Spring的java配置方式，普通方式java配置"><span class="nav-number">6.</span> <span class="nav-text">六、Spring的java配置方式，普通方式java配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、SpringBoot提供的属性注入方式"><span class="nav-number">7.</span> <span class="nav-text">七、SpringBoot提供的属性注入方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1第一种"><span class="nav-number">7.1.</span> <span class="nav-text">7.1第一种</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1第二种"><span class="nav-number">7.2.</span> <span class="nav-text">7.1第二种</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#每日注解"><span class="nav-number">8.</span> <span class="nav-text">每日注解</span></a></li></ol></div>
             
 
           </div>
@@ -1018,7 +1103,7 @@ public class HelloController {
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共6.2k字</span>
+  <span class="post-count">博客全站共6.7k字</span>
 </div>
         
 
