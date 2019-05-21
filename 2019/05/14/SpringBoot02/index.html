@@ -96,18 +96,20 @@
 
 
 
-<meta name="description" content="每日注解 1、 @SpringBootConfiguration和@Configuration基本一样，只不过是声明此类为SpringBoot的配置类  2、 @Component 组件，将此注解标注的类注入到Spring容器中管理。  3、 @ComponentScan 包扫描，若没有写具体的扫描路径，则扫描此注解标注的类下的所有路径。 @Component 和 @ComponentScan的使">
+<meta name="description" content="一、SpringBoot(SpringMVC)对日志的控制application.yml中添加 logging:   level:     cn.itcast: debug 二、编写自定义拦截器MyInterceptor实现HandlerInterceptor接口package cn.itcast.interceptor;  import lombok.extern.slf4j.Slf4j; im">
 <meta name="keywords" content="教程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot入门第二节">
 <meta property="og:url" content="http://hanhanhanxu.github.io/2019/05/14/SpringBoot02/index.html">
 <meta property="og:site_name" content="旭">
-<meta property="og:description" content="每日注解 1、 @SpringBootConfiguration和@Configuration基本一样，只不过是声明此类为SpringBoot的配置类  2、 @Component 组件，将此注解标注的类注入到Spring容器中管理。  3、 @ComponentScan 包扫描，若没有写具体的扫描路径，则扫描此注解标注的类下的所有路径。 @Component 和 @ComponentScan的使">
+<meta property="og:description" content="一、SpringBoot(SpringMVC)对日志的控制application.yml中添加 logging:   level:     cn.itcast: debug 二、编写自定义拦截器MyInterceptor实现HandlerInterceptor接口package cn.itcast.interceptor;  import lombok.extern.slf4j.Slf4j; im">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-16T12:54:43.537Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/20/Ex2ADf.md.png">
+<meta property="og:updated_time" content="2019-05-21T09:56:38.291Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot入门第二节">
-<meta name="twitter:description" content="每日注解 1、 @SpringBootConfiguration和@Configuration基本一样，只不过是声明此类为SpringBoot的配置类  2、 @Component 组件，将此注解标注的类注入到Spring容器中管理。  3、 @ComponentScan 包扫描，若没有写具体的扫描路径，则扫描此注解标注的类下的所有路径。 @Component 和 @ComponentScan的使">
+<meta name="twitter:description" content="一、SpringBoot(SpringMVC)对日志的控制application.yml中添加 logging:   level:     cn.itcast: debug 二、编写自定义拦截器MyInterceptor实现HandlerInterceptor接口package cn.itcast.interceptor;  import lombok.extern.slf4j.Slf4j; im">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/05/20/Ex2ADf.md.png">
 
 
 
@@ -421,7 +423,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  158
+                  529
                 </span>
               
 
@@ -437,7 +439,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -458,7 +460,76 @@
       
 
       
-        <h1 id="每日注解"><a href="#每日注解" class="headerlink" title="每日注解"></a>每日注解</h1><ul>
+        <h1 id="一、SpringBoot-SpringMVC-对日志的控制"><a href="#一、SpringBoot-SpringMVC-对日志的控制" class="headerlink" title="一、SpringBoot(SpringMVC)对日志的控制"></a>一、SpringBoot(SpringMVC)对日志的控制</h1><p>application.yml中添加</p>
+<pre><code>logging:
+  level:
+    cn.itcast: debug
+</code></pre><h1 id="二、编写自定义拦截器MyInterceptor实现HandlerInterceptor接口"><a href="#二、编写自定义拦截器MyInterceptor实现HandlerInterceptor接口" class="headerlink" title="二、编写自定义拦截器MyInterceptor实现HandlerInterceptor接口"></a>二、编写自定义拦截器MyInterceptor实现HandlerInterceptor接口</h1><pre><code>package cn.itcast.interceptor;
+
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.servlet.HandlerInterceptor;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@Slf4j
+public class MyInterceptor implements HandlerInterceptor {
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        log.debug(&quot;preHandle method is running&quot;);
+        return true;
+    }
+
+    @Override
+    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+        log.debug(&quot;postHandle method is running&quot;);
+    }
+
+    @Override
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+        log.debug(&quot;afterCompletion method is running&quot;);
+    }
+}
+</code></pre><h1 id="三、编写MvcConfig意思是对Mvc的配置，继承WebMvcConfigurer类"><a href="#三、编写MvcConfig意思是对Mvc的配置，继承WebMvcConfigurer类" class="headerlink" title="三、编写MvcConfig意思是对Mvc的配置，继承WebMvcConfigurer类"></a>三、编写MvcConfig意思是对Mvc的配置，继承WebMvcConfigurer类</h1><p><strong>这个就相当于以前ssm中的springmvc的xml文件，里面做些对SpringMvc的配置</strong></p>
+<pre><code>package cn.itcast.config;
+
+import cn.itcast.interceptor.MyInterceptor;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+//SpringMvc配置  以前是配置文件
+@Configuration
+public class MvcConfig implements WebMvcConfigurer {
+
+    /*
+    写好的东西（拦截器）必须要配置才能生效
+     */
+
+    //添加拦截器配置
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new MyInterceptor()).addPathPatterns(&quot;/**&quot;);//拦截一切路径
+    }
+}
+</code></pre><h1 id="四、控制层测试"><a href="#四、控制层测试" class="headerlink" title="四、控制层测试"></a>四、控制层测试</h1><pre><code>@GetMapping(&quot;hello&quot;)
+public String hello(){
+    log.debug(&quot;xxxxxxxxxxxxxxxxxxx&quot;);
+    System.out.println(&quot;？？？？？？？？？？？？？？？？？？？？&quot;);
+    return &quot;hello SpringBoot&quot;;
+}
+</code></pre><p>访问页面localhost:8080/hello</p>
+<p><a href="https://imgchr.com/i/Ex2ADf" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/20/Ex2ADf.md.png" alt="Ex2ADf.md.png"></a></p>
+<h1 id="通用mapper"><a href="#通用mapper" class="headerlink" title="通用mapper"></a>通用mapper</h1><p>只要引入通用mapper就不需要再引入mybatis和jdbc的依赖了（她已经引入过了）</p>
+<p><a href="https://github.com/abel533/Mapper" target="_blank" rel="noopener">github地址:https://github.com/abel533/Mapper</a></p>
+<pre><code>&lt;!--通用mapper--&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;tk.mybatis&lt;/groupId&gt;
+    &lt;artifactId&gt;mapper-spring-boot-starter&lt;/artifactId&gt;
+    &lt;version&gt;2.0.3&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre><h1 id="每日注解"><a href="#每日注解" class="headerlink" title="每日注解"></a>每日注解</h1><ul>
 <li><p>1、 @SpringBootConfiguration和@Configuration基本一样，只不过是声明此类为SpringBoot的配置类</p>
 </li>
 <li><p>2、 @Component 组件，将此注解标注的类注入到Spring容器中管理。</p>
@@ -659,7 +730,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -670,7 +741,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -770,7 +841,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#每日注解"><span class="nav-number">1.</span> <span class="nav-text">每日注解</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、SpringBoot-SpringMVC-对日志的控制"><span class="nav-number">1.</span> <span class="nav-text">一、SpringBoot(SpringMVC)对日志的控制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、编写自定义拦截器MyInterceptor实现HandlerInterceptor接口"><span class="nav-number">2.</span> <span class="nav-text">二、编写自定义拦截器MyInterceptor实现HandlerInterceptor接口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、编写MvcConfig意思是对Mvc的配置，继承WebMvcConfigurer类"><span class="nav-number">3.</span> <span class="nav-text">三、编写MvcConfig意思是对Mvc的配置，继承WebMvcConfigurer类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、控制层测试"><span class="nav-number">4.</span> <span class="nav-text">四、控制层测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通用mapper"><span class="nav-number">5.</span> <span class="nav-text">通用mapper</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#每日注解"><span class="nav-number">6.</span> <span class="nav-text">每日注解</span></a></li></ol></div>
             
 
           </div>
@@ -844,7 +915,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共6.7k字</span>
+  <span class="post-count">博客全站共19k字</span>
 </div>
         
 
