@@ -96,13 +96,13 @@
 
 
 
-<meta name="description" content="demo地址：https://github.com/hanhanhanxu/cloud-demo 结构：  一、pom父工程pom&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;project xmlns=&amp;quot;http://maven.apache.org/POM/4.0.0&amp;quot;">
+<meta name="description" content="restTemplate底层使用http调用方式，从一个服务中远程调用另一个服务的方法。 demo地址：https://github.com/hanhanhanxu/cloud-demo 结构：  一、pom父工程pom&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;project xmlns=&amp;quot;h">
 <meta name="keywords" content="微服务">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringCloud简单demo">
+<meta property="og:title" content="SpringCloud利用restTemplate实现服务间的远程调用">
 <meta property="og:url" content="http://hanhanhanxu.github.io/2019/05/22/SpringCloud01/index.html">
 <meta property="og:site_name" content="旭">
-<meta property="og:description" content="demo地址：https://github.com/hanhanhanxu/cloud-demo 结构：  一、pom父工程pom&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;project xmlns=&amp;quot;http://maven.apache.org/POM/4.0.0&amp;quot;">
+<meta property="og:description" content="restTemplate底层使用http调用方式，从一个服务中远程调用另一个服务的方法。 demo地址：https://github.com/hanhanhanxu/cloud-demo 结构：  一、pom父工程pom&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;project xmlns=&amp;quot;h">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/22/V99rh8.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/22/V9CMvQ.png">
@@ -114,10 +114,10 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/22/V9kmZj.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/22/V9kEQS.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/22/V9kFRf.md.png">
-<meta property="og:updated_time" content="2019-05-22T07:35:42.251Z">
+<meta property="og:updated_time" content="2019-05-26T01:16:53.967Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringCloud简单demo">
-<meta name="twitter:description" content="demo地址：https://github.com/hanhanhanxu/cloud-demo 结构：  一、pom父工程pom&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;project xmlns=&amp;quot;http://maven.apache.org/POM/4.0.0&amp;quot;">
+<meta name="twitter:title" content="SpringCloud利用restTemplate实现服务间的远程调用">
+<meta name="twitter:description" content="restTemplate底层使用http调用方式，从一个服务中远程调用另一个服务的方法。 demo地址：https://github.com/hanhanhanxu/cloud-demo 结构：  一、pom父工程pom&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;project xmlns=&amp;quot;h">
 <meta name="twitter:image" content="https://s2.ax1x.com/2019/05/22/V99rh8.png">
 
 
@@ -177,7 +177,7 @@
     })();
 </script>
 
-  <title>SpringCloud简单demo | 旭</title>
+  <title>SpringCloud利用restTemplate实现服务间的远程调用 | 旭</title>
   
 
 
@@ -355,7 +355,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SpringCloud简单demo</h1>
+          <h1 class="post-title" itemprop="name headline">SpringCloud利用restTemplate实现服务间的远程调用</h1>
         
 
         <div class="post-meta">
@@ -407,7 +407,7 @@
 
           
           
-             <span id="/2019/05/22/SpringCloud01/" class="leancloud_visitors" data-flag-title="SpringCloud简单demo">
+             <span id="/2019/05/22/SpringCloud01/" class="leancloud_visitors" data-flag-title="SpringCloud利用restTemplate实现服务间的远程调用">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -469,7 +469,8 @@
       
 
       
-        <p>demo地址：<a href="https://github.com/hanhanhanxu/cloud-demo" target="_blank" rel="noopener">https://github.com/hanhanhanxu/cloud-demo</a></p>
+        <p><strong>restTemplate底层使用http调用方式，从一个服务中远程调用另一个服务的方法。</strong></p>
+<p>demo地址：<a href="https://github.com/hanhanhanxu/cloud-demo" target="_blank" rel="noopener">https://github.com/hanhanhanxu/cloud-demo</a></p>
 <p>结构：</p>
 <p><img src="https://s2.ax1x.com/2019/05/22/V99rh8.png" alt="V99rh8.png"></p>
 <h1 id="一、pom"><a href="#一、pom" class="headerlink" title="一、pom"></a>一、pom</h1><h2 id="父工程pom"><a href="#父工程pom" class="headerlink" title="父工程pom"></a>父工程pom</h2><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
@@ -500,7 +501,7 @@
         &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
         &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;
         &lt;java.version&gt;1.8&lt;/java.version&gt;
-        &lt;spring-cloud.version&gt;Finchley.RC1&lt;/spring-cloud.version&gt;
+        &lt;spring-cloud.version&gt;Finchley.SR1&lt;/spring-cloud.version&gt;
         &lt;mapper.starter.version&gt;2.0.3&lt;/mapper.starter.version&gt;
         &lt;mysql.version&gt;5.1.32&lt;/mysql.version&gt;
     &lt;/properties&gt;
@@ -512,7 +513,7 @@
             &lt;dependency&gt;
                 &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
                 &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
-                &lt;version&gt;Finchley.RC1&lt;/version&gt;
+                &lt;version&gt;${spring-cloud.version}&lt;/version&gt;
                 &lt;type&gt;pom&lt;/type&gt;
                 &lt;scope&gt;import&lt;/scope&gt;
             &lt;/dependency&gt;
@@ -940,7 +941,7 @@ public class ConsumerAplication {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1125,7 +1126,7 @@ public class ConsumerAplication {
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共20.6k字</span>
+  <span class="post-count">博客全站共21.6k字</span>
 </div>
         
 
