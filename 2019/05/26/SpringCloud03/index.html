@@ -96,18 +96,28 @@
 
 
 
-<meta name="description" content="eureka搭建集群就是搭建好几个eureka，然后将彼此之间相互注册，并且将其他服务注册到所有eureka中">
+<meta name="description" content="eureka搭建集群就是搭建好几个eureka，然后将彼此之间相互注册，并且将其他服务注册到所有eureka中 一、idea下配置eureka一个服务的两个实例**下列步骤请严格按照我的步骤来，后面会解释： 1、Edit configuration,复制一份EurekaServer 将Name改为EurekaServer2 2、启动服务 先将EurekaServer的配置按照如下图修改：修改端口号">
 <meta name="keywords" content="教程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringCloud搭建eureka注册中心集群">
 <meta property="og:url" content="http://hanhanhanxu.github.io/2019/05/26/SpringCloud03/index.html">
 <meta property="og:site_name" content="旭">
-<meta property="og:description" content="eureka搭建集群就是搭建好几个eureka，然后将彼此之间相互注册，并且将其他服务注册到所有eureka中">
+<meta property="og:description" content="eureka搭建集群就是搭建好几个eureka，然后将彼此之间相互注册，并且将其他服务注册到所有eureka中 一、idea下配置eureka一个服务的两个实例**下列步骤请严格按照我的步骤来，后面会解释： 1、Edit configuration,复制一份EurekaServer 将Name改为EurekaServer2 2、启动服务 先将EurekaServer的配置按照如下图修改：修改端口号">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-26T03:15:35.460Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/26/VEX8F1.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/26/VEXoYq.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/26/VEjtNn.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/26/VEjXgf.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/26/VEjO8P.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/26/VVEWo6.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/26/VVEqeI.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/26/VVEOTP.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/26/VVekGT.md.png">
+<meta property="og:updated_time" content="2019-05-26T13:04:05.698Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringCloud搭建eureka注册中心集群">
-<meta name="twitter:description" content="eureka搭建集群就是搭建好几个eureka，然后将彼此之间相互注册，并且将其他服务注册到所有eureka中">
+<meta name="twitter:description" content="eureka搭建集群就是搭建好几个eureka，然后将彼此之间相互注册，并且将其他服务注册到所有eureka中 一、idea下配置eureka一个服务的两个实例**下列步骤请严格按照我的步骤来，后面会解释： 1、Edit configuration,复制一份EurekaServer 将Name改为EurekaServer2 2、启动服务 先将EurekaServer的配置按照如下图修改：修改端口号">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/05/26/VEX8F1.md.png">
 
 
 
@@ -421,7 +431,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  37
+                  1.1k
                 </span>
               
 
@@ -437,7 +447,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -459,6 +469,95 @@
 
       
         <p><strong>eureka搭建集群就是搭建好几个eureka，然后将彼此之间相互注册，并且将其他服务注册到所有eureka中</strong></p>
+<h1 id="一、idea下配置eureka一个服务的两个实例"><a href="#一、idea下配置eureka一个服务的两个实例" class="headerlink" title="一、idea下配置eureka一个服务的两个实例**"></a>一、idea下配置eureka一个服务的两个实例**</h1><p>下列步骤请严格按照我的步骤来，后面会解释：</p>
+<h2 id="1、Edit-configuration-复制一份EurekaServer"><a href="#1、Edit-configuration-复制一份EurekaServer" class="headerlink" title="1、Edit configuration,复制一份EurekaServer"></a>1、Edit configuration,复制一份EurekaServer</h2><p><a href="https://imgchr.com/i/VEX8F1" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/26/VEX8F1.md.png" alt="VEX8F1.md.png"></a></p>
+<p>将Name改为EurekaServer2</p>
+<h2 id="2、启动服务"><a href="#2、启动服务" class="headerlink" title="2、启动服务"></a>2、启动服务</h2><ul>
+<li>先将EurekaServer的配置按照如下图修改：修改端口号为10087，service-url:的值中的端口号为10086</li>
+</ul>
+<p><a href="https://imgchr.com/i/VEXoYq" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/26/VEXoYq.md.png" alt="VEXoYq.md.png"></a></p>
+<ul>
+<li>然后启动EurekaServer,UserApplication,ConsumerApplication三个服务（启动顺序可以是先启动EurekaServer，在启动其他两个，也可以随便启动）</li>
+</ul>
+<ul>
+<li>然后再次修改EurekaServer的application.yml配置文件，将端口号改为10086，service-url:的值中的端口号为10087</li>
+</ul>
+<p><a href="https://imgchr.com/i/VEjtNn" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/26/VEjtNn.md.png" alt="VEjtNn.md.png"></a></p>
+<ul>
+<li>启动EurekaServer2</li>
+</ul>
+<p>访问eureka</p>
+<p><a href="http://localhost:10087/" target="_blank" rel="noopener">http://localhost:10087/</a><br><a href="http://localhost:10086/" target="_blank" rel="noopener">http://localhost:10086/</a></p>
+<p><a href="https://imgchr.com/i/VEjXgf" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/26/VEjXgf.md.png" alt="VEjXgf.md.png"></a><br><a href="https://imgchr.com/i/VEjO8P" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/26/VEjO8P.md.png" alt="VEjO8P.md.png"></a></p>
+<p>可以发现eureka-server中有两个实例。</p>
+<p><strong><em>如果刚开始没有，就等一会儿，eureka注册中心注册是有时间的，可以到控制台看EurekaServer的打印日志信息，在不停的变，就说明在注册，一般过30s就刷新就能出现。</em></strong></p>
+<h3 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h3><ul>
+<li><p>Q：我们复制了两份configuration，为什么在左侧文件导航栏中，cloud-demo中只有一个EurekaServer呢？</p>
+</li>
+<li><p>A:不论你复制多少分Configuration，文件都只有一个，我么把另一个名字改为EurekaServer2，是这个配置的名字，但是在application.yml这个服务的名字还是叫eureka-server，这是一个服务的多个实例（这里是eureka-server服务的两个实例），这一点在<a href="http://localhost:10086/页面也能显示出来：UP" target="_blank" rel="noopener">http://localhost:10086/页面也能显示出来：UP</a> (2)</p>
+</li>
+</ul>
+<ul>
+<li><p>Q：我们为什么总是修改一个配置文件，不是有两个实例吗</p>
+</li>
+<li><p>A：这个记住就行了，两个实例（配置）用的同一份文件，配置文件按照启动的时候是什么样子，那这个实例的配置就是什么样子。我们编辑配置文件application.yml的内容后，启动服务EurekaServer；再修改配置文件application.yml，再启动EurekaServer2服务，那第二个服务实例就跟第一个服务实例的application.yml配置信息不同了</p>
+</li>
+</ul>
+<h1 id="二、将服务注册到多个注册州中心上，对Eureka做集群，做高可用的注册中心"><a href="#二、将服务注册到多个注册州中心上，对Eureka做集群，做高可用的注册中心" class="headerlink" title="二、将服务注册到多个注册州中心上，对Eureka做集群，做高可用的注册中心"></a>二、将服务注册到多个注册州中心上，对Eureka做集群，做高可用的注册中心</h1><p>上面的步骤之后，就要将其他服务注册都注册到所有注册中心中，这样一个注册中心意外挂了之后，也不会影响系统运行。（将来Eureka服务是要部署到不同服务器上的）</p>
+<ul>
+<li>在user-service的application.yml中修改，添加新的eureka服务</li>
+</ul>
+<blockquote>
+</blockquote>
+<pre><code>eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka,http://localhost:10087/eureka
+</code></pre><blockquote>
+</blockquote>
+<ul>
+<li>在consumer-service的application.yml中修改，添加新的eureka服务</li>
+</ul>
+<blockquote>
+</blockquote>
+<pre><code>eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka,http://localhost:10087/eureka
+</code></pre><blockquote>
+</blockquote>
+<ul>
+<li>将两个eureka注册中心也相互注册。</li>
+</ul>
+<p>启动所有服务（注意，先启动一个eureka，然后修改配置文件，再启动另一个eureka）</p>
+<p><a href="https://imgchr.com/i/VVEWo6" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/26/VVEWo6.md.png" alt="VVEWo6.md.png"></a></p>
+<p>这样看不出来有什么好处，我们将eureka挂掉一台，选择EurekaServer，右键，停掉。</p>
+<p><a href="https://imgchr.com/i/VVEqeI" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/26/VVEqeI.md.png" alt="VVEqeI.md.png"></a></p>
+<p>然后再访问<a href="http://localhost:8080/consumer/111" target="_blank" rel="noopener">http://localhost:8080/consumer/111</a></p>
+<p><a href="https://imgchr.com/i/VVEOTP" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/26/VVEOTP.md.png" alt="VVEOTP.md.png"></a></p>
+<p>在一个Eureka服务停掉（down机）的情况下，依旧能够访问到服务。</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>在注册服务完成后，服务提供者会维持一个心跳（定时向EurekaServer发起Rest请求），告诉EurekaServer：“我还活着”。我们称为服务的续约（renew）;</p>
+<p>有两个重要的参数可以修改服务续约行为：</p>
+<p>（修改服务提供者的配置，user-service的配置文件）</p>
+<blockquote>
+</blockquote>
+<pre><code>eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90
+</code></pre><blockquote>
+</blockquote>
+<p>最大续约周期 单位 秒 默认30s   （每隔30秒发送一次续约请求，如果周期太短，将会给eureka带来很大压力）<br>最小过期时长 单位 秒 默认90s   （超过90秒没有发送续约请求，意味着这个服务出现意外挂了，那么注册中心将会剔除该服务）</p>
+<p>当一个服务90s没有向Eureka发送续约请求时，Eureka就认为这个服务失效了，会从注册中心剔除此服务（这叫失效剔除），但这个剔除不是立即执行，Eureka发现一个服务挂了之后，再过60s才会剔除该服务</p>
+<p>这个60s是默认，也可以配置，在Eureka服务中配置</p>
+<blockquote>
+</blockquote>
+<pre><code>eureka:
+  server:
+    eviction-interval-timer-in-ms: 60
+</code></pre><blockquote>
+</blockquote>
+<p><a href="https://imgchr.com/i/VVekGT" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/26/VVekGT.md.png" alt="VVekGT.md.png"></a></p>
 
       
     </div>
@@ -558,6 +657,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/05/26/SpringCloud04/" rel="prev" title="负载均衡Ribbon">
+                负载均衡Ribbon <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -613,8 +716,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -631,7 +743,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -733,6 +845,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、idea下配置eureka一个服务的两个实例"><span class="nav-number">1.</span> <span class="nav-text">一、idea下配置eureka一个服务的两个实例**</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、Edit-configuration-复制一份EurekaServer"><span class="nav-number">1.1.</span> <span class="nav-text">1、Edit configuration,复制一份EurekaServer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、启动服务"><span class="nav-number">1.2.</span> <span class="nav-text">2、启动服务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解释"><span class="nav-number">1.2.1.</span> <span class="nav-text">解释</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、将服务注册到多个注册州中心上，对Eureka做集群，做高可用的注册中心"><span class="nav-number">2.</span> <span class="nav-text">二、将服务注册到多个注册州中心上，对Eureka做集群，做高可用的注册中心</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">3.</span> <span class="nav-text">其他</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 	  
@@ -800,7 +928,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共21.6k字</span>
+  <span class="post-count">博客全站共22.9k字</span>
 </div>
         
 
