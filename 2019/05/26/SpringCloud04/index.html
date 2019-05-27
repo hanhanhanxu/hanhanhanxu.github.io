@@ -107,8 +107,9 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/26/VVKCXF.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/26/VVKim4.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/26/VVK96U.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/27/VVyjsS.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/26/VVKplT.md.png">
-<meta property="og:updated_time" content="2019-05-26T13:37:22.256Z">
+<meta property="og:updated_time" content="2019-05-27T01:55:22.987Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="负载均衡Ribbon">
 <meta name="twitter:description" content="我们在Copy出来同一个服务的多个实例时，修改Name，然后还可以修改VM options的值，来修改服务（实例）端口。   VM options: -Dserver.port=8082   -D配置JVM参数  这样跟上一章中修改application.yml配置文件的端口号是一个效果   我们前面调用中 instances.get(0);（ConsumerController/queryByI">
@@ -426,7 +427,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  272
+                  382
                 </span>
               
 
@@ -475,6 +476,10 @@
 <p><a href="https://imgchr.com/i/VVKim4" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/26/VVKim4.md.png" alt="VVKim4.md.png"></a><br><a href="https://imgchr.com/i/VVK96U" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/26/VVK96U.md.png" alt="VVK96U.md.png"></a></p>
 <hr>
 <p>我们前面调用中 instances.get(0);（ConsumerController/queryById） 还是固定了写法，get(0)，实际中我们要部署同一个服务的多个实例，</p>
+<h1 id="0、需求"><a href="#0、需求" class="headerlink" title="0、需求"></a>0、需求</h1><p>实际环境中，我们往往会开启很多个user-service的集群。此时我们获取的服务列表中就会有多个，到底该访问哪一个呢？</p>
+<p>一般这种情况下我们就需要编写负载均衡算法，在多个实例列表中进行选择。</p>
+<p>不过Eureka中已经帮我们集成了负载均衡组件：Ribbon，简单修改代码即可使用。</p>
+<p><img src="https://s2.ax1x.com/2019/05/27/VVyjsS.png" alt="VVyjsS.png"></p>
 <h1 id="1、添加ribbon依赖"><a href="#1、添加ribbon依赖" class="headerlink" title="1、添加ribbon依赖"></a>1、添加ribbon依赖</h1><blockquote>
 </blockquote>
 <pre><code>&lt;!--负载均衡Ribbon--&gt;
@@ -601,6 +606,10 @@ User user = restTemplate.getForObject(url,User.class);
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/05/27/SpringCloud05/" rel="prev" title="Hystix">
+                Hystix <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -683,7 +692,7 @@ User user = restTemplate.getForObject(url,User.class);
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -794,7 +803,7 @@ User user = restTemplate.getForObject(url,User.class);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、添加ribbon依赖"><span class="nav-number">1.</span> <span class="nav-text">1、添加ribbon依赖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、添加-LoadBalanced注解"><span class="nav-number">2.</span> <span class="nav-text">2、添加@LoadBalanced注解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、用的时候直接写服务id，ribbon自动帮我们做负载均衡算法，看哪个服务最适合被调用，则调用她。-底层是拦截器，拦截一切RestTemplate请求"><span class="nav-number">3.</span> <span class="nav-text">3、用的时候直接写服务id，ribbon自动帮我们做负载均衡算法，看哪个服务最适合被调用，则调用她。(底层是拦截器，拦截一切RestTemplate请求)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0、需求"><span class="nav-number">1.</span> <span class="nav-text">0、需求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1、添加ribbon依赖"><span class="nav-number">2.</span> <span class="nav-text">1、添加ribbon依赖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、添加-LoadBalanced注解"><span class="nav-number">3.</span> <span class="nav-text">2、添加@LoadBalanced注解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、用的时候直接写服务id，ribbon自动帮我们做负载均衡算法，看哪个服务最适合被调用，则调用她。-底层是拦截器，拦截一切RestTemplate请求"><span class="nav-number">4.</span> <span class="nav-text">3、用的时候直接写服务id，ribbon自动帮我们做负载均衡算法，看哪个服务最适合被调用，则调用她。(底层是拦截器，拦截一切RestTemplate请求)</span></a></li></ol></div>
             
 
           </div>
@@ -868,7 +877,7 @@ User user = restTemplate.getForObject(url,User.class);
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共22.9k字</span>
+  <span class="post-count">博客全站共23.4k字</span>
 </div>
         
 
