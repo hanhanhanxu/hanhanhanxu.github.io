@@ -96,13 +96,13 @@
 
 
 
-<meta name="description" content="Hystrix（豪猪）熔断器：https://github.com/Netflix/hystrix  解决了什么？Hystrix帮我们解决雪崩问题 解决方式：  线程隔离，服务降级（线程隔离内部帮我们实现，我们只需要配置服务的降级） 服务熔断  该怎么做？1、引入依赖在服务提供方，引入Hystrix依赖   &amp;lt;dependency&amp;gt;         &amp;lt;groupId&amp;gt;org">
+<meta name="description" content="Hystrix（豪猪）熔断器：https://github.com/Netflix/hystrix  一、解决了什么？Hystrix帮我们解决雪崩问题 解决方式：  线程隔离，服务降级（线程隔离内部帮我们实现，我们只需要配置服务的降级） 服务熔断  二、该怎么做？为了模拟服务不可用，我们在 user-service 的 UserController/queryById 方法里添加   try {/">
 <meta name="keywords" content="教程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hystrix">
+<meta property="og:title" content="Hystrix熔断器">
 <meta property="og:url" content="http://hanhanhanxu.github.io/2019/05/27/SpringCloud05/index.html">
 <meta property="og:site_name" content="旭">
-<meta property="og:description" content="Hystrix（豪猪）熔断器：https://github.com/Netflix/hystrix  解决了什么？Hystrix帮我们解决雪崩问题 解决方式：  线程隔离，服务降级（线程隔离内部帮我们实现，我们只需要配置服务的降级） 服务熔断  该怎么做？1、引入依赖在服务提供方，引入Hystrix依赖   &amp;lt;dependency&amp;gt;         &amp;lt;groupId&amp;gt;org">
+<meta property="og:description" content="Hystrix（豪猪）熔断器：https://github.com/Netflix/hystrix  一、解决了什么？Hystrix帮我们解决雪崩问题 解决方式：  线程隔离，服务降级（线程隔离内部帮我们实现，我们只需要配置服务的降级） 服务熔断  二、该怎么做？为了模拟服务不可用，我们在 user-service 的 UserController/queryById 方法里添加   try {/">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/27/VZbSER.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/27/VZbpU1.md.png">
@@ -111,10 +111,11 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/27/VZXMwQ.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/27/VZXQoj.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/27/VZXYlV.md.png">
-<meta property="og:updated_time" content="2019-05-27T14:08:49.035Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/28/VehdEV.md.png">
+<meta property="og:updated_time" content="2019-05-28T03:50:35.629Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hystrix">
-<meta name="twitter:description" content="Hystrix（豪猪）熔断器：https://github.com/Netflix/hystrix  解决了什么？Hystrix帮我们解决雪崩问题 解决方式：  线程隔离，服务降级（线程隔离内部帮我们实现，我们只需要配置服务的降级） 服务熔断  该怎么做？1、引入依赖在服务提供方，引入Hystrix依赖   &amp;lt;dependency&amp;gt;         &amp;lt;groupId&amp;gt;org">
+<meta name="twitter:title" content="Hystrix熔断器">
+<meta name="twitter:description" content="Hystrix（豪猪）熔断器：https://github.com/Netflix/hystrix  一、解决了什么？Hystrix帮我们解决雪崩问题 解决方式：  线程隔离，服务降级（线程隔离内部帮我们实现，我们只需要配置服务的降级） 服务熔断  二、该怎么做？为了模拟服务不可用，我们在 user-service 的 UserController/queryById 方法里添加   try {/">
 <meta name="twitter:image" content="https://s2.ax1x.com/2019/05/27/VZbSER.md.png">
 
 
@@ -174,7 +175,7 @@
     })();
 </script>
 
-  <title>Hystrix | 旭</title>
+  <title>Hystrix熔断器 | 旭</title>
   
 
 
@@ -352,7 +353,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hystrix</h1>
+          <h1 class="post-title" itemprop="name headline">Hystrix熔断器</h1>
         
 
         <div class="post-meta">
@@ -404,7 +405,7 @@
 
           
           
-             <span id="/2019/05/27/SpringCloud05/" class="leancloud_visitors" data-flag-title="Hystrix">
+             <span id="/2019/05/27/SpringCloud05/" class="leancloud_visitors" data-flag-title="Hystrix熔断器">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -429,7 +430,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  754
+                  1.2k
                 </span>
               
 
@@ -445,7 +446,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  5
                 </span>
               
             </div>
@@ -468,13 +469,24 @@
       
         <p>Hystrix（豪猪）熔断器：<a href="https://github.com/Netflix/hystrix" target="_blank" rel="noopener">https://github.com/Netflix/hystrix</a></p>
 <hr>
-<h1 id="解决了什么？"><a href="#解决了什么？" class="headerlink" title="解决了什么？"></a>解决了什么？</h1><p>Hystrix帮我们解决雪崩问题</p>
+<h1 id="一、解决了什么？"><a href="#一、解决了什么？" class="headerlink" title="一、解决了什么？"></a>一、解决了什么？</h1><p>Hystrix帮我们解决雪崩问题</p>
 <p>解决方式：</p>
 <ul>
 <li>线程隔离，服务降级（线程隔离内部帮我们实现，我们只需要配置服务的降级）</li>
 <li>服务熔断</li>
 </ul>
-<h1 id="该怎么做？"><a href="#该怎么做？" class="headerlink" title="该怎么做？"></a>该怎么做？</h1><h2 id="1、引入依赖"><a href="#1、引入依赖" class="headerlink" title="1、引入依赖"></a>1、引入依赖</h2><p>在服务提供方，引入Hystrix依赖</p>
+<h1 id="二、该怎么做？"><a href="#二、该怎么做？" class="headerlink" title="二、该怎么做？"></a>二、该怎么做？</h1><p>为了模拟服务不可用，我们在 user-service 的 UserController/queryById 方法里添加</p>
+<blockquote>
+</blockquote>
+<pre><code>try {//模拟服务超时
+    Thread.sleep(2000);
+} catch (InterruptedException e) {
+    e.printStackTrace();
+}
+</code></pre><blockquote>
+</blockquote>
+<p>用来模拟服务超时，看hystrix是否会对服务进行降级控制</p>
+<h1 id="二-1、线程隔离，服务降级"><a href="#二-1、线程隔离，服务降级" class="headerlink" title="二.1、线程隔离，服务降级"></a>二.1、线程隔离，服务降级</h1><h2 id="1、引入依赖"><a href="#1、引入依赖" class="headerlink" title="1、引入依赖"></a>1、引入依赖</h2><p>在服务提供方，引入Hystrix依赖</p>
 <blockquote>
 </blockquote>
 <pre><code>&lt;dependency&gt;
@@ -548,7 +560,7 @@ public class ConsumerController {
 <p><a href="http://localhost:8080/consumer/222" target="_blank" rel="noopener">http://localhost:8080/consumer/222</a></p>
 <p><a href="https://imgchr.com/i/VZbpU1" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/27/VZbpU1.md.png" alt="VZbpU1.md.png"></a></p>
 <p>访问consumer（设置了熔断），直接出错误页面，<br>并且访问时间是1s左右<br>说明熔断时间是1s，当超过1s未相应的服务<br>Hystrix会认为该服务不可用，直接执行错误函数</p>
-<h2 id="自定义超时时长"><a href="#自定义超时时长" class="headerlink" title="自定义超时时长"></a>自定义超时时长</h2><h3 id="1、针对某个方法"><a href="#1、针对某个方法" class="headerlink" title="1、针对某个方法"></a>1、针对某个方法</h3><p>在方法上加地注解里，添加配置</p>
+<h2 id="自定义超时时长"><a href="#自定义超时时长" class="headerlink" title="自定义超时时长"></a>自定义超时时长</h2><h3 id="1、针对某个方法"><a href="#1、针对某个方法" class="headerlink" title="1、针对某个方法"></a>1、针对某个方法</h3><p>在方法上加的注解里，添加配置</p>
 <blockquote>
 </blockquote>
 <pre><code>@HystrixCommand(commandProperties = {
@@ -575,14 +587,65 @@ public class ConsumerController {
 </blockquote>
 <p>配置的<br>hystrix:<br>      command:<br>        default:<br>的值</p>
 <p>值是一个键值对形式：<br>           execution:<br>            isolation:<br>              thread:<br>                timeoutInMilliseconds: 3000</p>
-<h1 id="熔断器"><a href="#熔断器" class="headerlink" title="熔断器"></a>熔断器</h1><p>熔断器三个状态</p>
+<h1 id="二-2、服务熔断-熔断器"><a href="#二-2、服务熔断-熔断器" class="headerlink" title="二.2、服务熔断 熔断器"></a>二.2、服务熔断 熔断器</h1><p>熔断器三个状态</p>
 <p>关闭，</p>
 <p>打开，</p>
 <p>半开。</p>
+<p>三个状态之间的转换：</p>
 <p><a href="https://imgchr.com/i/VZLyNR" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/27/VZLyNR.md.png" alt="VZLyNR.md.png"></a></p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>1、我们将上面程序中，user-service里的睡眠2s去掉，将配置的自定义熔断时长也去掉，剩下干净的程序（defaultFallback类的默认错误处理不要去掉）。</p>
+<p>下面来通过模拟服务可用和不可用来看熔断器的三个状态</p>
+<h2 id="1、配置"><a href="#1、配置" class="headerlink" title="1、配置"></a>1、配置</h2><ul>
+<li>熔断统计次数</li>
+<li>休眠时间窗 </li>
+<li>错误百分比，</li>
+</ul>
+<blockquote>
+</blockquote>
+<pre><code>@Slf4j
+@RestController
+@RequestMapping(&quot;consumer&quot;)
+@DefaultProperties(defaultFallback = &quot;defaultFallback&quot;)
+public class ConsumerController {
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @GetMapping(&quot;/{id}&quot;)
+    //熔断统计次数  默认20
+    //休眠时间窗  休眠10s（10000ms）才会放行一定量的请求  默认5s
+    //错误百分比，高于60%才会触发开启熔断  默认50%
+    @HystrixCommand(commandProperties = {
+            @HystrixProperty(name = &quot;circuitBreaker.requestVolumeThreshold&quot;,value = &quot;10&quot;),
+            @HystrixProperty(name = &quot;circuitBreaker.sleepWindowInMilliseconds&quot;,value = &quot;10000&quot;),
+            @HystrixProperty(name = &quot;circuitBreaker.errorThresholdPercentage&quot;,value = &quot;10&quot;)
+    })
+    public String queryById(@PathVariable String id){
+
+        if(id.equals(&quot;111&quot;)){//手动控制服务。如果访问111 则让这个请求失败（触发熔断）。请求其他，让这个请求成功
+            throw new RuntimeException(&quot;RuntimeException111&quot;);
+        }
+
+        String url = &quot;http://user-service/user/&quot;+id;
+        String user = restTemplate.getForObject(url,String.class);
+        //getForObject本来就是返回的json格式字符串，不过看你写了User.class，他又给你转为对象了
+        return user;
+    }
+
+    public String defaultFallback(){
+        log.error(&quot;查询用户信息失败&quot;);
+        return &quot;服务器正忙，请稍后重试...&quot;;
+    }
+
+}
+</code></pre><blockquote>
+</blockquote>
+<p>启动服务，访问</p>
 <p><a href="https://imgchr.com/i/VZXMwQ" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/27/VZXMwQ.md.png" alt="VZXMwQ.md.png"></a><br><a href="https://imgchr.com/i/VZXQoj" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/27/VZXQoj.md.png" alt="VZXQoj.md.png"></a></p>
-<p>然后我们快速访问好几次111，这时就会触发熔断器开启，<br>然后再访问222，发现访问222快速失败。因为此时熔断器已经开启。</p>
+<p>然后我们快速访问好几次111，这时就会触发熔断器开启（最近的10此请求里，有60%的请求都超时，那么会认为服务有问题，熔断器开启），<br>然后再访问222，发现访问222快速失败。因为此时熔断器已经开启。</p>
 <p><a href="https://imgchr.com/i/VZXYlV" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/27/VZXYlV.md.png" alt="VZXYlV.md.png"></a></p>
+<p>等待10s（休眠时间窗）后，再次访问222，服务正常，则熔断器关闭</p>
+<p><a href="https://imgchr.com/i/VehdEV" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/28/VehdEV.md.png" alt="VehdEV.md.png"></a></p>
 
       
     </div>
@@ -875,7 +938,7 @@ public class ConsumerController {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#解决了什么？"><span class="nav-number">1.</span> <span class="nav-text">解决了什么？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#该怎么做？"><span class="nav-number">2.</span> <span class="nav-text">该怎么做？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、引入依赖"><span class="nav-number">2.1.</span> <span class="nav-text">1、引入依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、在启动类上添加启用熔断器注解"><span class="nav-number">2.2.</span> <span class="nav-text">2、在启动类上添加启用熔断器注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、编写降级逻辑，做失败处理"><span class="nav-number">2.3.</span> <span class="nav-text">3、编写降级逻辑，做失败处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一种，针对方法"><span class="nav-number">2.3.1.</span> <span class="nav-text">第一种，针对方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二种，针对类"><span class="nav-number">2.3.2.</span> <span class="nav-text">第二种，针对类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试："><span class="nav-number">2.3.3.</span> <span class="nav-text">测试：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义超时时长"><span class="nav-number">2.4.</span> <span class="nav-text">自定义超时时长</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、针对某个方法"><span class="nav-number">2.4.1.</span> <span class="nav-text">1、针对某个方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、针对全局"><span class="nav-number">2.4.2.</span> <span class="nav-text">2、针对全局</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#熔断器"><span class="nav-number">3.</span> <span class="nav-text">熔断器</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、解决了什么？"><span class="nav-number">1.</span> <span class="nav-text">一、解决了什么？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、该怎么做？"><span class="nav-number">2.</span> <span class="nav-text">二、该怎么做？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-1、线程隔离，服务降级"><span class="nav-number">3.</span> <span class="nav-text">二.1、线程隔离，服务降级</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、引入依赖"><span class="nav-number">3.1.</span> <span class="nav-text">1、引入依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、在启动类上添加启用熔断器注解"><span class="nav-number">3.2.</span> <span class="nav-text">2、在启动类上添加启用熔断器注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、编写降级逻辑，做失败处理"><span class="nav-number">3.3.</span> <span class="nav-text">3、编写降级逻辑，做失败处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一种，针对方法"><span class="nav-number">3.3.1.</span> <span class="nav-text">第一种，针对方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二种，针对类"><span class="nav-number">3.3.2.</span> <span class="nav-text">第二种，针对类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试："><span class="nav-number">3.3.3.</span> <span class="nav-text">测试：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义超时时长"><span class="nav-number">3.4.</span> <span class="nav-text">自定义超时时长</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、针对某个方法"><span class="nav-number">3.4.1.</span> <span class="nav-text">1、针对某个方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、针对全局"><span class="nav-number">3.4.2.</span> <span class="nav-text">2、针对全局</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-2、服务熔断-熔断器"><span class="nav-number">4.</span> <span class="nav-text">二.2、服务熔断 熔断器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">4.1.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1、配置"><span class="nav-number">4.2.</span> <span class="nav-text">1、配置</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -949,7 +1012,7 @@ public class ConsumerController {
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共24.3k字</span>
+  <span class="post-count">博客全站共24.7k字</span>
 </div>
         
 
