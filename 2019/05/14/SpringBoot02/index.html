@@ -105,7 +105,7 @@
 <meta property="og:description" content="一、SpringBoot(SpringMVC)对日志的控制application.yml中添加 logging:   level:     cn.itcast: debug 二、编写自定义拦截器MyInterceptor实现HandlerInterceptor接口package cn.itcast.interceptor;  import lombok.extern.slf4j.Slf4j; im">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/20/Ex2ADf.md.png">
-<meta property="og:updated_time" content="2019-05-21T09:56:38.291Z">
+<meta property="og:updated_time" content="2019-05-27T13:02:54.856Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot入门第二节">
 <meta name="twitter:description" content="一、SpringBoot(SpringMVC)对日志的控制application.yml中添加 logging:   level:     cn.itcast: debug 二、编写自定义拦截器MyInterceptor实现HandlerInterceptor接口package cn.itcast.interceptor;  import lombok.extern.slf4j.Slf4j; im">
@@ -381,8 +381,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Spring-Boot/" itemprop="url" rel="index">
-                    <span itemprop="name">Spring Boot</span>
+                  <a href="/categories/SpringBoot/" itemprop="url" rel="index">
+                    <span itemprop="name">SpringBoot</span>
                   </a>
                 </span>
 
@@ -423,7 +423,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  529
+                  563
                 </span>
               
 
@@ -521,6 +521,7 @@ public String hello(){
 }
 </code></pre><p>访问页面localhost:8080/hello</p>
 <p><a href="https://imgchr.com/i/Ex2ADf" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/20/Ex2ADf.md.png" alt="Ex2ADf.md.png"></a></p>
+<h1 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h1><p>在类上添加<strong>@Slf4j</strong>注解，即可使用<br>log.debug(“xxxxxxxxxxxxxxxxxxx”);<br>log.error(“查询用户信息失败, id: {}”,id);<br>等打印日志</p>
 <h1 id="通用mapper"><a href="#通用mapper" class="headerlink" title="通用mapper"></a>通用mapper</h1><p>只要引入通用mapper就不需要再引入mybatis和jdbc的依赖了（她已经引入过了）</p>
 <p><a href="https://github.com/abel533/Mapper" target="_blank" rel="noopener">github地址:https://github.com/abel533/Mapper</a></p>
 <pre><code>&lt;!--通用mapper--&gt;
@@ -741,7 +742,7 @@ public String hello(){
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -841,7 +842,7 @@ public String hello(){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、SpringBoot-SpringMVC-对日志的控制"><span class="nav-number">1.</span> <span class="nav-text">一、SpringBoot(SpringMVC)对日志的控制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、编写自定义拦截器MyInterceptor实现HandlerInterceptor接口"><span class="nav-number">2.</span> <span class="nav-text">二、编写自定义拦截器MyInterceptor实现HandlerInterceptor接口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、编写MvcConfig意思是对Mvc的配置，继承WebMvcConfigurer类"><span class="nav-number">3.</span> <span class="nav-text">三、编写MvcConfig意思是对Mvc的配置，继承WebMvcConfigurer类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、控制层测试"><span class="nav-number">4.</span> <span class="nav-text">四、控制层测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通用mapper"><span class="nav-number">5.</span> <span class="nav-text">通用mapper</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#每日注解"><span class="nav-number">6.</span> <span class="nav-text">每日注解</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、SpringBoot-SpringMVC-对日志的控制"><span class="nav-number">1.</span> <span class="nav-text">一、SpringBoot(SpringMVC)对日志的控制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、编写自定义拦截器MyInterceptor实现HandlerInterceptor接口"><span class="nav-number">2.</span> <span class="nav-text">二、编写自定义拦截器MyInterceptor实现HandlerInterceptor接口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、编写MvcConfig意思是对Mvc的配置，继承WebMvcConfigurer类"><span class="nav-number">3.</span> <span class="nav-text">三、编写MvcConfig意思是对Mvc的配置，继承WebMvcConfigurer类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、控制层测试"><span class="nav-number">4.</span> <span class="nav-text">四、控制层测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#日志"><span class="nav-number">5.</span> <span class="nav-text">日志</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通用mapper"><span class="nav-number">6.</span> <span class="nav-text">通用mapper</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#每日注解"><span class="nav-number">7.</span> <span class="nav-text">每日注解</span></a></li></ol></div>
             
 
           </div>
@@ -915,7 +916,7 @@ public String hello(){
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共23.4k字</span>
+  <span class="post-count">博客全站共24.3k字</span>
 </div>
         
 
