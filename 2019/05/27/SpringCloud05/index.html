@@ -96,13 +96,13 @@
 
 
 
-<meta name="description" content="Hystrix（豪猪）熔断器：https://github.com/Netflix/hystrix  一、解决了什么？Hystrix帮我们解决雪崩问题 雪崩问题微服务中，服务间调用关系错综复杂，一个请求，可能要调用多个微服务接口才能实现，会形成非常复杂的调用链路：  只有这些服务都成功，这个请求才会成功。 如果此时，某个服务出现异常：  例如微服务i发生异常，请求阻塞，用户不会得到响应，则tomc">
+<meta name="description" content="Hystrix（豪猪）熔断器官网：https://github.com/Netflix/hystrix  一、解决了什么？Hystrix帮我们解决雪崩问题 雪崩问题微服务中，服务间调用关系错综复杂，一个请求，可能要调用多个微服务接口才能实现，会形成非常复杂的调用链路：  只有这些服务都成功，这个请求才会成功。 如果此时，某个服务出现异常：  例如微服务i发生异常，请求阻塞，用户不会得到响应，则to">
 <meta name="keywords" content="教程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hystrix熔断器">
 <meta property="og:url" content="http://hanhanhanxu.github.io/2019/05/27/SpringCloud05/index.html">
 <meta property="og:site_name" content="旭">
-<meta property="og:description" content="Hystrix（豪猪）熔断器：https://github.com/Netflix/hystrix  一、解决了什么？Hystrix帮我们解决雪崩问题 雪崩问题微服务中，服务间调用关系错综复杂，一个请求，可能要调用多个微服务接口才能实现，会形成非常复杂的调用链路：  只有这些服务都成功，这个请求才会成功。 如果此时，某个服务出现异常：  例如微服务i发生异常，请求阻塞，用户不会得到响应，则tomc">
+<meta property="og:description" content="Hystrix（豪猪）熔断器官网：https://github.com/Netflix/hystrix  一、解决了什么？Hystrix帮我们解决雪崩问题 雪崩问题微服务中，服务间调用关系错综复杂，一个请求，可能要调用多个微服务接口才能实现，会形成非常复杂的调用链路：  只有这些服务都成功，这个请求才会成功。 如果此时，某个服务出现异常：  例如微服务i发生异常，请求阻塞，用户不会得到响应，则to">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/28/VmUoff.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/28/Vma9pT.md.png">
@@ -117,10 +117,10 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/27/VZXQoj.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/27/VZXYlV.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/28/VehdEV.md.png">
-<meta property="og:updated_time" content="2019-05-28T09:43:09.494Z">
+<meta property="og:updated_time" content="2019-05-28T09:49:46.052Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hystrix熔断器">
-<meta name="twitter:description" content="Hystrix（豪猪）熔断器：https://github.com/Netflix/hystrix  一、解决了什么？Hystrix帮我们解决雪崩问题 雪崩问题微服务中，服务间调用关系错综复杂，一个请求，可能要调用多个微服务接口才能实现，会形成非常复杂的调用链路：  只有这些服务都成功，这个请求才会成功。 如果此时，某个服务出现异常：  例如微服务i发生异常，请求阻塞，用户不会得到响应，则tomc">
+<meta name="twitter:description" content="Hystrix（豪猪）熔断器官网：https://github.com/Netflix/hystrix  一、解决了什么？Hystrix帮我们解决雪崩问题 雪崩问题微服务中，服务间调用关系错综复杂，一个请求，可能要调用多个微服务接口才能实现，会形成非常复杂的调用链路：  只有这些服务都成功，这个请求才会成功。 如果此时，某个服务出现异常：  例如微服务i发生异常，请求阻塞，用户不会得到响应，则to">
 <meta name="twitter:image" content="https://s2.ax1x.com/2019/05/28/VmUoff.md.png">
 
 
@@ -472,7 +472,7 @@
       
 
       
-        <p>Hystrix（豪猪）熔断器：<a href="https://github.com/Netflix/hystrix" target="_blank" rel="noopener">https://github.com/Netflix/hystrix</a></p>
+        <p>Hystrix（豪猪）熔断器官网：<a href="https://github.com/Netflix/hystrix" target="_blank" rel="noopener">https://github.com/Netflix/hystrix</a></p>
 <hr>
 <h1 id="一、解决了什么？"><a href="#一、解决了什么？" class="headerlink" title="一、解决了什么？"></a>一、解决了什么？</h1><p>Hystrix帮我们解决雪崩问题</p>
 <h2 id="雪崩问题"><a href="#雪崩问题" class="headerlink" title="雪崩问题"></a>雪崩问题</h2><p>微服务中，服务间调用关系错综复杂，一个请求，可能要调用多个微服务接口才能实现，会形成非常复杂的调用链路：</p>
@@ -879,7 +879,7 @@ public class ConsumerController {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -890,7 +890,7 @@ public class ConsumerController {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1064,7 +1064,7 @@ public class ConsumerController {
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共26.5k字</span>
+  <span class="post-count">博客全站共27.6k字</span>
 </div>
         
 

@@ -96,23 +96,23 @@
 
 
 
-<meta name="description" content="我们在Copy出来同一个服务的多个实例时，修改Name，然后还可以修改VM options的值，来修改服务（实例）端口。   VM options: -Dserver.port=8082   -D配置JVM参数  这样跟上一章中修改application.yml配置文件的端口号是一个效果   我们前面调用中 instances.get(0);（ConsumerController/queryByI">
+<meta name="description" content="ribbon官网：https://github.com/Netflix/ribbon 我们在Copy出来同一个服务的多个实例时，修改Name，然后还可以修改VM options的值，来修改服务（实例）端口。   VM options: -Dserver.port=8082   -D配置JVM参数  这样跟上一章中修改application.yml配置文件的端口号是一个效果   我们前面调用中 in">
 <meta name="keywords" content="教程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="负载均衡Ribbon">
 <meta property="og:url" content="http://hanhanhanxu.github.io/2019/05/26/SpringCloud04/index.html">
 <meta property="og:site_name" content="旭">
-<meta property="og:description" content="我们在Copy出来同一个服务的多个实例时，修改Name，然后还可以修改VM options的值，来修改服务（实例）端口。   VM options: -Dserver.port=8082   -D配置JVM参数  这样跟上一章中修改application.yml配置文件的端口号是一个效果   我们前面调用中 instances.get(0);（ConsumerController/queryByI">
+<meta property="og:description" content="ribbon官网：https://github.com/Netflix/ribbon 我们在Copy出来同一个服务的多个实例时，修改Name，然后还可以修改VM options的值，来修改服务（实例）端口。   VM options: -Dserver.port=8082   -D配置JVM参数  这样跟上一章中修改application.yml配置文件的端口号是一个效果   我们前面调用中 in">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/26/VVKCXF.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/26/VVKim4.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/26/VVK96U.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/27/VVyjsS.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/05/26/VVKplT.md.png">
-<meta property="og:updated_time" content="2019-05-27T01:55:22.987Z">
+<meta property="og:updated_time" content="2019-05-28T09:49:18.416Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="负载均衡Ribbon">
-<meta name="twitter:description" content="我们在Copy出来同一个服务的多个实例时，修改Name，然后还可以修改VM options的值，来修改服务（实例）端口。   VM options: -Dserver.port=8082   -D配置JVM参数  这样跟上一章中修改application.yml配置文件的端口号是一个效果   我们前面调用中 instances.get(0);（ConsumerController/queryByI">
+<meta name="twitter:description" content="ribbon官网：https://github.com/Netflix/ribbon 我们在Copy出来同一个服务的多个实例时，修改Name，然后还可以修改VM options的值，来修改服务（实例）端口。   VM options: -Dserver.port=8082   -D配置JVM参数  这样跟上一章中修改application.yml配置文件的端口号是一个效果   我们前面调用中 in">
 <meta name="twitter:image" content="https://s2.ax1x.com/2019/05/26/VVKCXF.md.png">
 
 
@@ -427,7 +427,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  382
+                  390
                 </span>
               
 
@@ -464,7 +464,8 @@
       
 
       
-        <p>我们在Copy出来同一个服务的多个实例时，修改Name，然后还可以修改VM options的值，来修改服务（实例）端口。</p>
+        <p>ribbon官网：<a href="https://github.com/Netflix/ribbon" target="_blank" rel="noopener">https://github.com/Netflix/ribbon</a></p>
+<p>我们在Copy出来同一个服务的多个实例时，修改Name，然后还可以修改VM options的值，来修改服务（实例）端口。</p>
 <blockquote>
 </blockquote>
 <pre><code>VM options: -Dserver.port=8082
@@ -692,7 +693,7 @@ User user = restTemplate.getForObject(url,User.class);
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -703,7 +704,7 @@ User user = restTemplate.getForObject(url,User.class);
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -877,7 +878,7 @@ User user = restTemplate.getForObject(url,User.class);
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共26.5k字</span>
+  <span class="post-count">博客全站共27.6k字</span>
 </div>
         
 

@@ -96,22 +96,29 @@
 
 
 
-<meta name="description" content="Feign官网：https://github.com/OpenFeign/feign Feign（伪装） 声明式服务调用 1、依赖   &amp;lt;dependency&amp;gt;     &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;     &amp;lt;artifactId&amp;gt;spring-cloud-starter-openfeign">
+<meta name="description" content="zuul官网:https://github.com/Netflix/zuul zuul加入微服务后的架构   不管是来自于客户端（PC或移动端）的请求，还是服务内部调用。一切对服务的请求都会经过Zuul这个网关，然后再由网关来实现 鉴权、动态路由等等操作。Zuul就是我们服务的统一入口。  zuul功能：一、路由功能 0、新建模块module，gateway   1、引入pom依赖    &amp;lt;">
 <meta name="keywords" content="教程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Feign 更好的服务调用方式">
-<meta property="og:url" content="http://hanhanhanxu.github.io/2019/05/28/SpringCloud06/index.html">
+<meta property="og:title" content="Zuul网关">
+<meta property="og:url" content="http://hanhanhanxu.github.io/2019/05/29/SpringCloud07/index.html">
 <meta property="og:site_name" content="旭">
-<meta property="og:description" content="Feign官网：https://github.com/OpenFeign/feign Feign（伪装） 声明式服务调用 1、依赖   &amp;lt;dependency&amp;gt;     &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;     &amp;lt;artifactId&amp;gt;spring-cloud-starter-openfeign">
+<meta property="og:description" content="zuul官网:https://github.com/Netflix/zuul zuul加入微服务后的架构   不管是来自于客户端（PC或移动端）的请求，还是服务内部调用。一切对服务的请求都会经过Zuul这个网关，然后再由网关来实现 鉴权、动态路由等等操作。Zuul就是我们服务的统一入口。  zuul功能：一、路由功能 0、新建模块module，gateway   1、引入pom依赖    &amp;lt;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://s2.ax1x.com/2019/05/28/VmGdcd.md.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/05/28/VmtP6H.md.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/05/28/VmUuLj.md.png">
-<meta property="og:updated_time" content="2019-05-28T09:50:11.812Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/01/V1XJI0.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/01/V1j51U.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/01/V1xpGV.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/01/V1xiMF.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/01/V1x8Zd.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/01/V1zr6O.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/01/V1zD1K.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/01/V1zWtI.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/01/V3t8gI.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/01/V3tVjx.md.png">
+<meta property="og:updated_time" content="2019-06-01T10:52:27.796Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Feign 更好的服务调用方式">
-<meta name="twitter:description" content="Feign官网：https://github.com/OpenFeign/feign Feign（伪装） 声明式服务调用 1、依赖   &amp;lt;dependency&amp;gt;     &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;     &amp;lt;artifactId&amp;gt;spring-cloud-starter-openfeign">
-<meta name="twitter:image" content="https://s2.ax1x.com/2019/05/28/VmGdcd.md.png">
+<meta name="twitter:title" content="Zuul网关">
+<meta name="twitter:description" content="zuul官网:https://github.com/Netflix/zuul zuul加入微服务后的架构   不管是来自于客户端（PC或移动端）的请求，还是服务内部调用。一切对服务的请求都会经过Zuul这个网关，然后再由网关来实现 鉴权、动态路由等等操作。Zuul就是我们服务的统一入口。  zuul功能：一、路由功能 0、新建模块module，gateway   1、引入pom依赖    &amp;lt;">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/06/01/V1XJI0.md.png">
 
 
 
@@ -141,7 +148,7 @@
 
 
 
-  <link rel="canonical" href="http://hanhanhanxu.github.io/2019/05/28/SpringCloud06/">
+  <link rel="canonical" href="http://hanhanhanxu.github.io/2019/05/29/SpringCloud07/">
 
 
 
@@ -170,7 +177,7 @@
     })();
 </script>
 
-  <title>Feign 更好的服务调用方式 | 旭</title>
+  <title>Zuul网关 | 旭</title>
   
 
 
@@ -331,7 +338,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hanhanhanxu.github.io/2019/05/28/SpringCloud06/">
+    <link itemprop="mainEntityOfPage" href="http://hanhanhanxu.github.io/2019/05/29/SpringCloud07/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Han Xu">
@@ -348,7 +355,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Feign 更好的服务调用方式</h1>
+          <h1 class="post-title" itemprop="name headline">Zuul网关</h1>
         
 
         <div class="post-meta">
@@ -360,8 +367,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-28T11:55:33+08:00">
-                2019-05-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-29T11:41:09+08:00">
+                2019-05-29
               </time>
             
 
@@ -383,8 +390,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SpringCloud/" itemprop="url" rel="index">
-                    <span itemprop="name">SpringCloud</span>
+                  <a href="/categories/Springcloud/" itemprop="url" rel="index">
+                    <span itemprop="name">Springcloud</span>
                   </a>
                 </span>
 
@@ -400,7 +407,7 @@
 
           
           
-             <span id="/2019/05/28/SpringCloud06/" class="leancloud_visitors" data-flag-title="Feign 更好的服务调用方式">
+             <span id="/2019/05/29/SpringCloud07/" class="leancloud_visitors" data-flag-title="Zuul网关">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -425,7 +432,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  584
+                  1k
                 </span>
               
 
@@ -441,7 +448,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  4
                 </span>
               
             </div>
@@ -462,131 +469,210 @@
       
 
       
-        <p>Feign官网：<a href="https://github.com/OpenFeign/feign" target="_blank" rel="noopener">https://github.com/OpenFeign/feign</a></p>
-<p>Feign（伪装） 声明式服务调用</p>
-<p>1、依赖</p>
+        <p><a href="https://github.com/Netflix/zuul" target="_blank" rel="noopener">zuul官网:https://github.com/Netflix/zuul</a></p>
+<p>zuul加入微服务后的架构</p>
+<p><a href="https://imgchr.com/i/V1XJI0" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/01/V1XJI0.md.png" alt="V1XJI0.md.png"></a></p>
+<ul>
+<li>不管是来自于客户端（PC或移动端）的请求，还是服务内部调用。一切对服务的请求都会经过Zuul这个网关，然后再由网关来实现 鉴权、动态路由等等操作。Zuul就是我们服务的统一入口。</li>
+</ul>
+<h1 id="zuul功能："><a href="#zuul功能：" class="headerlink" title="zuul功能："></a>zuul功能：</h1><h2 id="一、路由功能"><a href="#一、路由功能" class="headerlink" title="一、路由功能"></a>一、路由功能</h2><ul>
+<li>0、新建模块module，gateway</li>
+</ul>
+<ul>
+<li>1、引入pom依赖</li>
+</ul>
 <blockquote>
 </blockquote>
-<pre><code>&lt;dependency&gt;
+<pre><code>&lt;!--引入zuul依赖--&gt;
+&lt;dependency&gt;
     &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
-    &lt;artifactId&gt;spring-cloud-starter-openfeign&lt;/artifactId&gt;
+    &lt;artifactId&gt;spring-cloud-starter-netflix-zuul&lt;/artifactId&gt;
 &lt;/dependency&gt;
 </code></pre><blockquote>
 </blockquote>
-<p>2、主类加注解</p>
-<pre><code>@EnableFeignClients
-</code></pre><p>3、编写接口</p>
-<p>在consumer-service服务里，编写接口(底层跟Mybatis一样，使用动态代理，帮我们实现接口)</p>
-<p>cn.itcast.consumer.client.UserClient</p>
-<blockquote>
-</blockquote>
-<pre><code>package cn.itcast.consumer.client;
-
-import cn.itcast.consumer.pojo.User;
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-
-@FeignClient(&quot;user-service&quot;)//服务名称  eureka注册中心里的名字
-/*
-用服务名称去eureka注册中心里找此服务，然后通过ribbon负载均衡找到最适合的那个服务实例，
-然后向user/{id}这个地址发起请求，并且传递id作为参数，得到json结果，帮你转换为User对象
- */
-public interface UserClient {
-
-    @GetMapping(&quot;user/{id}&quot;)
-    //方法名叫啥都行，controller里面调用的
-    User queryById(@PathVariable String id);
-
-    /*
-    告诉她4个东西：
-    请求方式（@GetMapping），请求路径（user-service+user/{id}），参数(String id)，返回值(User)。
-     */
-
-}
-</code></pre><blockquote>
-</blockquote>
-<p>controller里直接调用，像调用一个本地方法一样</p>
-<p>cn.itcast.consumer.web.ConsumerController</p>
-<blockquote>
-</blockquote>
-<pre><code>@Slf4j
-@RestController
-@RequestMapping(&quot;consumer&quot;)
-public class ConsumerController {
-
-    @Autowired
-    private UserClient userClient;
-
-    @GetMapping(&quot;/{id}&quot;)
-    public User queryById(@PathVariable String id){
-        return userClient.queryById(id);
-    }
-
-}
-</code></pre><blockquote>
-</blockquote>
-<p><a href="https://imgchr.com/i/VmGdcd" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/28/VmGdcd.md.png" alt="VmGdcd.md.png"></a></p>
-<h1 id="feign的一些事情"><a href="#feign的一些事情" class="headerlink" title="feign的一些事情"></a>feign的一些事情</h1><p>openfeign依赖引入之后，ribbon的依赖就不用再引入了，openfeign已经依赖了了。</p>
-<h2 id="ribbon"><a href="#ribbon" class="headerlink" title="ribbon"></a>ribbon</h2><p>feign的负载均衡ribbon跟以前完全一样，不用管。她的ribbon有一个默认的超时时长，1s</p>
-<p>可以在配置文件中修改</p>
-<blockquote>
-</blockquote>
-<pre><code>ribbon:
-  ConnectionTimeOut: 500
-  ReadTimeOut: 2000
-</code></pre><blockquote>
-</blockquote>
-<p>如果0.5s之内没有建立连接，抛出异常；如果建立了连接，超过2s没有读取到数据，也会抛出异常。</p>
-<h2 id="hystrix"><a href="#hystrix" class="headerlink" title="hystrix"></a>hystrix</h2><ul>
-<li>1、<br>Hystrix默认在feign中是关闭的，需要手动开启</li>
+<ul>
+<li>2、添加启用Zuul代理注解@EnableZuulProxy</li>
 </ul>
 <blockquote>
 </blockquote>
-<pre><code>feign:
-  hystrix:
-    enabled: true #开启feign的熔断(hystrix)功能
+<pre><code>@EnableZuulProxy
+@SpringBootApplication
+public class GatewayApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(GatewayApplication.class);
+    }
+}
 </code></pre><blockquote>
 </blockquote>
 <ul>
-<li><p>2、<br>加注解：@EnableCircuitBreaker或@SpringCloudApplication</p>
-</li>
-<li><p>3、定义一个类实现UserClient接口，在里面实现熔断逻辑，然后设置此类未Fallback类</p>
-</li>
+<li>3、配置application.yml信息</li>
 </ul>
+<p>配置端口：</p>
 <blockquote>
 </blockquote>
-<pre><code>package cn.itcast.consumer.client;
-xxx...
-
-@FeignClient(value = &quot;user-service&quot;,fallback = UserClientFallback.class)
-public interface UserClient {
-
-    @GetMapping(&quot;user/{id}&quot;)
-    String queryById(@PathVariable(&quot;id&quot;) String id);
-
-}
+<pre><code>server:
+      port: 10010
 </code></pre><blockquote>
 </blockquote>
-<p><a href="https://imgchr.com/i/VmtP6H" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/28/VmtP6H.md.png" alt="VmtP6H.md.png"></a></p>
+<h3 id="第一种配置："><a href="#第一种配置：" class="headerlink" title="第一种配置："></a>第一种配置：</h3><blockquote>
+</blockquote>
+<pre><code>zuul:
+  routes:
+    hehe:
+      path: /user-service/**
+      url: http://127.0.0.1:8081
+</code></pre><blockquote>
+</blockquote>
+<p>所有符合/user-service/**(path)规则的请求都会被转发到<a href="http://127.0.0.1:8081/**(url)中" target="_blank" rel="noopener">http://127.0.0.1:8081/**(url)中</a></p>
+<p>启动gateway，访问：<a href="http://localhost:10010/user-service/user/333" target="_blank" rel="noopener">http://localhost:10010/user-service/user/333</a></p>
+<p><img src="https://s2.ax1x.com/2019/06/01/V1j51U.png" alt="V1j51U.png"></p>
+<h3 id="第二种配置：面向服务的路由"><a href="#第二种配置：面向服务的路由" class="headerlink" title="第二种配置：面向服务的路由"></a>第二种配置：面向服务的路由</h3><p>pom文件添加依赖</p>
 <blockquote>
 </blockquote>
-<pre><code>package cn.itcast.consumer.client;
+<pre><code>&lt;!--eureka-client 注册中心 客户端--&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre><blockquote>
+</blockquote>
+<p>yml配置文件添加配置：</p>
+<blockquote>
+</blockquote>
+<pre><code>eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka,http://localhost:10087/eureka
+spring:
+  application:
+    name: gateway
 
-import cn.itcast.consumer.pojo.User;
+zuul:
+  routes:
+    hehe:
+      path: /user-service/**
+      serviceId: user-service
+</code></pre><blockquote>
+</blockquote>
+<p>请求转发+负载均衡</p>
+<p>重启gateway服务，访问:<a href="http://localhost:10010/user-service/user/222" target="_blank" rel="noopener">http://localhost:10010/user-service/user/222</a></p>
+<p><a href="https://imgchr.com/i/V1xpGV" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/01/V1xpGV.md.png" alt="V1xpGV.md.png"></a></p>
+<h3 id="第三种配置："><a href="#第三种配置：" class="headerlink" title="第三种配置："></a>第三种配置：</h3><blockquote>
+</blockquote>
+<pre><code>eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka,http://localhost:10087/eureka
+spring:
+  application:
+    name: gateway
+zuul:
+  routes:
+    user-service: /user-service/**
+</code></pre><blockquote>
+</blockquote>
+<p>重启gateway服务，访问：<a href="http://localhost:10010/user-service/user/111" target="_blank" rel="noopener">http://localhost:10010/user-service/user/111</a></p>
+<p><a href="https://imgchr.com/i/V1xiMF" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/01/V1xiMF.md.png" alt="V1xiMF.md.png"></a></p>
+<p>此时，我们只配置了user-service，但我们可以试着访问：<a href="http://localhost:10010/consumer-service/consumer/111" target="_blank" rel="noopener">http://localhost:10010/consumer-service/consumer/111</a></p>
+<p><a href="https://imgchr.com/i/V1x8Zd" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/01/V1x8Zd.md.png" alt="V1x8Zd.md.png"></a></p>
+<p>也能访问得到，由此可知，zuul帮我们所有服务都默认配置了此规则：</p>
+<blockquote>
+</blockquote>
+<pre><code>zuul:
+      routes:
+        xxx-service: /xxx-service/**
+</code></pre><blockquote>
+</blockquote>
+<p><strong><em>注：xxx-service 代表服务在eureka中注册的服务名字</em></strong></p>
+<h3 id="第四种配置：不用配置zuul-routes规则"><a href="#第四种配置：不用配置zuul-routes规则" class="headerlink" title="第四种配置：不用配置zuul.routes规则"></a>第四种配置：不用配置zuul.routes规则</h3><p>所以我们可以什么都不用配置，即可访问</p>
+<h3 id="第五种配置：不忽略前缀"><a href="#第五种配置：不忽略前缀" class="headerlink" title="第五种配置：不忽略前缀"></a>第五种配置：不忽略前缀</h3><blockquote>
+</blockquote>
+<pre><code>zuul:
+  routes:
+    user-service:
+      path: /user/**
+      serviceId: user-service
+      strip-prefix: false
+</code></pre><blockquote>
+</blockquote>
+<p>不忽略前缀，可通过<br><a href="http://localhost:10010/user-service/user/111访问到（默认配置）" target="_blank" rel="noopener">http://localhost:10010/user-service/user/111访问到（默认配置）</a></p>
+<p><a href="https://imgchr.com/i/V1zr6O" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/01/V1zr6O.md.png" alt="V1zr6O.md.png"></a></p>
+<p>也可通过<br><a href="http://localhost:10010/user/111访问到" target="_blank" rel="noopener">http://localhost:10010/user/111访问到</a></p>
+<p><a href="https://imgchr.com/i/V1zD1K" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/01/V1zD1K.md.png" alt="V1zD1K.md.png"></a></p>
+<h3 id="将某个服务不对外提供-zuul-ignored-services-值是一个集合"><a href="#将某个服务不对外提供-zuul-ignored-services-值是一个集合" class="headerlink" title="将某个服务不对外提供  zuul.ignored-services 值是一个集合"></a>将某个服务不对外提供  zuul.ignored-services 值是一个集合</h3><blockquote>
+</blockquote>
+<pre><code>zuul:
+  ignored-services:
+    - consumer-service
+</code></pre><blockquote>
+</blockquote>
+<p>访问：<a href="http://localhost:10010/consumer-service/consumer/111" target="_blank" rel="noopener">http://localhost:10010/consumer-service/consumer/111</a></p>
+<p><a href="https://imgchr.com/i/V1zWtI" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/01/V1zWtI.md.png" alt="V1zWtI.md.png"></a></p>
+<h2 id="二、过滤器"><a href="#二、过滤器" class="headerlink" title="二、过滤器"></a>二、过滤器</h2><p>编写过滤器继承ZuulFilter</p>
+<blockquote>
+</blockquote>
+<pre><code>package cn.itcast.filter;
+
+import com.netflix.zuul.ZuulFilter;
+import com.netflix.zuul.context.RequestContext;
+import com.netflix.zuul.exception.ZuulException;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.http.HttpStatus;
+import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
 import org.springframework.stereotype.Component;
 
-@Component//将此类注入到Spring中去
-public class UserClientFallback implements UserClient {
+import javax.servlet.http.HttpServletRequest;
+
+@Component
+public class LoginFilter extends ZuulFilter {
     @Override
-    public String queryById(String id) {
-         return &quot;查询失败，请重新刷新页面。&quot;;
+    public String filterType() {//过滤器类型  前置过滤器  xx过滤器  后置过滤器
+        return FilterConstants.PRE_TYPE;
+    }
+
+    @Override
+    public int filterOrder() {//过滤器顺序   在处理请求头 之前
+        return FilterConstants.PRE_DECORATION_FILTER_ORDER - 1;
+    }
+
+    @Override
+    public boolean shouldFilter() {//要不要过滤
+        return true;
+    }
+
+    @Override
+    public Object run() throws ZuulException {
+        //获取请求上下文
+        RequestContext ctx = RequestContext.getCurrentContext();
+        //获取request
+        HttpServletRequest request = ctx.getRequest();
+        //获取请求参数
+        String token = request.getParameter(&quot;access-token&quot;);
+        //判断是否存在
+        if(StringUtils.isBlank(token)){
+            //不存在 则登录拦击拦截
+            ctx.setSendZuulResponse(false);
+            //返回403
+            ctx.setResponseStatusCode(HttpStatus.SC_FORBIDDEN);
+        }
+        return null;
     }
 }
 </code></pre><blockquote>
 </blockquote>
-<p>完成，启动，访问</p>
-<p><a href="https://imgchr.com/i/VmUuLj" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/28/VmUuLj.md.png" alt="VmUuLj.md.png"></a></p>
+<p>访问</p>
+<p><a href="http://localhost:10010/user-service/user/111：" target="_blank" rel="noopener">http://localhost:10010/user-service/user/111：</a></p>
+<p><a href="https://imgchr.com/i/V3t8gI" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/01/V3t8gI.md.png" alt="V3t8gI.md.png"></a></p>
+<p><a href="http://localhost:10010/user-service/user/111?access-token=asdf：" target="_blank" rel="noopener">http://localhost:10010/user-service/user/111?access-token=asdf：</a></p>
+<p><a href="https://imgchr.com/i/V3tVjx" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/01/V3tVjx.md.png" alt="V3tVjx.md.png"></a></p>
+<h2 id="三、zuul的负载均衡和熔断"><a href="#三、zuul的负载均衡和熔断" class="headerlink" title="三、zuul的负载均衡和熔断"></a>三、zuul的负载均衡和熔断</h2><p>Zuul中默认就已经集成了Ribbon负载均衡和Hystix熔断机制。但是所有的超时策略都是走的默认值，比如熔断超时时间只有1S，很容易就触发了。因此建议我们手动进行配置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">zuul:</span></span><br><span class="line"><span class="attr">  retryable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">ribbon:</span></span><br><span class="line"><span class="attr">  ConnectTimeout:</span> <span class="number">250</span> <span class="comment"># 连接超时时间(ms)</span></span><br><span class="line"><span class="attr">  ReadTimeout:</span> <span class="number">2000</span> <span class="comment"># 通信超时时间(ms)  （ConnectTimeout+ReadTimeout）*2 不能超过 熔断超时时长  6000ms</span></span><br><span class="line"><span class="attr">  OkToRetryOnAllOperations:</span> <span class="literal">true</span> <span class="comment"># 是否对所有操作重试</span></span><br><span class="line"><span class="attr">  MaxAutoRetriesNextServer:</span> <span class="number">2</span> <span class="comment"># 同一服务不同实例的重试次数</span></span><br><span class="line"><span class="attr">  MaxAutoRetries:</span> <span class="number">1</span> <span class="comment"># 同一实例的重试次数</span></span><br><span class="line"><span class="attr">hystrix:</span></span><br><span class="line"><span class="attr">  command:</span></span><br><span class="line">  	<span class="attr">default:</span></span><br><span class="line"><span class="attr">        execution:</span></span><br><span class="line"><span class="attr">          isolation:</span></span><br><span class="line"><span class="attr">            thread:</span></span><br><span class="line"><span class="attr">              timeoutInMillisecond:</span> <span class="number">6000</span> <span class="comment"># 熔断超时时长：6000ms</span></span><br></pre></td></tr></table></figure>
+<h1 id="番外"><a href="#番外" class="headerlink" title="番外"></a>番外</h1><pre><code>&lt;!--StringUtils工具包--&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.commons&lt;/groupId&gt;
+    &lt;artifactId&gt;commons-lang3&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre><p>查看字符串是否为空（空返回true） StringUtils.isBlank(“asd”);</p>
 
       
     </div>
@@ -676,8 +762,8 @@ public class UserClientFallback implements UserClient {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/27/SpringCloud05/" rel="next" title="Hystrix熔断器">
-                <i class="fa fa-chevron-left"></i> Hystrix熔断器
+              <a href="/2019/05/28/SpringCloud06/" rel="next" title="Feign 更好的服务调用方式">
+                <i class="fa fa-chevron-left"></i> Feign 更好的服务调用方式
               </a>
             
           </div>
@@ -685,10 +771,6 @@ public class UserClientFallback implements UserClient {
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/29/SpringCloud07/" rel="prev" title="Zuul网关">
-                Zuul网关 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -883,7 +965,7 @@ public class UserClientFallback implements UserClient {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#feign的一些事情"><span class="nav-number">1.</span> <span class="nav-text">feign的一些事情</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ribbon"><span class="nav-number">1.1.</span> <span class="nav-text">ribbon</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hystrix"><span class="nav-number">1.2.</span> <span class="nav-text">hystrix</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#zuul功能："><span class="nav-number">1.</span> <span class="nav-text">zuul功能：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、路由功能"><span class="nav-number">1.1.</span> <span class="nav-text">一、路由功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一种配置："><span class="nav-number">1.1.1.</span> <span class="nav-text">第一种配置：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二种配置：面向服务的路由"><span class="nav-number">1.1.2.</span> <span class="nav-text">第二种配置：面向服务的路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三种配置："><span class="nav-number">1.1.3.</span> <span class="nav-text">第三种配置：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四种配置：不用配置zuul-routes规则"><span class="nav-number">1.1.4.</span> <span class="nav-text">第四种配置：不用配置zuul.routes规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五种配置：不忽略前缀"><span class="nav-number">1.1.5.</span> <span class="nav-text">第五种配置：不忽略前缀</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将某个服务不对外提供-zuul-ignored-services-值是一个集合"><span class="nav-number">1.1.6.</span> <span class="nav-text">将某个服务不对外提供  zuul.ignored-services 值是一个集合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、过滤器"><span class="nav-number">1.2.</span> <span class="nav-text">二、过滤器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、zuul的负载均衡和熔断"><span class="nav-number">1.3.</span> <span class="nav-text">三、zuul的负载均衡和熔断</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#番外"><span class="nav-number">2.</span> <span class="nav-text">番外</span></a></li></ol></div>
             
 
           </div>
