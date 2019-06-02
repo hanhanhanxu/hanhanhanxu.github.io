@@ -96,31 +96,24 @@
 
 
 
-<meta name="description" content="SpringBoot官方网站  一、什么是Spring Boot用一些固定的方式来构建生产级别的Spring应用。  Spring Boot推崇“约定”&amp;gt;“配置”的方式，以便于你能够尽可能快速的启动并运行程序。  人们把Spring Boot成为搭建程序的脚手架。其最主要的作用就是帮我们快速的构建庞大的Spring项目，并尽可能的减少一切xml配置，做到开箱即用，迅速上手，让程序员关注业务而">
+<meta name="description" content="参考链接： https://blog.csdn.net/sanyaoxu_2/article/details/80555328 https://www.cnblogs.com/softidea/p/6251249.html Swagger是什么Swagger 是一个规范和完整的框架，用于生成、描述、调用和可视化 RESTful 风格的 Web 服务。总体目标是使客户端和文件系统作为服务器以同样的速">
 <meta name="keywords" content="教程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot入门第一节">
-<meta property="og:url" content="http://hanhanhanxu.github.io/2019/05/13/SpringBoot01/index.html">
+<meta property="og:title" content="Swagger简单使用">
+<meta property="og:url" content="http://hanhanhanxu.github.io/2019/06/02/Swagger/index.html">
 <meta property="og:site_name" content="旭">
-<meta property="og:description" content="SpringBoot官方网站  一、什么是Spring Boot用一些固定的方式来构建生产级别的Spring应用。  Spring Boot推崇“约定”&amp;gt;“配置”的方式，以便于你能够尽可能快速的启动并运行程序。  人们把Spring Boot成为搭建程序的脚手架。其最主要的作用就是帮我们快速的构建庞大的Spring项目，并尽可能的减少一切xml配置，做到开箱即用，迅速上手，让程序员关注业务而">
+<meta property="og:description" content="参考链接： https://blog.csdn.net/sanyaoxu_2/article/details/80555328 https://www.cnblogs.com/softidea/p/6251249.html Swagger是什么Swagger 是一个规范和完整的框架，用于生成、描述、调用和可视化 RESTful 风格的 Web 服务。总体目标是使客户端和文件系统作为服务器以同样的速">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://s2.ax1x.com/2019/05/15/E7cd1J.md.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/05/15/E7cDn1.md.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/05/15/E7c0XR.md.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/05/15/E7c6AK.md.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/05/15/E7cr0x.md.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/05/15/E7cwc9.md.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/05/15/E7cs76.md.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/05/15/E7cctO.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/05/15/E7cghD.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/05/15/E7cR9e.md.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/05/16/EHxCz4.md.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/05/16/EHxEe1.png">
-<meta property="og:updated_time" content="2019-05-27T12:57:25.361Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/02/V8kxqP.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/02/V8kxqP.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/02/V8AVrq.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/02/V8VCcj.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/02/V8VZNT.md.png">
+<meta property="og:updated_time" content="2019-06-02T02:36:26.740Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringBoot入门第一节">
-<meta name="twitter:description" content="SpringBoot官方网站  一、什么是Spring Boot用一些固定的方式来构建生产级别的Spring应用。  Spring Boot推崇“约定”&amp;gt;“配置”的方式，以便于你能够尽可能快速的启动并运行程序。  人们把Spring Boot成为搭建程序的脚手架。其最主要的作用就是帮我们快速的构建庞大的Spring项目，并尽可能的减少一切xml配置，做到开箱即用，迅速上手，让程序员关注业务而">
-<meta name="twitter:image" content="https://s2.ax1x.com/2019/05/15/E7cd1J.md.png">
+<meta name="twitter:title" content="Swagger简单使用">
+<meta name="twitter:description" content="参考链接： https://blog.csdn.net/sanyaoxu_2/article/details/80555328 https://www.cnblogs.com/softidea/p/6251249.html Swagger是什么Swagger 是一个规范和完整的框架，用于生成、描述、调用和可视化 RESTful 风格的 Web 服务。总体目标是使客户端和文件系统作为服务器以同样的速">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/06/02/V8kxqP.md.png">
 
 
 
@@ -150,7 +143,7 @@
 
 
 
-  <link rel="canonical" href="http://hanhanhanxu.github.io/2019/05/13/SpringBoot01/">
+  <link rel="canonical" href="http://hanhanhanxu.github.io/2019/06/02/Swagger/">
 
 
 
@@ -179,7 +172,7 @@
     })();
 </script>
 
-  <title>SpringBoot入门第一节 | 旭</title>
+  <title>Swagger简单使用 | 旭</title>
   
 
 
@@ -340,7 +333,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hanhanhanxu.github.io/2019/05/13/SpringBoot01/">
+    <link itemprop="mainEntityOfPage" href="http://hanhanhanxu.github.io/2019/06/02/Swagger/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Han Xu">
@@ -357,7 +350,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SpringBoot入门第一节</h1>
+          <h1 class="post-title" itemprop="name headline">Swagger简单使用</h1>
         
 
         <div class="post-meta">
@@ -369,8 +362,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-13T09:22:41+08:00">
-                2019-05-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-02T09:35:10+08:00">
+                2019-06-02
               </time>
             
 
@@ -392,8 +385,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SpringBoot/" itemprop="url" rel="index">
-                    <span itemprop="name">SpringBoot</span>
+                  <a href="/categories/Swagger/" itemprop="url" rel="index">
+                    <span itemprop="name">Swagger</span>
                   </a>
                 </span>
 
@@ -409,7 +402,7 @@
 
           
           
-             <span id="/2019/05/13/SpringBoot01/" class="leancloud_visitors" data-flag-title="SpringBoot入门第一节">
+             <span id="/2019/06/02/Swagger/" class="leancloud_visitors" data-flag-title="Swagger简单使用">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -434,7 +427,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2k
+                  2.4k
                 </span>
               
 
@@ -450,7 +443,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8
+                  11
                 </span>
               
             </div>
@@ -471,268 +464,369 @@
       
 
       
-        <p><a href="https://spring.io/projects/spring-boot/" target="_blank" rel="noopener">SpringBoot官方网站</a> </p>
-<h1 id="一、什么是Spring-Boot"><a href="#一、什么是Spring-Boot" class="headerlink" title="一、什么是Spring Boot"></a>一、什么是Spring Boot</h1><p>用一些固定的方式来构建生产级别的Spring应用。 </p>
-<p>Spring Boot推崇“约定”&gt;“配置”的方式，以便于你能够尽可能快速的启动并运行程序。</p>
-<blockquote>
-<p>人们把Spring Boot成为搭建程序的脚手架。其最主要的作用就是帮我们快速的构建庞大的Spring项目，并尽可能的减少一切xml配置，做到开箱即用，迅速上手，让程序员关注业务而非配置。</p>
+        <p>参考链接：</p>
+<p><a href="https://blog.csdn.net/sanyaoxu_2/article/details/80555328" target="_blank" rel="noopener">https://blog.csdn.net/sanyaoxu_2/article/details/80555328</a></p>
+<p><a href="https://www.cnblogs.com/softidea/p/6251249.html" target="_blank" rel="noopener">https://www.cnblogs.com/softidea/p/6251249.html</a></p>
+<h1 id="Swagger是什么"><a href="#Swagger是什么" class="headerlink" title="Swagger是什么"></a>Swagger是什么</h1><p>Swagger 是一个规范和完整的框架，用于生成、描述、调用和可视化 RESTful 风格的 Web 服务。总体目标是使客户端和文件系统作为服务器以同样的速度来更新。文件的方法，参数和模型紧密集成到服务器端的代码，允许API来始终保持同步。</p>
+<p><strong>其实就是一个结合SpringBoot项目使用的 自动生成文档的工具</strong></p>
+<p>使用Swagger后，你的项目启动完成，然后访问<a href="http://localhost:8080/swagger-ui.html#/即可得到一个这样的文档：" target="_blank" rel="noopener">http://localhost:8080/swagger-ui.html#/即可得到一个这样的文档：</a></p>
+<p><a href="https://imgchr.com/i/V8kxqP" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/02/V8kxqP.md.png" alt="V8kxqP.md.png"></a></p>
+<h1 id="怎么用（基本使用）"><a href="#怎么用（基本使用）" class="headerlink" title="怎么用（基本使用）"></a>怎么用（基本使用）</h1><h2 id="1、创建一个SpringBoot项目"><a href="#1、创建一个SpringBoot项目" class="headerlink" title="1、创建一个SpringBoot项目"></a>1、创建一个SpringBoot项目</h2><h2 id="2、引入Swagger依赖"><a href="#2、引入Swagger依赖" class="headerlink" title="2、引入Swagger依赖"></a>2、引入Swagger依赖</h2><blockquote>
 </blockquote>
-<p>什么是“约定”&gt;“配置”？</p>
-<blockquote>
-<p>Spring Boot约定一些固定的配置并在底层封装好这些东西，等到你用的时候可以直接去用而不是一个个去配，这些已经配置好的东西称为“约定”。有了这些约定的东西，程序员写代码的时候就不用手动配置。</p>
-</blockquote>
-<h1 id="二、为什么要用Spring-Boot"><a href="#二、为什么要用Spring-Boot" class="headerlink" title="二、为什么要用Spring Boot"></a>二、为什么要用Spring Boot</h1><p>以前的java写Spring项目需要太多的配置，臃肿，麻烦。搭建项目需要太多的时间和心思。其原因主要是两点： </p>
-<ul>
-<li>复杂的配置</li>
-<li>混乱的依赖管理</li>
-</ul>
-<p>而Spring Boot让这一切成为了过去。 </p>
-<p><strong>我们可以使用SpringBoot创建java应用，并使用java -jar启动她，就能得到一个生产级别的web工程。</strong></p>
-<h1 id="三、Spring-Boot的特点"><a href="#三、Spring-Boot的特点" class="headerlink" title="三、Spring Boot的特点"></a>三、Spring Boot的特点</h1><ul>
-<li>为所有Spring开发者提供一个非常快速的、广泛接收的入门体验。 </li>
-<li>开箱即用（启动器starter-其实就是Spring Boot提供的一个jar包），但通过自己设置参数（.properties），即可快速摆脱这种方式。 </li>
-<li>提供了一些大型项目中国常见的非功能性特性，入内嵌服务器，安全，指标，健康监测，外部化配置等。 </li>
-<li>绝对没有代码生成，也无需XML配置。</li>
-</ul>
-<h1 id="四、怎样用Spring-Boot"><a href="#四、怎样用Spring-Boot" class="headerlink" title="四、怎样用Spring Boot"></a>四、怎样用Spring Boot</h1><ul>
-<li>工具：idea2017  </li>
-<li>jdk： 1.8 </li>
-</ul>
-<h2 id="1-第一步，创建一个Maven项目。"><a href="#1-第一步，创建一个Maven项目。" class="headerlink" title="1. 第一步，创建一个Maven项目。"></a>1. 第一步，创建一个Maven项目。</h2><p><img src="https://s2.ax1x.com/2019/05/15/E7cd1J.md.png" alt="Alt text" title="创建Maven工程"> </p>
-<p><img src="https://s2.ax1x.com/2019/05/15/E7cDn1.md.png" alt="Alt text" title="创建Maven工程"> </p>
-<p><img src="https://s2.ax1x.com/2019/05/15/E7c0XR.md.png" alt="Alt text" title="创建Maven工程"> </p>
-<p><em>我创建的时候因为以前起了同名的项目为避免重复将项目名字后面加了个01</em> </p>
-<p>创建Maven项目成功后是这样的 </p>
-<p><img src="https://s2.ax1x.com/2019/05/15/E7c6AK.md.png" alt title="创建Maven工程"></p>
-<h2 id="2-我们要使我们的普通maven项目变为SpringBoot项目"><a href="#2-我们要使我们的普通maven项目变为SpringBoot项目" class="headerlink" title="2.我们要使我们的普通maven项目变为SpringBoot项目"></a>2.我们要使我们的普通maven项目变为SpringBoot项目</h2><ul>
-<li>1、导入springboot父工程依赖 </li>
-</ul>
-<pre><code> &lt;parent&gt; 
-    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
-    &lt;version&gt;2.0.4.RELEASE&lt;/version&gt;
-&lt;/parent&gt; 
-</code></pre><p>这里我们的version选的是2.0.4，指的是选择的springbootstarter(spring boot启动器)父工程的版本</p>
-<ul>
-<li>2、导入springbootweb依赖 </li>
-</ul>
-<pre><code>&lt;dependencies&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-        &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
-    &lt;/dependency&gt;
-&lt;/dependencies&gt; 
-</code></pre><p>这里我们不再需要选择版本，因为我们已经添加了springbootstarter父工程，这个父工程会帮我们管理依赖版本。 </p>
-<p>当添加完依赖后我们看项目的External Librarier，已经自动帮我们添加了支持spring，springmvc和web相关的依赖，并且自动关联了最适合的版本。<br><img src="https://s2.ax1x.com/2019/05/15/E7cr0x.md.png" alt title="添加依赖"> </p>
-<h2 id="3-快速使用springboot"><a href="#3-快速使用springboot" class="headerlink" title="3.快速使用springboot"></a>3.快速使用springboot</h2><p>我们现在已经搭建好了springboot需要的基本环境，是不是非常快。现在就让我们一起编写第一个可访问的web项目。</p>
-<ul>
-<li>1、编写main函数（SpringBoot项目入口函数）<br>在java目录下添加cn.itcast.main类 ,编写如下代码</li>
-</ul>
-<pre><code>@SpringBootApplication 
-public class main { 
-    public static void main(String[] args) {
-        SpringApplication.run(main.class);
-    }
-} 
-</code></pre><p>这个类相当于我们普通java项目的main函数，运行SpringBoot项目就像运行普通java项目一样，run主函数就行了。 </p>
-<ul>
-<li>2、编写测试页面 </li>
-</ul>
-<p>有了主函数还要写什么呢？此时我们已经有了一个基本完整的SpringBoot项目所需内容，但是现在什么测试内容都没有，我们就需要写一个页面来看到我们的项目搭建运行成功了。所以我们要编写一个测试页面。</p>
-<p>那应该怎么写呢？ </p>
-<p>以前怎么写，现在就怎么写！ </p>
-<p>我们写一个controller层的接口：</p>
-<p>在cn.itcast下新建controller.HelloController.java</p>
-<pre><code>package cn.itcast.controller;
-
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-@RestController
-public class HelloController {
-
-    @GetMapping(&quot;hello&quot;)
-    public String hello(){
-        return &quot;hello SpringBoot&quot;;
-    }
-}
-</code></pre><p>现在我们在main函数页面，启动main函数，即启动SpringBoot项目</p>
-<p><img src="https://s2.ax1x.com/2019/05/15/E7cwc9.md.png" alt title="启动main函数"> </p>
-<p>打开浏览器访问:<a href="http://localhost:8080/hello/" target="_blank" rel="noopener">http://localhost:8080/hello/</a> </p>
-<p>即可看到我们的测试页面</p>
-<p><img src="https://s2.ax1x.com/2019/05/15/E7cs76.md.png" alt title="测试页面"> </p>
-<h1 id="五、答疑"><a href="#五、答疑" class="headerlink" title="五、答疑"></a>五、答疑</h1><p><strong>Q:</strong> 为什么没有web.xml了？</p>
-<p><strong>A:</strong> springboot项目中默认采用servlet版本是3.0版本，3.0版本后不需要web.xml，可以用纯注解。</p>
-<p><strong>Q:</strong> 为什么没有Spring的ApplicationContext.xml了？</p>
-<p><strong>A:</strong> 不用这个xml了，SpringBoot已经默认帮我们配置了以前Spring的配置文件里需要配置的所有东西。但是SpringBoot不能帮你把全世界所有框架都配好，所以SpringBoot帮你配置的框架、东西是有限的。当我们需要用到SpringBoot没有帮我们配置的东西的时候，就需要自己去配置。</p>
-<h1 id="六、Spring的java配置方式，普通方式java配置"><a href="#六、Spring的java配置方式，普通方式java配置" class="headerlink" title="六、Spring的java配置方式，普通方式java配置"></a>六、Spring的java配置方式，普通方式java配置</h1><p>用java类+注解配置数据库连接池</p>
-<p><strong>结构：</strong></p>
-<p><img src="https://s2.ax1x.com/2019/05/15/E7cctO.png" alt title="结构说明"> </p>
-<p>先向pom里面添加druid依赖</p>
-<pre><code> &lt;dependency&gt;
-    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
-    &lt;!--dataSource连接池--&gt;
-    &lt;artifactId&gt;druid&lt;/artifactId&gt;
-    &lt;version&gt;1.1.6&lt;/version&gt;
+<pre><code> &lt;!--Swagger依赖--&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;io.springfox&lt;/groupId&gt;
+    &lt;artifactId&gt;springfox-swagger-ui&lt;/artifactId&gt;
+    &lt;version&gt;2.2.2&lt;/version&gt;
 &lt;/dependency&gt;
-</code></pre><p>jdbc.properties 数据库配置</p>
-<pre><code>jdbc.driver=com.mysql.jdbc.Driver
-jdbc.url=jdbc:mysql://localhost:3306/test
-jdbc.username=root
-jdbc.password=root
-</code></pre><p>java类+注解 配置连接池</p>
-<pre><code>package cn.itcast.config;
+&lt;dependency&gt;
+    &lt;groupId&gt;io.springfox&lt;/groupId&gt;
+    &lt;artifactId&gt;springfox-swagger2&lt;/artifactId&gt;
+    &lt;version&gt;2.2.2&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre><blockquote>
+</blockquote>
+<h2 id="3、添加Swagger配置（注意修改包扫描路径）"><a href="#3、添加Swagger配置（注意修改包扫描路径）" class="headerlink" title="3、添加Swagger配置（注意修改包扫描路径）"></a>3、添加Swagger配置（注意修改包扫描路径）</h2><p>在Application.java同级上创建配置类Swagger2</p>
+<blockquote>
+</blockquote>
+<pre><code>package cn.itcast;
 
-import com.alibaba.druid.pool.DruidDataSource;
-import org.springframework.beans.factory.annotation.Value;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-import javax.sql.DataSource;
 
-//java配置方式
+/**
+ * Swagger2配置类
+ * 在与spring boot集成时，放在与Application.java同级的目录下。
+ * 通过@Configuration注解，让Spring来加载该类配置。
+ * 再通过@EnableSwagger2注解来启用Swagger2。
+ */
+
 @Configuration
-@PropertySource(&quot;classpath:jdbc.properties&quot;)
-public class JdbcConfig {
+@EnableSwagger2
+public class Swagger2 {
 
-    @Value(&quot;${jdbc.url}&quot;)
-    String url;
-    @Value(&quot;${jdbc.driver}&quot;)
-    String driverClassName;
-    @Value(&quot;${jdbc.username}&quot;)
-    String username;
-    @Value(&quot;${jdbc.password}&quot;)
-    String password;
-
-
+    /**
+     * 创建API应用
+     * apiInfo() 增加API相关信息
+     * 通过select()函数返回一个ApiSelectorBuilder实例,用来控制哪些接口暴露给Swagger来展现，
+     * 本例采用指定扫描的包路径来定义指定要建立API的目录。
+     *
+     * @return
+     */
     @Bean
-    public DataSource dataSource(){
-        DruidDataSource dataSource = new DruidDataSource();
-        dataSource.setDriverClassName(driverClassName);
-        dataSource.setUrl(url);
-        dataSource.setUsername(username);
-        dataSource.setPassword(password);
-        return dataSource;
+    public Docket createRestApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(apiInfo())
+                .select()
+                .apis(RequestHandlerSelectors.basePackage(&quot;cn.itcast.web&quot;))//api接口包扫描路径
+                .paths(PathSelectors.any())
+                .build();
+    }
+
+    /**
+     * 创建该API的基本信息（这些基本信息会展现在文档页面中）
+     * 访问地址：http://项目实际地址/swagger-ui.html
+     * @return
+     */
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder()
+                .title(&quot;Spring Boot中使用Swagger2构建RESTful APIs&quot;)//设置文档的标题
+                .description(&quot;更多请关注http://hanhanhanxu.coding.me&quot;)//设置文档的描述-&gt;1.Overview
+                .termsOfServiceUrl(&quot;http://www.baidu.com&quot;)//设置文档的License信息-&gt;1.3 License information
+                .contact(&quot;Han Xu : http://hanhanhanxu.coding.me&quot;)//设置文档的联系方式-&gt;1.2 Contact information
+                .version(&quot;1.0&quot;)//设置文档的版本信息-&gt; 1.1 Version information
+                .build();
     }
 }
-</code></pre><p>controller中注入dataSource，然后打断点以dbug方式运行查看</p>
-<pre><code>@RestController
-public class HelloController {
+</code></pre><blockquote>
+</blockquote>
+<h2 id="4、创建测试controller类SayController"><a href="#4、创建测试controller类SayController" class="headerlink" title="4、创建测试controller类SayController"></a>4、创建测试controller类SayController</h2><blockquote>
+</blockquote>
+<pre><code>package cn.itcast.web;
 
-    @Autowired
-    private DataSource dataSource;
 
-    @GetMapping(&quot;hello&quot;)
-    public String hello(){
-        return &quot;hello SpringBoot&quot;;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+
+/**
+ * 一个用来测试swagger注解的控制器
+ * 注意@ApiImplicitParam的使用会影响程序运行，如果使用不当可能造成控制器收不到消息
+ *
+ * @author Han Xu
+ */
+
+@Controller
+@RequestMapping(&quot;/say&quot;)
+@Api(value = &quot;SayController|一个用来测试swagger注解的控制器&quot;)
+public class SayController {
+
+    @ResponseBody
+    @RequestMapping(value =&quot;/getUserName&quot;, method= RequestMethod.GET)
+    @ApiOperation(value=&quot;根据用户编号获取用户姓名&quot;, notes=&quot;test: 仅1和2有正确返回&quot;)
+    @ApiImplicitParam(paramType=&quot;query&quot;, name = &quot;userNumber&quot;, value = &quot;用户编号&quot;, required = true, dataType = &quot;Integer&quot;)
+    public String getUserName(@RequestParam Integer userNumber){
+        if(userNumber == 1){
+            return &quot;张三丰&quot;;
+        }
+        else if(userNumber == 2){
+            return &quot;慕容复&quot;;
+        }
+        else{
+            return &quot;未知&quot;;
+        }
+    }
+
+    @ResponseBody
+    @RequestMapping(&quot;/updatePassword&quot;)
+    @ApiOperation(value=&quot;修改用户密码&quot;, notes=&quot;根据用户id修改密码&quot;)
+    @ApiImplicitParams({
+            @ApiImplicitParam(paramType=&quot;query&quot;, name = &quot;userId&quot;, value = &quot;用户ID&quot;, required = true, dataType = &quot;Integer&quot;),
+            @ApiImplicitParam(paramType=&quot;query&quot;, name = &quot;password&quot;, value = &quot;旧密码&quot;, required = true, dataType = &quot;String&quot;),
+            @ApiImplicitParam(paramType=&quot;query&quot;, name = &quot;newPassword&quot;, value = &quot;新密码&quot;, required = true, dataType = &quot;String&quot;)
+    })
+    public String updatePassword(@RequestParam(value=&quot;userId&quot;) Integer userId, @RequestParam(value=&quot;password&quot;) String password,
+                                 @RequestParam(value=&quot;newPassword&quot;) String newPassword){
+        if(userId &lt;= 0 || userId &gt; 2){
+            return &quot;未知的用户&quot;;
+        }
+        if(org.apache.commons.lang3.StringUtils.isBlank(password) || org.apache.commons.lang3.StringUtils.isBlank(newPassword)){
+            return &quot;密码不能为空&quot;;
+        }
+        if(password.equals(newPassword)){
+            return &quot;新旧密码不能相同&quot;;
+        }
+        return &quot;密码修改成功!&quot;;
     }
 }
-</code></pre><p><strong>刷新浏览器 </strong></p>
-<p><img src="https://s2.ax1x.com/2019/05/15/E7cghD.png" alt title="刷新浏览器"> </p>
-<p><img src="https://s2.ax1x.com/2019/05/15/E7cR9e.md.png" alt title="查看dataSource是否注入成功"> </p>
-<p>繁琐</p>
-<h1 id="七、SpringBoot提供的属性注入方式"><a href="#七、SpringBoot提供的属性注入方式" class="headerlink" title="七、SpringBoot提供的属性注入方式"></a>七、SpringBoot提供的属性注入方式</h1><h2 id="7-1第一种"><a href="#7-1第一种" class="headerlink" title="7.1第一种"></a>7.1第一种</h2><p><strong>配置文件:application.properties(resources目录下)</strong></p>
-<pre><code>jdbc.driver=com.mysql.jdbc.Driver
-jdbc.url=jdbc:mysql://localhost:3306/test
-jdbc.username=root
-jdbc.password=root
-</code></pre><p><strong>配置属性类：JdbcProperties.java</strong></p>
-<pre><code>//配置属性类  前缀是jdbc
-@ConfigurationProperties(prefix = &quot;jdbc&quot;)
+</code></pre><blockquote>
+</blockquote>
+<h2 id="5、启动项目，测试"><a href="#5、启动项目，测试" class="headerlink" title="5、启动项目，测试"></a>5、启动项目，测试</h2><p>访问:<a href="http://localhost:8080/swagger-ui.html#/" target="_blank" rel="noopener">http://localhost:8080/swagger-ui.html#/</a></p>
+<p><a href="https://imgchr.com/i/V8kxqP" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/02/V8kxqP.md.png" alt="V8kxqP.md.png"></a></p>
+<h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><p><strong>Swagger使用的注解及其说明：</strong></p>
+<p>@Api：用在类上，说明该类的作用。</p>
+<p>@ApiOperation：注解来给API增加方法说明。</p>
+<p>@ApiImplicitParams : 用在方法上包含一组参数说明。</p>
+<p>@ApiImplicitParam：用来注解来给方法入参增加说明。</p>
+<p>@ApiResponses：用于表示一组响应</p>
+<p>@ApiResponse：用在@ApiResponses中，一般用于表达一个错误的响应信息</p>
+<pre><code>|   code：数字，例如400
+
+|   message：信息，例如&quot;请求参数没填好&quot;
+
+|   response：抛出异常的类   
+</code></pre><p>@ApiModel：描述一个Model的信息（一般用在请求参数无法使用@ApiImplicitParam注解进行描述的时候）</p>
+<pre><code>|   @ApiModelProperty：描述一个model的属性
+</code></pre><p><a href="https://imgchr.com/i/V8AVrq" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/02/V8AVrq.md.png" alt="V8AVrq.md.png"></a></p>
+<h1 id="接收对象（参数为pojo）例子"><a href="#接收对象（参数为pojo）例子" class="headerlink" title="接收对象（参数为pojo）例子"></a>接收对象（参数为pojo）例子</h1><h2 id="1、自定义pojo类-DemoDoctor"><a href="#1、自定义pojo类-DemoDoctor" class="headerlink" title="1、自定义pojo类:DemoDoctor"></a>1、自定义pojo类:DemoDoctor</h2><blockquote>
+</blockquote>
+<pre><code>package cn.itcast.pojo;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+
+/**
+ * 医生对象模型，不要使用该类
+ * @author SUNF
+ *
+ */
+@ApiModel(value=&quot;医生对象模型&quot;)
 @Data
-public class JdbcProperties {
-    String driver;
-    String url;
-    String username;
-    String password;
+public class DemoDoctor{
+    @ApiModelProperty(value=&quot;id&quot; ,required=true)
+    private Integer id;
+    @ApiModelProperty(value=&quot;医生姓名&quot; ,required=true)
+    private String name;
 }
-</code></pre><p><strong>配置类：JdbcConfig.java</strong></p>
-<pre><code>//表明这是一个配置类
-@Configuration
-//启用配置属性类
-@EnableConfigurationProperties(JdbcProperties.class)
-public class JdbcConfig {
+</code></pre><blockquote>
+</blockquote>
+<h2 id="2、编写测试controller：DoctorTestController"><a href="#2、编写测试controller：DoctorTestController" class="headerlink" title="2、编写测试controller：DoctorTestController"></a>2、编写测试controller：DoctorTestController</h2><blockquote>
+</blockquote>
+<pre><code>package cn.itcast.web;
 
-    //Spring调用，Spring注入
-    @Bean
-    public DataSource dataSource(JdbcProperties properties){
-        DruidDataSource dataSource = new DruidDataSource();
-        dataSource.setDriverClassName(properties.getDriver());
-        dataSource.setUrl(properties.getUrl());
-        dataSource.setUsername(properties.getUsername());
-        dataSource.setPassword(properties.getPassword());
-        return dataSource;
+import cn.itcast.exception.HttpStatus401Exception;
+import cn.itcast.pojo.DemoDoctor;
+import com.github.pagehelper.PageInfo;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * 医生类（模拟）
+ * @author Han Xu
+ */
+@RequestMapping(&quot;/api/v1&quot;)
+@Controller
+@Api(value = &quot;DoctorTestController-医生信息接口模拟&quot;)
+@Slf4j
+public class DoctorTestController {
+
+    /**
+     * 添加医生
+     *
+     * 在使用对象封装参数进行传参时，需要在该对象添加注解，将其注册到swagger中
+     * @link com.zhongying.api.model.base.DemoDoctor
+     *
+     * 注意： 在后台采用对象接收参数时，Swagger自带的工具采用的是JSON传参，
+     *     测试时需要在参数上加入@RequestBody,正常运行采用form或URL提交时候请删除。
+     *
+     * @param doctor 医生类对象
+     * @return
+     * @throws Exception
+     */
+    @ResponseBody
+    @RequestMapping(value=&quot;/doctor&quot;,  method= RequestMethod.POST )
+    @ApiOperation(value=&quot;添加医生信息&quot;, notes=&quot;test:返回已添加医生的id&quot;)
+    public String addDoctor(@RequestBody DemoDoctor doctor) throws Exception {
+        if(null == doctor || doctor.getId() == null){
+            throw new HttpStatus401Exception(&quot;添加医生失败&quot;,&quot;DT3388&quot;,&quot;未知原因&quot;,&quot;请联系管理员&quot;);
+        }
+        try {
+            System.out.println(&quot;成功-----------&gt;&quot;+doctor.getName());
+        } catch (Exception e) {
+            throw new HttpStatus401Exception(&quot;添加医生失败&quot;,&quot;DT3388&quot;,&quot;未知原因&quot;,&quot;请联系管理员&quot;);
+        }
+
+        return doctor.getId().toString();
     }
-}
-</code></pre><p><strong>实践部分，直接注入@Autowired(任何其他部分想要注入都可以直接注入使用)</strong></p>
-<pre><code>@RestController
-public class HelloController {
 
-   @Autowired
-   private DataSource dataSource;
-
-    @GetMapping(&quot;hello&quot;)
-    public String hello(){
-        return &quot;hello SpringBoot&quot;;
+    /**
+     * 删除医生
+     * @param doctorId 医生ID
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value=&quot;/doctor/{doctorId}&quot;,  method= RequestMethod.DELETE )
+    @ApiOperation(value=&quot;删除医生信息&quot;, notes=&quot;test:根据医生id删除医生，返回执行结果提示信息&quot;)
+    @ApiImplicitParam(paramType=&quot;query&quot;, name = &quot;doctorId&quot;, value = &quot;医生ID&quot;, required = true, dataType = &quot;Integer&quot;)
+    public String deleteDoctor(@RequestParam Integer doctorId){
+        if(doctorId &gt; 2){
+            return &quot;删除失败&quot;;
+        }
+        return &quot;删除成功&quot;;
     }
-}
-</code></pre><p><a href="https://imgchr.com/i/EHxCz4" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/16/EHxCz4.md.png" alt="EHxCz4.md.png"></a></p>
-<p>类结构：</p>
-<p><img src="https://s2.ax1x.com/2019/05/16/EHxEe1.png" alt="EHxEe1.png"></p>
-<h2 id="7-1第二种"><a href="#7-1第二种" class="headerlink" title="7.1第二种"></a>7.1第二种</h2><p>配置文件：application.properties</p>
-<pre><code>jdbc.driverClassName=com.mysql.jdbc.Driver
-jdbc.url=jdbc:mysql://localhost:3306/test
-jdbc.username=root
-jdbc.password=root
-</code></pre><p>配置类：JdbcConfig.java</p>
-<pre><code>//标识这是一个配置类
-@Configuration
-public class JdbcConfig {
 
-    @Bean
-    //Spring调用的时候直接去application.properties里找能set到DataSource里属性，且前缀是jdbc
-    @ConfigurationProperties(prefix = &quot;jdbc&quot;)
-    public DataSource dataSource(){
-        DruidDataSource dataSource = new DruidDataSource();
-        return dataSource;
+    /**
+     * 修改医生信息
+     * @param doctorId 医生ID
+     * @param doctor 医生信息
+     * @return
+     * @throws HttpStatus401Exception
+     */
+    @ResponseBody
+    @RequestMapping(value=&quot;/doctor/{doctorId}&quot;,  method= RequestMethod.POST )
+    @ApiOperation(value=&quot;修改医生信息&quot;, notes=&quot;test:根据医生id修改医生&quot;)
+    @ApiImplicitParam(paramType=&quot;query&quot;, name = &quot;doctorId&quot;, value = &quot;医生ID&quot;, required = true, dataType = &quot;Integer&quot;)
+    public String updateDoctor(@RequestParam Integer doctorId, @RequestBody DemoDoctor doctor) throws Exception{
+        if(null == doctorId || null == doctor){
+            throw new HttpStatus401Exception(&quot;修改医生信息失败&quot;,&quot;DT3391&quot;,&quot;id不能为空&quot;,&quot;请修改&quot;);
+        }
+        if(doctorId &gt; 5 ){
+            throw new HttpStatus401Exception(&quot;医生不存在&quot;,&quot;DT3392&quot;,&quot;错误的ID&quot;,&quot;请更换ID&quot;);
+        }
+        log.info(doctorId.toString());
+        log.info(&quot;医生:&quot;,doctor);
+        return &quot;修改成功&quot;;
     }
-}
-</code></pre><p>实践部分，直接 @Autowired注入使用：</p>
-<pre><code>@RestController
-public class HelloController {
 
-   @Autowired
-   private DataSource dataSource;
-
-    @GetMapping(&quot;hello&quot;)
-    public String hello(){
-        return &quot;hello SpringBoot&quot;;
+    /**
+     * 获取医生详细信息
+     * @param doctorId 医生ID
+     * @return
+     * @throws HttpStatus401Exception
+     */
+    @ResponseBody
+    @RequestMapping(value=&quot;/doctor/{doctorId}&quot;,  method= RequestMethod.GET )
+    @ApiOperation(value=&quot;获取医生详细信息&quot;, notes=&quot;test:根据医生id获取信息&quot;)
+    @ApiImplicitParam(paramType=&quot;query&quot;, name = &quot;doctorId&quot;, value = &quot;医生ID&quot;, required = true, dataType = &quot;Integer&quot;)
+    public DemoDoctor getDoctorDetail(@RequestParam Integer doctorId) throws Exception{
+        log.info(doctorId.toString());
+        if(null == doctorId){
+            throw new HttpStatus401Exception(&quot;查看医生信息失败&quot;,&quot;DT3390&quot;,&quot;未知原因&quot;,&quot;请联系管理员&quot;);
+        }
+        if(doctorId &gt; 3){
+            throw new HttpStatus401Exception(&quot;医生不存在&quot;,&quot;DT3392&quot;,&quot;错误的ID&quot;,&quot;请更换ID&quot;);
+        }
+        DemoDoctor doctor = new DemoDoctor();
+        doctor.setId(1);
+        doctor.setName(&quot;测试医生&quot;);
+        return doctor;
     }
+
+    /**
+     * 获取医生列表
+     * @param pageIndex 当前页数
+     * @param pageSize 每页记录数
+     * @param request
+     * @return
+     * @throws HttpStatus401Exception
+     */
+    @ResponseBody
+    @RequestMapping(value=&quot;/doctor&quot;,  method= RequestMethod.GET )
+    @ApiOperation(value=&quot;获取医生列表&quot;, notes=&quot;目前一次全部取，不分页&quot;)
+    @ApiImplicitParams({
+            @ApiImplicitParam(paramType=&quot;header&quot;, name = &quot;token&quot;, value = &quot;token&quot;, required = true, dataType = &quot;String&quot;),
+            @ApiImplicitParam(paramType=&quot;query&quot;, name = &quot;pageIndex&quot;, value = &quot;当前页数&quot;, required = false, dataType = &quot;String&quot;),
+            @ApiImplicitParam(paramType=&quot;query&quot;, name = &quot;pageSize&quot;, value = &quot;每页记录数&quot;, required = true, dataType = &quot;String&quot;),
+    })
+    public PageInfo&lt;DemoDoctor&gt; getDoctorList(@RequestParam(value = &quot;pageIndex&quot;, required = false, defaultValue = &quot;1&quot;) Integer pageIndex,
+                                              @RequestParam(value = &quot;pageSize&quot;, required = false) Integer pageSize,
+                                              HttpServletRequest request) throws Exception{
+
+        String token = request.getHeader(&quot;token&quot;);
+        log.info(token);
+        if(null == token){
+            throw new HttpStatus401Exception(&quot;没有权限&quot;,&quot;SS8888&quot;,&quot;没有权限&quot;,&quot;请查看操作文档&quot;);
+        }
+        if(null == pageSize){
+            throw new HttpStatus401Exception(&quot;每页记录数不粗安在&quot;,&quot;DT3399&quot;,&quot;不存在pageSize&quot;,&quot;请查看操作文档&quot;);
+        }
+
+        DemoDoctor doctor1 = new DemoDoctor();
+        doctor1.setId(1);
+        doctor1.setName(&quot;测试医生1&quot;);
+        DemoDoctor doctor2 = new DemoDoctor();
+        doctor2.setId(2);
+        doctor2.setName(&quot;测试医生2&quot;);
+
+        List&lt;DemoDoctor&gt; doctorList = new ArrayList&lt;DemoDoctor&gt;();
+        doctorList.add(doctor1);
+        doctorList.add(doctor2);
+        return new PageInfo&lt;DemoDoctor&gt;(doctorList);
+    }
+
+
 }
-</code></pre><h1 id="每日注解"><a href="#每日注解" class="headerlink" title="每日注解"></a>每日注解</h1><ol>
-<li><p>@RestController </p>
-<p> @RestController注解相当于@ResponseBody ＋ @Controller合在一起的作用。 </p>
-</li>
-</ol>
-<ol start="2">
-<li><p>@GetMapping</p>
-<p> @GetMapping是一个组合注解，是@RequestMapping(method = RequestMethod.GET)的缩写。</p>
-</li>
-<li><p>@Configuration：声明一个类作为配置类，代替xml文件</p>
-</li>
-<li><p>@Bean：声明在方法上，将方法的返回值加入Bean容器，代替<bean>标签（和@Configuration配合使用）</bean></p>
-<p> @Bean标注的方法，由Spring调用，加入到applicationContext中，以后谁要用这个方法的返回值(返回一个类对象)就直接@Autowired注入就行了</p>
-</li>
-<li><p>@Value：属性注入</p>
-</li>
-<li><p>@PropertySource：指定外部属性文件。  </p>
-</li>
-<li><p>@ConfigurationProperties(prefix = “”)配置属性注解，标识在类上，自动去匹配application配置文件里的相关属性注入到类的同名属性中</p>
-</li>
-<li><p>@EnableConfigurationProperties(xxx.class)启用配置属性类，和上面的连用</p>
-</li>
-</ol>
+</code></pre><blockquote>
+</blockquote>
+<h2 id="3、启动，测试"><a href="#3、启动，测试" class="headerlink" title="3、启动，测试"></a>3、启动，测试</h2><p>访问：<a href="http://localhost:8080/swagger-ui.html#/" target="_blank" rel="noopener">http://localhost:8080/swagger-ui.html#/</a></p>
+<p><a href="https://imgchr.com/i/V8VCcj" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/02/V8VCcj.md.png" alt="V8VCcj.md.png"></a></p>
+<p><a href="https://imgchr.com/i/V8VZNT" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/02/V8VZNT.md.png" alt="V8VZNT.md.png"></a></p>
 
       
     </div>
@@ -822,8 +916,8 @@ public class HelloController {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/24/3/" rel="next" title="计算机组成原理详解">
-                <i class="fa fa-chevron-left"></i> 计算机组成原理详解
+              <a href="/2019/05/29/SpringCloud07/" rel="next" title="Zuul网关">
+                <i class="fa fa-chevron-left"></i> Zuul网关
               </a>
             
           </div>
@@ -832,8 +926,8 @@ public class HelloController {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/13/LeanClound/" rel="prev" title="使用LeanClound为hexo+next博客添加文章阅读数和阅读排行">
-                使用LeanClound为hexo+next博客添加文章阅读数和阅读排行 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/02/注解/" rel="prev" title="maven依赖">
+                maven依赖 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1029,7 +1123,7 @@ public class HelloController {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、什么是Spring-Boot"><span class="nav-number">1.</span> <span class="nav-text">一、什么是Spring Boot</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、为什么要用Spring-Boot"><span class="nav-number">2.</span> <span class="nav-text">二、为什么要用Spring Boot</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、Spring-Boot的特点"><span class="nav-number">3.</span> <span class="nav-text">三、Spring Boot的特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、怎样用Spring-Boot"><span class="nav-number">4.</span> <span class="nav-text">四、怎样用Spring Boot</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-第一步，创建一个Maven项目。"><span class="nav-number">4.1.</span> <span class="nav-text">1. 第一步，创建一个Maven项目。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-我们要使我们的普通maven项目变为SpringBoot项目"><span class="nav-number">4.2.</span> <span class="nav-text">2.我们要使我们的普通maven项目变为SpringBoot项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-快速使用springboot"><span class="nav-number">4.3.</span> <span class="nav-text">3.快速使用springboot</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、答疑"><span class="nav-number">5.</span> <span class="nav-text">五、答疑</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、Spring的java配置方式，普通方式java配置"><span class="nav-number">6.</span> <span class="nav-text">六、Spring的java配置方式，普通方式java配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、SpringBoot提供的属性注入方式"><span class="nav-number">7.</span> <span class="nav-text">七、SpringBoot提供的属性注入方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1第一种"><span class="nav-number">7.1.</span> <span class="nav-text">7.1第一种</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1第二种"><span class="nav-number">7.2.</span> <span class="nav-text">7.1第二种</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#每日注解"><span class="nav-number">8.</span> <span class="nav-text">每日注解</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Swagger是什么"><span class="nav-number">1.</span> <span class="nav-text">Swagger是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#怎么用（基本使用）"><span class="nav-number">2.</span> <span class="nav-text">怎么用（基本使用）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、创建一个SpringBoot项目"><span class="nav-number">2.1.</span> <span class="nav-text">1、创建一个SpringBoot项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、引入Swagger依赖"><span class="nav-number">2.2.</span> <span class="nav-text">2、引入Swagger依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、添加Swagger配置（注意修改包扫描路径）"><span class="nav-number">2.3.</span> <span class="nav-text">3、添加Swagger配置（注意修改包扫描路径）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、创建测试controller类SayController"><span class="nav-number">2.4.</span> <span class="nav-text">4、创建测试controller类SayController</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、启动项目，测试"><span class="nav-number">2.5.</span> <span class="nav-text">5、启动项目，测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注解"><span class="nav-number">3.</span> <span class="nav-text">注解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接收对象（参数为pojo）例子"><span class="nav-number">4.</span> <span class="nav-text">接收对象（参数为pojo）例子</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、自定义pojo类-DemoDoctor"><span class="nav-number">4.1.</span> <span class="nav-text">1、自定义pojo类:DemoDoctor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、编写测试controller：DoctorTestController"><span class="nav-number">4.2.</span> <span class="nav-text">2、编写测试controller：DoctorTestController</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、启动，测试"><span class="nav-number">4.3.</span> <span class="nav-text">3、启动，测试</span></a></li></ol></li></ol></div>
             
 
           </div>
