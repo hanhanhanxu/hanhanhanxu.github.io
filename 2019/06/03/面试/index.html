@@ -111,7 +111,10 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/03/VJXBod.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/03/VJXsJI.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/03/VJjE0e.md.png">
-<meta property="og:updated_time" content="2019-06-03T10:16:27.933Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/03/VJv181.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/04/VYLjsO.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/04/VYxUu6.md.png">
+<meta property="og:updated_time" content="2019-06-04T04:23:18.308Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试题大全">
 <meta name="twitter:description" content="1、单例设计模式饿汉式：类加载时创建，不存在线程安全问题  直接初始化  枚举  静态代码块（适合复杂实例化）   懒汉式：类使用时创建，存在线程安全问题  getInstance方式（线程不安全）  加锁外层加if判断（线程安全）  静态内部类（线程安全且简洁）（静态内部类在使用时创建，不随着外部类加载而加载）   2、类初始化和实例（对象）初始化main方法所在的类需要初始化 类初始化（加载类">
@@ -429,7 +432,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2k
+                  3.9k
                 </span>
               
 
@@ -445,7 +448,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7
+                  14
                 </span>
               
             </div>
@@ -634,6 +637,102 @@ GET参数通过URL传递，POST放在Request body中。
 <li>3、Mapper映射文件中使用resultMap来自定义映射规则</li>
 </ul>
 <p><a href="https://imgchr.com/i/VJjE0e" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/03/VJjE0e.md.png" alt="VJjE0e.md.png"></a></p>
+<h2 id="7、Git相关"><a href="#7、Git相关" class="headerlink" title="7、Git相关"></a>7、Git相关</h2><p><strong>Git:世界上最先进的分布式版本控制工具</strong></p>
+<h3 id="7-1-分支相关命令"><a href="#7-1-分支相关命令" class="headerlink" title="7.1 分支相关命令"></a>7.1 分支相关命令</h3><p><strong>创建分支：</strong></p>
+<ul>
+<li>git branch &lt;分支名&gt;</li>
+<li>git branch -v 查看分支</li>
+</ul>
+<p><strong>切换分支</strong></p>
+<ul>
+<li>git checkout &lt;分支名&gt;</li>
+<li>git checkout -b &lt;分支名&gt;  <strong>一步完成：创建分支并切换到此分支</strong></li>
+</ul>
+<p><strong>合并分支</strong></p>
+<ul>
+<li>先切换到主干分支 git checkout master</li>
+<li>git merge &lt;分支名&gt;</li>
+</ul>
+<p><strong>删除分支</strong></p>
+<ul>
+<li>先切换到主干 git checkout master</li>
+<li>git branch -D &lt;分支名&gt;   大写的D</li>
+</ul>
+<h3 id="7-2-实际应用"><a href="#7-2-实际应用" class="headerlink" title="7.2 实际应用"></a>7.2 实际应用</h3><p><a href="https://imgchr.com/i/VJv181" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/03/VJv181.md.png" alt="VJv181.md.png"></a></p>
+<h2 id="8、HTTP协议的8种请求类型介绍"><a href="#8、HTTP协议的8种请求类型介绍" class="headerlink" title="8、HTTP协议的8种请求类型介绍"></a>8、HTTP协议的8种请求类型介绍</h2><p>参考链接:<a href="https://www.cnblogs.com/liangxiaofeng/p/5798607.html" target="_blank" rel="noopener">https://www.cnblogs.com/liangxiaofeng/p/5798607.html</a></p>
+<p>HTTP协议中共定义了八种方法或者叫“动作”来表明对Request-URI指定的资源的不同操作方式，具体介绍如下： </p>
+<ul>
+<li><strong>OPTIONS</strong>：返回服务器针对特定资源所支持的HTTP请求方法。也可以利用向Web服务器发送’*’的请求来测试服务器的功能性。 </li>
+<li><strong>HEAD</strong>：向服务器索要与GET请求相一致的响应，只不过响应体将不会被返回。这一方法可以在不必传输整个响应内容的情况下，就可以获取包含在响应消息头中的元信息。 </li>
+<li><strong>GET</strong>：向特定的资源发出请求。 </li>
+<li><strong>POST</strong>：向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST请求可能会导致新的资源的创建和/或已有资源的修改。 </li>
+<li><strong>PUT</strong>：向指定资源位置上传其最新内容。 </li>
+<li><strong>DELETE</strong>：请求服务器删除Request-URI所标识的资源。 </li>
+<li><strong>TRACE</strong>：回显服务器收到的请求，主要用于测试或诊断。 </li>
+<li><strong>CONNECT</strong>：HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器。</li>
+</ul>
+<h2 id="9、SSL四次握手，TCP三次握手"><a href="#9、SSL四次握手，TCP三次握手" class="headerlink" title="9、SSL四次握手，TCP三次握手"></a>9、SSL四次握手，TCP三次握手</h2><p>SSL/TLS协议四次握手<br>参考链接：<a href="https://blog.csdn.net/odyyy/article/details/80256129" target="_blank" rel="noopener">https://blog.csdn.net/odyyy/article/details/80256129</a></p>
+<p>TCP三次握手，四次挥手：<br>参考链接：<a href="https://blog.csdn.net/a1065712890/article/details/80864516" target="_blank" rel="noopener">https://blog.csdn.net/a1065712890/article/details/80864516</a></p>
+<h2 id="10、HTTP有关缓存的几个字段"><a href="#10、HTTP有关缓存的几个字段" class="headerlink" title="10、HTTP有关缓存的几个字段"></a>10、HTTP有关缓存的几个字段</h2><p><strong>Expires、Cache-Control、Last-Modified、 ETag</strong>是RFC 2616（HTTP/1.1）协议中和网页缓存相关的几个字段。前两个用来控制缓存的失效日期，后两个用来验证网页的有效性。</p>
+<p>参考链接：<br><a href="https://blog.csdn.net/lifeibo/article/details/5979572" target="_blank" rel="noopener">https://blog.csdn.net/lifeibo/article/details/5979572</a></p>
+<h2 id="11、基于TCP-IP协议的应用层协议有哪些"><a href="#11、基于TCP-IP协议的应用层协议有哪些" class="headerlink" title="11、基于TCP/IP协议的应用层协议有哪些"></a>11、基于TCP/IP协议的应用层协议有哪些</h2><ul>
+<li><p>1、SMTP：简单邮件传输协议</p>
+</li>
+<li><p>2、Telnet：远程登录协议</p>
+</li>
+<li><p>3、SNMP：简单网络管理协议</p>
+</li>
+<li><p>4、FTP：文件传输协议</p>
+</li>
+<li><p>5、LPD：行式打印机守护进程</p>
+</li>
+<li><p>6、TFTP：简单文件传输协议</p>
+</li>
+<li><p>7、NFS：网络文件系统协议</p>
+</li>
+</ul>
+<h2 id="12、Mybatis中-占位符-和-拼接符-的区别"><a href="#12、Mybatis中-占位符-和-拼接符-的区别" class="headerlink" title="12、Mybatis中#{}占位符 和 ${}拼接符 的区别"></a>12、Mybatis中#{}占位符 和 ${}拼接符 的区别</h2><p>#{}相当于预编译preparedstatement，${}是直接使用里面的值进行拼接</p>
+<p><a href="https://blog.csdn.net/aphysia/article/details/80814626" target="_blank" rel="noopener">https://blog.csdn.net/aphysia/article/details/80814626</a></p>
+<h2 id="13、gc垃圾回收器"><a href="#13、gc垃圾回收器" class="headerlink" title="13、gc垃圾回收器"></a>13、gc垃圾回收器</h2><p><a href="https://www.cnblogs.com/firstdream/p/5763646.html" target="_blank" rel="noopener">https://www.cnblogs.com/firstdream/p/5763646.html</a></p>
+<h2 id="14、java中的volatile关键字"><a href="#14、java中的volatile关键字" class="headerlink" title="14、java中的volatile关键字"></a>14、java中的volatile关键字</h2><p><strong>volatile修饰的变量</strong>：<strong>用以标识变量的值随时可能被别的线程修改</strong>，使用volatile修饰的变量的值发生改变时，会强制立即将改变后的值写入主存，主存中的值更新会使缓存中的值失效（非volatile修饰的变量不具有这样的属性，并发编程中，线程A更新了这个值，线程B读取到这个变量的值可能并不是线程A修改后的值。）</p>
+<p>volatile具有可见性，有序性。不具备原子性。<strong><em>volatile变量是一种比sychronized关键字更轻量级的同步机制。</em></strong></p>
+<p><strong>volatile 性能：</strong></p>
+<p>　　volatile 的读性能消耗与普通变量几乎相同，但是写操作稍慢，因为它需要在本地代码中插入许多内存屏障指令来保证处理器不发生乱序执行</p>
+<p>当一个变量定义为 volatile 之后，将具备两种特性：</p>
+<p>　　<strong>1.保证此变量对所有的线程的可见性。</strong></p>
+<p>　　<strong>2.禁止指令重排序优化。</strong>有volatile修饰的变量，赋值后多执行了一个“load addl $0x0, (%esp)”操作，这个操作相当于一个内存屏障（指令重排序时不能把后面的指令重排序到内存屏障之前的位置），只有一个CPU访问内存时，并不需要内存屏障；（什么是指令重排序：是指CPU采用了允许将多条指令不按程序规定的顺序分开发送给各相应电路单元处理）</p>
+<h2 id="15、Hash表和Hash算法"><a href="#15、Hash表和Hash算法" class="headerlink" title="15、Hash表和Hash算法"></a>15、Hash表和Hash算法</h2><p><strong>哈希表</strong>：根据设定的哈希函数H(key)和所选中的处理冲突的方法，将一组关键字映象到一个有限的、地址连续的地址集(区间)上并以关键字在地址集中的“象”作为相应记录在表中的存储位置，这种表被称为哈希表。</p>
+<p>Hash，一般翻译做“散列”，也有直接音译为“哈希”的，就是把任意长度的输入（又叫做预映射， pre-image），通过散列算法，变换成固定长度的输出，该输出就是散列值。这种转换是一种压缩映射，也就是，散列值的空间通常远小于输入的空间，不同的输入可能会散列成相同的输出，而不可能从散列值来唯一的确定输入值。简单的说就是一种将任意长度的消息压缩到某一固定长度的消息摘要的函数。</p>
+<p>组的特点是：寻址容易，插入和删除困难；而链表的特点是：寻址困难，插入和删除容易。那么我们能不能综合两者的特性，做出一种寻址容易，插入删除也容易的数据结构？答案是肯定的，这就是我们要提起的哈希表</p>
+<h2 id="16、JSP九大隐式对象和四大域"><a href="#16、JSP九大隐式对象和四大域" class="headerlink" title="16、JSP九大隐式对象和四大域"></a>16、JSP九大隐式对象和四大域</h2><p><strong>九大隐式对象</strong></p>
+<ul>
+<li><p>1、request 客户端请求，此请求会包含来自GET/POST请求的参数通过它才能了解到客户的需求，然后做出响应。</p>
+</li>
+<li><p>2、response 响应客户请求的有关信息。</p>
+</li>
+<li><p>3、session 客户端与服务器的一次会话，从客户端连到服务器的一个WebApplication开始，直到客户端与服务器断开连接为止。</p>
+</li>
+<li><p>4、application 它实现了用户间数据的共享，可存放全局变量。它开始于服务器的启动，直到服务器的关闭。</p>
+</li>
+<li><p>5、page JSP网页本身，page对象是当前页面转换后的Servlet类的实例。Object page = this;</p>
+</li>
+<li><p>6、pageContext JSP页面上下文，它提供了对JSP页面内所有对象及名字空间的访问。（pageContext对象是JSP技术中最重要的一个对象，它代表JSP的运行环境。这个对象不仅封装了对其他8大隐式对象的引用，它自身还是一个域对象，可以用来保存数据）</p>
+</li>
+<li><p>7、out 它是JspWriter类的实例，是向客户端输出内容常用的对象。</p>
+</li>
+<li><p>8、config 它是在一个Servlet初始化时，JSP引擎向它传递信息用的。</p>
+</li>
+<li><p>9、exception 它是一个例外对象，当一个页面在运行过程中发生了例外，就产生这个对象。</p>
+</li>
+</ul>
+<p><strong>通过pageContext获得其他对象</strong></p>
+<p><a href="https://imgchr.com/i/VYLjsO" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/04/VYLjsO.md.png" alt="VYLjsO.md.png"></a></p>
+<p><strong>四大域</strong></p>
+<p>pageContext（当前页面；page域）、</p>
+<p>request（当前请求，可转发；request域）、</p>
+<p>session（当前会话；session域）、</p>
+<p>servletcontext（当前应用；application域）</p>
+<p><a href="https://imgchr.com/i/VYxUu6" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/04/VYxUu6.md.png" alt="VYxUu6.md.png"></a></p>
 
       
     </div>
@@ -926,7 +1025,7 @@ GET参数通过URL传递，POST放在Request body中。
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、单例设计模式"><span class="nav-number">1.</span> <span class="nav-text">1、单例设计模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、类初始化和实例（对象）初始化"><span class="nav-number">2.</span> <span class="nav-text">2、类初始化和实例（对象）初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、Spring中bean的作用域"><span class="nav-number">3.</span> <span class="nav-text">3、Spring中bean的作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、数据库"><span class="nav-number">4.</span> <span class="nav-text">4、数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-数据库事务的4大特性：（ACID）"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 数据库事务的4大特性：（ACID）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-事务传播行为（7）："><span class="nav-number">4.2.</span> <span class="nav-text">4.2 事务传播行为（7）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-事务隔离级别（4）：两个事务并发执行，数据库隔离各个事务的能力，使之不会相互影响"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 事务隔离级别（4）：两个事务并发执行，数据库隔离各个事务的能力，使之不会相互影响</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、GET与POST："><span class="nav-number">5.</span> <span class="nav-text">5、GET与POST：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、MyBatis中当实体类中的属性名-lastName-和表中的字段名-last-name-不一样，怎么办？"><span class="nav-number">6.</span> <span class="nav-text">6、MyBatis中当实体类中的属性名(lastName)和表中的字段名(last_name)不一样，怎么办？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、单例设计模式"><span class="nav-number">1.</span> <span class="nav-text">1、单例设计模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、类初始化和实例（对象）初始化"><span class="nav-number">2.</span> <span class="nav-text">2、类初始化和实例（对象）初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、Spring中bean的作用域"><span class="nav-number">3.</span> <span class="nav-text">3、Spring中bean的作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、数据库"><span class="nav-number">4.</span> <span class="nav-text">4、数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-数据库事务的4大特性：（ACID）"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 数据库事务的4大特性：（ACID）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-事务传播行为（7）："><span class="nav-number">4.2.</span> <span class="nav-text">4.2 事务传播行为（7）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-事务隔离级别（4）：两个事务并发执行，数据库隔离各个事务的能力，使之不会相互影响"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 事务隔离级别（4）：两个事务并发执行，数据库隔离各个事务的能力，使之不会相互影响</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、GET与POST："><span class="nav-number">5.</span> <span class="nav-text">5、GET与POST：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、MyBatis中当实体类中的属性名-lastName-和表中的字段名-last-name-不一样，怎么办？"><span class="nav-number">6.</span> <span class="nav-text">6、MyBatis中当实体类中的属性名(lastName)和表中的字段名(last_name)不一样，怎么办？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、Git相关"><span class="nav-number">7.</span> <span class="nav-text">7、Git相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-分支相关命令"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 分支相关命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-实际应用"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 实际应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8、HTTP协议的8种请求类型介绍"><span class="nav-number">8.</span> <span class="nav-text">8、HTTP协议的8种请求类型介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9、SSL四次握手，TCP三次握手"><span class="nav-number">9.</span> <span class="nav-text">9、SSL四次握手，TCP三次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10、HTTP有关缓存的几个字段"><span class="nav-number">10.</span> <span class="nav-text">10、HTTP有关缓存的几个字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11、基于TCP-IP协议的应用层协议有哪些"><span class="nav-number">11.</span> <span class="nav-text">11、基于TCP/IP协议的应用层协议有哪些</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12、Mybatis中-占位符-和-拼接符-的区别"><span class="nav-number">12.</span> <span class="nav-text">12、Mybatis中#{}占位符 和 ${}拼接符 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13、gc垃圾回收器"><span class="nav-number">13.</span> <span class="nav-text">13、gc垃圾回收器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14、java中的volatile关键字"><span class="nav-number">14.</span> <span class="nav-text">14、java中的volatile关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15、Hash表和Hash算法"><span class="nav-number">15.</span> <span class="nav-text">15、Hash表和Hash算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16、JSP九大隐式对象和四大域"><span class="nav-number">16.</span> <span class="nav-text">16、JSP九大隐式对象和四大域</span></a></li></ol></div>
             
 
           </div>
@@ -1000,7 +1099,7 @@ GET参数通过URL传递，POST放在Request body中。
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共32.3k字</span>
+  <span class="post-count">博客全站共34.1k字</span>
 </div>
         
 
