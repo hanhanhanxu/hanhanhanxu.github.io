@@ -114,7 +114,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/03/VJv181.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/04/VYLjsO.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/04/VYxUu6.md.png">
-<meta property="og:updated_time" content="2019-06-04T04:23:18.308Z">
+<meta property="og:updated_time" content="2019-06-04T06:59:38.008Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试题大全">
 <meta name="twitter:description" content="1、单例设计模式饿汉式：类加载时创建，不存在线程安全问题  直接初始化  枚举  静态代码块（适合复杂实例化）   懒汉式：类使用时创建，存在线程安全问题  getInstance方式（线程不安全）  加锁外层加if判断（线程安全）  静态内部类（线程安全且简洁）（静态内部类在使用时创建，不随着外部类加载而加载）   2、类初始化和实例（对象）初始化main方法所在的类需要初始化 类初始化（加载类">
@@ -432,7 +432,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.9k
+                  4k
                 </span>
               
 
@@ -701,9 +701,13 @@ GET参数通过URL传递，POST放在Request body中。
 <p>当一个变量定义为 volatile 之后，将具备两种特性：</p>
 <p>　　<strong>1.保证此变量对所有的线程的可见性。</strong></p>
 <p>　　<strong>2.禁止指令重排序优化。</strong>有volatile修饰的变量，赋值后多执行了一个“load addl $0x0, (%esp)”操作，这个操作相当于一个内存屏障（指令重排序时不能把后面的指令重排序到内存屏障之前的位置），只有一个CPU访问内存时，并不需要内存屏障；（什么是指令重排序：是指CPU采用了允许将多条指令不按程序规定的顺序分开发送给各相应电路单元处理）</p>
-<h2 id="15、Hash表和Hash算法"><a href="#15、Hash表和Hash算法" class="headerlink" title="15、Hash表和Hash算法"></a>15、Hash表和Hash算法</h2><p><strong>哈希表</strong>：根据设定的哈希函数H(key)和所选中的处理冲突的方法，将一组关键字映象到一个有限的、地址连续的地址集(区间)上并以关键字在地址集中的“象”作为相应记录在表中的存储位置，这种表被称为哈希表。</p>
-<p>Hash，一般翻译做“散列”，也有直接音译为“哈希”的，就是把任意长度的输入（又叫做预映射， pre-image），通过散列算法，变换成固定长度的输出，该输出就是散列值。这种转换是一种压缩映射，也就是，散列值的空间通常远小于输入的空间，不同的输入可能会散列成相同的输出，而不可能从散列值来唯一的确定输入值。简单的说就是一种将任意长度的消息压缩到某一固定长度的消息摘要的函数。</p>
-<p>组的特点是：寻址容易，插入和删除困难；而链表的特点是：寻址困难，插入和删除容易。那么我们能不能综合两者的特性，做出一种寻址容易，插入删除也容易的数据结构？答案是肯定的，这就是我们要提起的哈希表</p>
+<h2 id="15、Hash表和Hash算法"><a href="#15、Hash表和Hash算法" class="headerlink" title="15、Hash表和Hash算法"></a>15、Hash表和Hash算法</h2><p><strong>什么是哈希算法？</strong></p>
+<p>Hash，一般翻译做“散列”，也有直接音译为“哈希”的，就是把任意长度的输入（又叫做预映射， pre-image），通过散列算法，变换成固定长度的输出，该输出就是散列值。</p>
+<p>这种转换是一种压缩映射，也就是，散列值的空间通常远小于输入的空间，不同的输入可能会散列成相同的输出，而不可能从散列值来唯一的确定输入值。简单的说就是一种将任意长度的消息压缩到某一固定长度的消息摘要的函数。</p>
+<p><strong>Hash算法</strong>特别的地方在于它是一种单向算法，用户可以通过hash算法对目标信息生成一段特定长度的唯一hash值，却不能通过这个hash值重新获得目标信息。因此Hash算法常用在不可还原的密码存储、信息完整性校验等。</p>
+<p>常见的Hash算法有MD2、MD4、MD5、HAVAL、SHA</p>
+<p><strong>哈希表</strong>：根据设定的哈希函数H(key)和所选中的处理冲突的方法，将一组关键字映射到一个有限的、地址连续的地址集(区间)上并以关键字在地址集中的“象”作为相应记录在表中的存储位置，这种表被称为哈希表。</p>
+<p>数组的特点是：寻址容易，插入和删除困难；而链表的特点是：寻址困难，插入和删除容易。那么我们能不能综合两者的特性，做出一种寻址容易，插入删除也容易的数据结构？答案是肯定的，这就是我们要提起的哈希表</p>
 <h2 id="16、JSP九大隐式对象和四大域"><a href="#16、JSP九大隐式对象和四大域" class="headerlink" title="16、JSP九大隐式对象和四大域"></a>16、JSP九大隐式对象和四大域</h2><p><strong>九大隐式对象</strong></p>
 <ul>
 <li><p>1、request 客户端请求，此请求会包含来自GET/POST请求的参数通过它才能了解到客户的需求，然后做出响应。</p>
@@ -832,6 +836,10 @@ GET参数通过URL传递，POST放在Request body中。
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/06/04/==和equals/" rel="prev" title="关于==和equals">
+                关于==和equals <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -914,7 +922,7 @@ GET参数通过URL传递，POST放在Request body中。
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -925,7 +933,7 @@ GET参数通过URL传递，POST放在Request body中。
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1099,7 +1107,7 @@ GET参数通过URL传递，POST放在Request body中。
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共34.1k字</span>
+  <span class="post-count">博客全站共35.1k字</span>
 </div>
         
 

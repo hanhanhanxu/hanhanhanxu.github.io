@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="HanXu,韩旭,韩旭的个人博客,韩旭的github,javaweb">
+  <meta name="keywords" content="基础知识,">
 
 
 
@@ -96,16 +96,22 @@
 
 
 
-<meta name="description" content="Knowing is not enough, we must apply. Willing is not enough, we must do.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="旭">
-<meta property="og:url" content="http://hanhanhanxu.github.io/tags/长期更新/index.html">
+<meta name="description" content="在看下面文章时希望你理解以下概念： 任何一个变量都在内存中，该变量可以储存数据，同时该变量也有其自身的地址   ==相信很多朋友在学习java时听到过一句话， “两个对象作==比较时，比较的是地址 做equals比较时，比较的是值“ 但其实我想说，很多人对这句话理解都错了。 两个对象做==比较时，比较的是他们的地址吗？不当两个对象做==比较时，比较的是这两个对象中储存的值。只不过java中的许多对">
+<meta name="keywords" content="基础知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于==和equals">
+<meta property="og:url" content="http://hanhanhanxu.github.io/2019/06/04/==和equals/index.html">
 <meta property="og:site_name" content="旭">
-<meta property="og:description" content="Knowing is not enough, we must apply. Willing is not enough, we must do.">
+<meta property="og:description" content="在看下面文章时希望你理解以下概念： 任何一个变量都在内存中，该变量可以储存数据，同时该变量也有其自身的地址   ==相信很多朋友在学习java时听到过一句话， “两个对象作==比较时，比较的是地址 做equals比较时，比较的是值“ 但其实我想说，很多人对这句话理解都错了。 两个对象做==比较时，比较的是他们的地址吗？不当两个对象做==比较时，比较的是这两个对象中储存的值。只不过java中的许多对">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/04/VtqtsO.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/04/VtLlnS.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/04/VtLK6f.md.png">
+<meta property="og:updated_time" content="2019-06-04T10:36:24.631Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="旭">
-<meta name="twitter:description" content="Knowing is not enough, we must apply. Willing is not enough, we must do.">
+<meta name="twitter:title" content="关于==和equals">
+<meta name="twitter:description" content="在看下面文章时希望你理解以下概念： 任何一个变量都在内存中，该变量可以储存数据，同时该变量也有其自身的地址   ==相信很多朋友在学习java时听到过一句话， “两个对象作==比较时，比较的是地址 做equals比较时，比较的是值“ 但其实我想说，很多人对这句话理解都错了。 两个对象做==比较时，比较的是他们的地址吗？不当两个对象做==比较时，比较的是这两个对象中储存的值。只不过java中的许多对">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/06/04/VtqtsO.md.png">
 
 
 
@@ -135,7 +141,7 @@
 
 
 
-  <link rel="canonical" href="http://hanhanhanxu.github.io/tags/长期更新/">
+  <link rel="canonical" href="http://hanhanhanxu.github.io/2019/06/04/==和equals/">
 
 
 
@@ -164,7 +170,7 @@
     })();
 </script>
 
-  <title>标签: 长期更新 | 旭</title>
+  <title>关于==和equals | 旭</title>
   
 
 
@@ -195,7 +201,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -311,52 +317,326 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>长期更新<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hanhanhanxu.github.io/2019/06/04/==和equals/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Han Xu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旭">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/05/14/share/" itemprop="url">
-              
-                <span itemprop="name">分享一些东西</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">关于==和equals</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-14T21:20:40+08:00" content="2019-05-14">
-          05-14
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-04T18:09:17+08:00">
+                2019-06-04
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/06/04/==和equals/" class="leancloud_visitors" data-flag-title="关于==和equals">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  528
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在看下面文章时希望你理解以下概念：</p>
+<p>任何一个变量都在内存中，该变量可以储存数据，同时该变量也有其自身的地址</p>
+<p><a href="https://imgchr.com/i/VtqtsO" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/04/VtqtsO.md.png" alt="VtqtsO.md.png"></a></p>
+<hr>
+<h1 id><a href="#" class="headerlink" title="=="></a>==</h1><p>相信很多朋友在学习java时听到过一句话，</p>
+<p>“两个对象作==比较时，比较的是<strong>地址</strong></p>
+<p>做equals比较时，比较的是<strong>值</strong>“</p>
+<p>但其实我想说，很多人对这句话理解都错了。</p>
+<h2 id="两个对象做-比较时，比较的是他们的地址吗？"><a href="#两个对象做-比较时，比较的是他们的地址吗？" class="headerlink" title="两个对象做==比较时，比较的是他们的地址吗？"></a>两个对象做==比较时，比较的是他们的地址吗？</h2><h2 id="不"><a href="#不" class="headerlink" title="不"></a>不</h2><h2 id="当两个对象做-比较时，比较的是这两个对象中储存的值。"><a href="#当两个对象做-比较时，比较的是这两个对象中储存的值。" class="headerlink" title="当两个对象做==比较时，比较的是这两个对象中储存的值。"></a>当两个对象做==比较时，比较的是这两个对象中<strong>储存的值</strong>。</h2><h3 id="只不过java中的许多对象都是引用对象类型，而引用对象类型储存的值，就是一块内存空间的地址值。"><a href="#只不过java中的许多对象都是引用对象类型，而引用对象类型储存的值，就是一块内存空间的地址值。" class="headerlink" title="只不过java中的许多对象都是引用对象类型，而引用对象类型储存的值，就是一块内存空间的地址值。"></a>只不过java中的许多对象都是引用对象类型，而引用对象类型储存的值，就是一块内存空间的地址值。</h3><p>记住这句话：</p>
+<h1 id="java中的引用对象类型的变量，所储存的是一块内存空间的地址值。"><a href="#java中的引用对象类型的变量，所储存的是一块内存空间的地址值。" class="headerlink" title="java中的引用对象类型的变量，所储存的是一块内存空间的地址值。"></a>java中的引用对象类型的变量，所储存的是一块内存空间的地址值。</h1><p>而为什么我们输出的时候，难道不应该输出，他们储存的内容，即这些地址值。为什么我们输出的是其他东西呢（例如字符串，数字，等非地址内容。内存地址值输出是0x111这种形式的）</p>
+<h2 id="那是因为，java中所有对象都是Object对象的子类，而他们都重写了toString方法，输出一个对象时，其实是输出该对象的toString方法。"><a href="#那是因为，java中所有对象都是Object对象的子类，而他们都重写了toString方法，输出一个对象时，其实是输出该对象的toString方法。" class="headerlink" title="那是因为，java中所有对象都是Object对象的子类，而他们都重写了toString方法，输出一个对象时，其实是输出该对象的toString方法。"></a>那是因为，java中所有对象都是Object对象的子类，而他们都重写了toString方法，输出一个对象时，其实是输出该对象的toString方法。</h2><p>举个简单的例子：</p>
+<blockquote>
+</blockquote>
+<pre><code> String a = &quot;123&quot;;
+String b = &quot;123&quot;;
+System.out.println(a==b);
+</code></pre><blockquote>
+</blockquote>
+<p>结果是什么？</p>
+<p>是true</p>
+<p>我们来一句句解析这段代码：</p>
+<blockquote>
+</blockquote>
+<pre><code>String a
+</code></pre><blockquote>
+</blockquote>
+<p>创建一个String类型的变量，命名为a</p>
+<blockquote>
+</blockquote>
+<p>“123”</p>
+<blockquote>
+</blockquote>
+<p>内存地址中静态储存区中有一块内存块，这个内存块储存着123，它的地址是0x111</p>
+<blockquote>
+</blockquote>
+<pre><code>String a = &quot;123&quot;
+</code></pre><blockquote>
+</blockquote>
+<p>将赋值号右边的值赋给左边：</p>
+<p>所以a储存的就是 0x111</p>
+<p>同理b</p>
+<p><a href="https://imgchr.com/i/VtLlnS" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/04/VtLlnS.md.png" alt="VtLlnS.md.png"></a></p>
+<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><blockquote>
+</blockquote>
+<pre><code> int i = 1;
+int j = 1;
+System.out.println(i==j);
+</code></pre><blockquote>
+</blockquote>
+<p>结果是true</p>
+<p><a href="https://imgchr.com/i/VtLK6f" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/04/VtLK6f.md.png" alt="VtLK6f.md.png"></a></p>
+<h1 id="equals"><a href="#equals" class="headerlink" title="equals"></a>equals</h1><p>equals比较的是<br>对于任何非空引用值 x 和 y，当且仅当 x 和 y 引用同一个对象时，此方法才返回 true（x == y 具有值<br>true）。</p>
+<p>所引用的对象</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>insist,on the road</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Han Xu 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Han Xu 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:26px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+	  
+	</div>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/基础知识/" rel="tag"><i class="fa fa-tag"></i> 基础知识</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/03/面试/" rel="next" title="面试题大全">
+                <i class="fa fa-chevron-left"></i> 面试题大全
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/05/Git使用/" rel="prev" title="Git基本使用">
+                Git基本使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -364,6 +644,15 @@
 
 
           
+
+  
+	<div id="gitalk-container"></div>
+  
+  
+  
+
+
+
 
         </div>
         
@@ -384,8 +673,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -503,6 +801,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">==</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#两个对象做-比较时，比较的是他们的地址吗？"><span class="nav-number">1.1.</span> <span class="nav-text">两个对象做==比较时，比较的是他们的地址吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不"><span class="nav-number">1.2.</span> <span class="nav-text">不</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当两个对象做-比较时，比较的是这两个对象中储存的值。"><span class="nav-number">1.3.</span> <span class="nav-text">当两个对象做==比较时，比较的是这两个对象中储存的值。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#只不过java中的许多对象都是引用对象类型，而引用对象类型储存的值，就是一块内存空间的地址值。"><span class="nav-number">1.3.1.</span> <span class="nav-text">只不过java中的许多对象都是引用对象类型，而引用对象类型储存的值，就是一块内存空间的地址值。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java中的引用对象类型的变量，所储存的是一块内存空间的地址值。"><span class="nav-number">2.</span> <span class="nav-text">java中的引用对象类型的变量，所储存的是一块内存空间的地址值。</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#那是因为，java中所有对象都是Object对象的子类，而他们都重写了toString方法，输出一个对象时，其实是输出该对象的toString方法。"><span class="nav-number">2.1.</span> <span class="nav-text">那是因为，java中所有对象都是Object对象的子类，而他们都重写了toString方法，输出一个对象时，其实是输出该对象的toString方法。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#验证"><span class="nav-number">2.2.</span> <span class="nav-text">验证</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#equals"><span class="nav-number">3.</span> <span class="nav-text">equals</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -682,6 +996,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -722,6 +1040,21 @@
 
 
 
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '93b01fb3f0489f2eb6be',
+          clientSecret: '107cd730d425572a1f9daede4dffc4aa257feb59',
+          repo: 'hanhanhanxu.github.io',
+          owner: 'hanhanhanxu',
+          admin: ['hanhanhanxu'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
 
 
   
