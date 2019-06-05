@@ -112,9 +112,10 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/03/VJXsJI.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/03/VJjE0e.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/03/VJv181.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/05/VUR0JS.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/04/VYLjsO.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/04/VYxUu6.md.png">
-<meta property="og:updated_time" content="2019-06-04T06:59:38.008Z">
+<meta property="og:updated_time" content="2019-06-05T13:52:02.061Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试题大全">
 <meta name="twitter:description" content="1、单例设计模式饿汉式：类加载时创建，不存在线程安全问题  直接初始化  枚举  静态代码块（适合复杂实例化）   懒汉式：类使用时创建，存在线程安全问题  getInstance方式（线程不安全）  加锁外层加if判断（线程安全）  静态内部类（线程安全且简洁）（静态内部类在使用时创建，不随着外部类加载而加载）   2、类初始化和实例（对象）初始化main方法所在的类需要初始化 类初始化（加载类">
@@ -432,7 +433,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4k
+                  4.4k
                 </span>
               
 
@@ -448,7 +449,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  14
+                  16
                 </span>
               
             </div>
@@ -701,13 +702,27 @@ GET参数通过URL传递，POST放在Request body中。
 <p>当一个变量定义为 volatile 之后，将具备两种特性：</p>
 <p>　　<strong>1.保证此变量对所有的线程的可见性。</strong></p>
 <p>　　<strong>2.禁止指令重排序优化。</strong>有volatile修饰的变量，赋值后多执行了一个“load addl $0x0, (%esp)”操作，这个操作相当于一个内存屏障（指令重排序时不能把后面的指令重排序到内存屏障之前的位置），只有一个CPU访问内存时，并不需要内存屏障；（什么是指令重排序：是指CPU采用了允许将多条指令不按程序规定的顺序分开发送给各相应电路单元处理）</p>
-<h2 id="15、Hash表和Hash算法"><a href="#15、Hash表和Hash算法" class="headerlink" title="15、Hash表和Hash算法"></a>15、Hash表和Hash算法</h2><p><strong>什么是哈希算法？</strong></p>
-<p>Hash，一般翻译做“散列”，也有直接音译为“哈希”的，就是把任意长度的输入（又叫做预映射， pre-image），通过散列算法，变换成固定长度的输出，该输出就是散列值。</p>
+<h2 id="15、Hash表和Hash算法-HashMap"><a href="#15、Hash表和Hash算法-HashMap" class="headerlink" title="15、Hash表和Hash算法,HashMap"></a>15、Hash表和Hash算法,HashMap</h2><p><strong>什么是哈希算法？</strong></p>
+<p><strong>Hash，一般翻译做“散列”，也有直接音译为“哈希”的，就是把任意长度的输入（又叫做预映射， pre-image），通过散列算法，变换成固定长度的输出，该输出就是散列值。（就是通过算法，将任意长度的输入转化为固定长度的输出。当然可能会有不同的输入经过算法运算后得到相同的输出。这叫做冲突）</strong></p>
 <p>这种转换是一种压缩映射，也就是，散列值的空间通常远小于输入的空间，不同的输入可能会散列成相同的输出，而不可能从散列值来唯一的确定输入值。简单的说就是一种将任意长度的消息压缩到某一固定长度的消息摘要的函数。</p>
 <p><strong>Hash算法</strong>特别的地方在于它是一种单向算法，用户可以通过hash算法对目标信息生成一段特定长度的唯一hash值，却不能通过这个hash值重新获得目标信息。因此Hash算法常用在不可还原的密码存储、信息完整性校验等。</p>
 <p>常见的Hash算法有MD2、MD4、MD5、HAVAL、SHA</p>
 <p><strong>哈希表</strong>：根据设定的哈希函数H(key)和所选中的处理冲突的方法，将一组关键字映射到一个有限的、地址连续的地址集(区间)上并以关键字在地址集中的“象”作为相应记录在表中的存储位置，这种表被称为哈希表。</p>
 <p>数组的特点是：寻址容易，插入和删除困难；而链表的特点是：寻址困难，插入和删除容易。那么我们能不能综合两者的特性，做出一种寻址容易，插入删除也容易的数据结构？答案是肯定的，这就是我们要提起的哈希表</p>
+<h3 id="HashMap原理"><a href="#HashMap原理" class="headerlink" title="HashMap原理"></a>HashMap原理</h3><p>HashMap是基于Hashing（哈希）的原理，我们使用put(key,value)储存数据到HashMap中，使用get(key)从HashMap中得到此key对应的value。</p>
+<hr>
+<p>HashMap底层使用<strong>数组+链表</strong>的数据结构进行储存。</p>
+<ul>
+<li><p>当我们使用put(key,value)方法储存数据时，先对键key调用hashCode()方法，得到此key经过算法运算后的哈希码值，这个哈希码值将作为数组中位置标识，储存在此数组后面的链表节点中。</p>
+</li>
+<li><p>当我们使用get(key)方法得到数组数据时，先对键key调用hashCode()方法，得到此key经过运算后的哈希码值，然后用此标识到数组中的某个位置查找，当此位置后面的链表节点的key和此key相同时，则返回此value。若不相同则顺着此链表通过pNext指针比对下一个key和此key是否相等。</p>
+</li>
+<li><p>当<strong>不同的key</strong>经过哈希算法运算得到<strong>相同的哈希码值</strong>时，则这个数据(key,value)就和之前储存在此位置的(key,value)产生了<strong>冲突</strong>，我们将此数据放在当前链表的末端。</p>
+</li>
+</ul>
+<p><a href="https://imgchr.com/i/VUR0JS" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/05/VUR0JS.md.png" alt="VUR0JS.md.png"></a></p>
+<p>大图：<a href="http://u6.gg/sD7M7" target="_blank" rel="noopener">http://u6.gg/sD7M7</a></p>
+<p>我手写了一个简单的哈希表（也可以叫做HashMap），不过我没有储存(key,value)数据，为追求简单只是储存了简单的int类型数据（单key，没有value。为了突出HashMap的原理和数据结构，等有空会再把(key,value)补上），详情：<a href="https://github.com/hanhanhanxu/MyHashTable" target="_blank" rel="noopener">https://github.com/hanhanhanxu/MyHashTable</a> (使用C++编写)</p>
 <h2 id="16、JSP九大隐式对象和四大域"><a href="#16、JSP九大隐式对象和四大域" class="headerlink" title="16、JSP九大隐式对象和四大域"></a>16、JSP九大隐式对象和四大域</h2><p><strong>九大隐式对象</strong></p>
 <ul>
 <li><p>1、request 客户端请求，此请求会包含来自GET/POST请求的参数通过它才能了解到客户的需求，然后做出响应。</p>
@@ -1033,7 +1048,7 @@ GET参数通过URL传递，POST放在Request body中。
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、单例设计模式"><span class="nav-number">1.</span> <span class="nav-text">1、单例设计模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、类初始化和实例（对象）初始化"><span class="nav-number">2.</span> <span class="nav-text">2、类初始化和实例（对象）初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、Spring中bean的作用域"><span class="nav-number">3.</span> <span class="nav-text">3、Spring中bean的作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、数据库"><span class="nav-number">4.</span> <span class="nav-text">4、数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-数据库事务的4大特性：（ACID）"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 数据库事务的4大特性：（ACID）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-事务传播行为（7）："><span class="nav-number">4.2.</span> <span class="nav-text">4.2 事务传播行为（7）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-事务隔离级别（4）：两个事务并发执行，数据库隔离各个事务的能力，使之不会相互影响"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 事务隔离级别（4）：两个事务并发执行，数据库隔离各个事务的能力，使之不会相互影响</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、GET与POST："><span class="nav-number">5.</span> <span class="nav-text">5、GET与POST：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、MyBatis中当实体类中的属性名-lastName-和表中的字段名-last-name-不一样，怎么办？"><span class="nav-number">6.</span> <span class="nav-text">6、MyBatis中当实体类中的属性名(lastName)和表中的字段名(last_name)不一样，怎么办？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、Git相关"><span class="nav-number">7.</span> <span class="nav-text">7、Git相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-分支相关命令"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 分支相关命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-实际应用"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 实际应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8、HTTP协议的8种请求类型介绍"><span class="nav-number">8.</span> <span class="nav-text">8、HTTP协议的8种请求类型介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9、SSL四次握手，TCP三次握手"><span class="nav-number">9.</span> <span class="nav-text">9、SSL四次握手，TCP三次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10、HTTP有关缓存的几个字段"><span class="nav-number">10.</span> <span class="nav-text">10、HTTP有关缓存的几个字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11、基于TCP-IP协议的应用层协议有哪些"><span class="nav-number">11.</span> <span class="nav-text">11、基于TCP/IP协议的应用层协议有哪些</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12、Mybatis中-占位符-和-拼接符-的区别"><span class="nav-number">12.</span> <span class="nav-text">12、Mybatis中#{}占位符 和 ${}拼接符 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13、gc垃圾回收器"><span class="nav-number">13.</span> <span class="nav-text">13、gc垃圾回收器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14、java中的volatile关键字"><span class="nav-number">14.</span> <span class="nav-text">14、java中的volatile关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15、Hash表和Hash算法"><span class="nav-number">15.</span> <span class="nav-text">15、Hash表和Hash算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16、JSP九大隐式对象和四大域"><span class="nav-number">16.</span> <span class="nav-text">16、JSP九大隐式对象和四大域</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、单例设计模式"><span class="nav-number">1.</span> <span class="nav-text">1、单例设计模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、类初始化和实例（对象）初始化"><span class="nav-number">2.</span> <span class="nav-text">2、类初始化和实例（对象）初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、Spring中bean的作用域"><span class="nav-number">3.</span> <span class="nav-text">3、Spring中bean的作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、数据库"><span class="nav-number">4.</span> <span class="nav-text">4、数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-数据库事务的4大特性：（ACID）"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 数据库事务的4大特性：（ACID）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-事务传播行为（7）："><span class="nav-number">4.2.</span> <span class="nav-text">4.2 事务传播行为（7）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-事务隔离级别（4）：两个事务并发执行，数据库隔离各个事务的能力，使之不会相互影响"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 事务隔离级别（4）：两个事务并发执行，数据库隔离各个事务的能力，使之不会相互影响</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、GET与POST："><span class="nav-number">5.</span> <span class="nav-text">5、GET与POST：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、MyBatis中当实体类中的属性名-lastName-和表中的字段名-last-name-不一样，怎么办？"><span class="nav-number">6.</span> <span class="nav-text">6、MyBatis中当实体类中的属性名(lastName)和表中的字段名(last_name)不一样，怎么办？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、Git相关"><span class="nav-number">7.</span> <span class="nav-text">7、Git相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-分支相关命令"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 分支相关命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-实际应用"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 实际应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8、HTTP协议的8种请求类型介绍"><span class="nav-number">8.</span> <span class="nav-text">8、HTTP协议的8种请求类型介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9、SSL四次握手，TCP三次握手"><span class="nav-number">9.</span> <span class="nav-text">9、SSL四次握手，TCP三次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10、HTTP有关缓存的几个字段"><span class="nav-number">10.</span> <span class="nav-text">10、HTTP有关缓存的几个字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11、基于TCP-IP协议的应用层协议有哪些"><span class="nav-number">11.</span> <span class="nav-text">11、基于TCP/IP协议的应用层协议有哪些</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12、Mybatis中-占位符-和-拼接符-的区别"><span class="nav-number">12.</span> <span class="nav-text">12、Mybatis中#{}占位符 和 ${}拼接符 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13、gc垃圾回收器"><span class="nav-number">13.</span> <span class="nav-text">13、gc垃圾回收器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14、java中的volatile关键字"><span class="nav-number">14.</span> <span class="nav-text">14、java中的volatile关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15、Hash表和Hash算法-HashMap"><span class="nav-number">15.</span> <span class="nav-text">15、Hash表和Hash算法,HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap原理"><span class="nav-number">15.1.</span> <span class="nav-text">HashMap原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16、JSP九大隐式对象和四大域"><span class="nav-number">16.</span> <span class="nav-text">16、JSP九大隐式对象和四大域</span></a></li></ol></div>
             
 
           </div>
@@ -1107,7 +1122,7 @@ GET参数通过URL传递，POST放在Request body中。
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共35.1k字</span>
+  <span class="post-count">博客全站共35.6k字</span>
 </div>
         
 
