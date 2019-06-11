@@ -107,7 +107,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/04/VtqtsO.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/04/VtLlnS.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/04/VtLK6f.md.png">
-<meta property="og:updated_time" content="2019-06-04T10:36:24.631Z">
+<meta property="og:updated_time" content="2019-06-10T04:20:56.269Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于==和equals">
 <meta name="twitter:description" content="在看下面文章时希望你理解以下概念： 任何一个变量都在内存中，该变量可以储存数据，同时该变量也有其自身的地址   ==相信很多朋友在学习java时听到过一句话， “两个对象作==比较时，比较的是地址 做equals比较时，比较的是值“ 但其实我想说，很多人对这句话理解都错了。 两个对象做==比较时，比较的是他们的地址吗？不当两个对象做==比较时，比较的是这两个对象中储存的值。只不过java中的许多对">
@@ -425,7 +425,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  528
+                  1.1k
                 </span>
               
 
@@ -441,7 +441,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -513,8 +513,63 @@ System.out.println(i==j);
 </blockquote>
 <p>结果是true</p>
 <p><a href="https://imgchr.com/i/VtLK6f" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/04/VtLK6f.md.png" alt="VtLK6f.md.png"></a></p>
-<h1 id="equals"><a href="#equals" class="headerlink" title="equals"></a>equals</h1><p>equals比较的是<br>对于任何非空引用值 x 和 y，当且仅当 x 和 y 引用同一个对象时，此方法才返回 true（x == y 具有值<br>true）。</p>
-<p>所引用的对象</p>
+<h1 id="equals"><a href="#equals" class="headerlink" title="equals"></a>equals</h1><p>equals方法其实分好多种情况，</p>
+<p>因为</p>
+<p>所有类都继承于Object类，</p>
+<p>Object中equals的定义是这样的：</p>
+<p>public boolean equals(Object obj) {<br>    return (this == obj);<br>}</p>
+<p><strong>所以在Object中==和equals是没有任何区别的。</strong></p>
+<p>而如果你自定义一个类User</p>
+<blockquote>
+</blockquote>
+<pre><code>class User{
+    int id;
+    String name;
+    public User(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+    @Override
+    public String toString() {
+        return &quot;User{&quot; +
+                &quot;id=&quot; + id +
+                &quot;, name=&apos;&quot; + name + &apos;\&apos;&apos; +
+                &apos;}&apos;;
+    }
+}
+</code></pre><blockquote>
+</blockquote>
+<p>然后比较两个user对象：</p>
+<blockquote>
+</blockquote>
+<pre><code> User u1 = new User(111,&quot;han&quot;);
+User u2 = new User(111,&quot;han&quot;);
+System.out.println(u1.equals(u2));//false
+</code></pre><blockquote>
+</blockquote>
+<p>得出的时false，因为你的类User继承于Object类，使用你的user的equals比较时其实是比较的</p>
+<blockquote>
+</blockquote>
+<pre><code>this == obj
+</code></pre><blockquote>
+</blockquote>
+<p>即如果自定义对象不重写equals方法的话，和==比较是没有区别的。</p>
+<p>而如果重写了equals方法，就像 String 类等，就按照equals中的规则比较（比较特定内容）</p>
+<p>在我看来equals就是为我们提供了一个可自定义比较规则的通道。不用非要用==比较了。</p>
+<hr>
+<p>equals</p>
+<p>public boolean equals(Object obj)指示其他某个对象是否与此对象“相等”。 </p>
+<p>equals 方法在非空对象引用上实现相等关系： </p>
+<ul>
+<li>自反性：对于任何非空引用值 x，x.equals(x) 都应返回 true。 </li>
+<li>对称性：对于任何非空引用值 x 和 y，当且仅当 y.equals(x) 返回 true 时，x.equals(y) 才应返回 true。 </li>
+<li>传递性：对于任何非空引用值 x、y 和 z，如果 x.equals(y) 返回 true，并且 y.equals(z) 返回 true，那么 x.equals(z) 应返回 true。 </li>
+<li>一致性：对于任何非空引用值 x 和 y，多次调用 x.equals(y) 始终返回 true 或始终返回 false，前提是对象上 equals 比较中所用的信息没有被修改。 </li>
+<li>对于任何非空引用值 x，x.equals(null) 都应返回 false。 </li>
+</ul>
+<p>Object 类的 equals 方法实现对象上差别可能性最大的相等关系；即，对于任何非空引用值 x 和 y，当且仅当 x 和 y 引用同一个对象时，此方法才返回 true（x == y 具有值 true）。 </p>
+<p>注意：当此方法被重写时，通常有必要重写 hashCode 方法，以维护 hashCode 方法的常规协定，该协定声明相等对象必须具有相等的哈希码。 </p>
+<p>参数：<br>obj - 要与之比较的引用对象。<br>返回：<br>如果此对象与 obj 参数相同，则返回 true；否则返回 false。</p>
 
       
     </div>
@@ -885,7 +940,7 @@ System.out.println(i==j);
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共38.3k字</span>
+  <span class="post-count">博客全站共39.3k字</span>
 </div>
         
 

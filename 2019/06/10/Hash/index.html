@@ -107,7 +107,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/10/VyZyL9.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/10/VylyUH.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/10/Vy8U8s.md.png">
-<meta property="og:updated_time" content="2019-06-10T03:28:38.944Z">
+<meta property="og:updated_time" content="2019-06-11T07:58:09.281Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hash">
 <meta name="twitter:description" content="Hash表和Hash算法,HashMap什么是哈希算法？Hash，一般翻译做“散列”，也有直接音译为“哈希”的，就是把任意长度的输入（又叫做预映射， pre-image），通过散列算法，变换成固定长度的输出，该输出就是散列值。（就是通过算法，将任意长度的输入转化为固定长度的输出。当然可能会有不同的输入经过算法运算后得到相同的输出。这叫做冲突） 这种转换是一种压缩映射，也就是，散列值的空间通常远小于">
@@ -425,7 +425,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.7k
+                  1.9k
                 </span>
               
 
@@ -441,7 +441,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  7
                 </span>
               
             </div>
@@ -477,6 +477,9 @@
 </code></pre><blockquote>
 </blockquote>
 <p>没错就是这么简单，将任意长度的数字输入转化为[0,7)之间的固定输出</p>
+<p>String类的hashCode算法</p>
+<pre><code>s[0]*31^(n-1) + s[1]*31^(n-2) + ... + s[n-1]
+</code></pre><p>使用 int 算法，这里 s[i] 是字符串的第 i 个字符，n 是字符串的长度，^ 表示求幂。（空字符串的哈希值为 0。） </p>
 <h3 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h3><p>根据设定的哈希函数H(key)和所选中的处理冲突的方法，将一组关键字映射到一个有限的、地址连续的地址集(区间)上并以关键字在地址集中的“象”作为相应记录在表中的存储位置，这种表被称为哈希表。</p>
 <p>数组的特点是：寻址容易，插入和删除困难；而链表的特点是：寻址困难，插入和删除容易。那么我们能不能综合两者的特性，做出一种寻址容易，插入删除也容易的数据结构？答案是肯定的，这就是的哈希表</p>
 <h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>HashMap是基于Hashing（哈希）的原理，我们使用put(key,value)储存数据到HashMap中，使用get(key)从HashMap中得到此key对应的value。</p>
@@ -565,6 +568,7 @@ public class test {
 <p>大图：<a href="http://u6.gg/sEt97" target="_blank" rel="noopener">http://u6.gg/sEt97</a></p>
 <p><strong><em>注：图中并没有画出key的hashCode相同，equals也相同时，value覆盖的情况</em></strong></p>
 <p><del>我手写了一个简单的哈希表（也可以叫做HashMap），不过我没有储存(key,value)数据，为追求简单只是储存了简单的int类型数据（单key，没有value。为了突出HashMap的原理和数据结构，等有空会再把(key,value)补上），详情：<a href="https://github.com/hanhanhanxu/MyHashTable" target="_blank" rel="noopener">https://github.com/hanhanhanxu/MyHashTable</a> (使用C++编写)</del></p>
+<p>这个是我自己写的java语言实现的HashMap，使用的数据结构也是数组+链表，这里面链表实现方式很特别，而且插入时是头插法，目前实现了put,get,toString方法：<a href="https://github.com/hanhanhanxu/MyHashMap" target="_blank" rel="noopener">https://github.com/hanhanhanxu/MyHashMap</a></p>
 
       
     </div>
@@ -931,7 +935,7 @@ public class test {
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共38.3k字</span>
+  <span class="post-count">博客全站共39.3k字</span>
 </div>
         
 

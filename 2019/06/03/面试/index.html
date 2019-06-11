@@ -117,7 +117,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/10/Vy8U8s.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/04/VYLjsO.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/04/VYxUu6.md.png">
-<meta property="og:updated_time" content="2019-06-10T03:29:22.064Z">
+<meta property="og:updated_time" content="2019-06-11T07:57:20.316Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试题大全">
 <meta name="twitter:description" content="1、单例设计模式饿汉式：类加载时创建，不存在线程安全问题  直接初始化  枚举  静态代码块（适合复杂实例化）   懒汉式：类使用时创建，存在线程安全问题  getInstance方式（线程不安全）  加锁外层加if判断（线程安全）  静态内部类（线程安全且简洁）（静态内部类在使用时创建，不随着外部类加载而加载）   2、类初始化和实例（对象）初始化main方法所在的类需要初始化 类初始化（加载类">
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  5.3k
+                  5.6k
                 </span>
               
 
@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  19
+                  21
                 </span>
               
             </div>
@@ -719,6 +719,9 @@ GET参数通过URL传递，POST放在Request body中。
 </code></pre><blockquote>
 </blockquote>
 <p>没错就是这么简单，将任意长度的数字输入转化为[0,7)之间的固定输出</p>
+<p>String类的hashCode算法</p>
+<pre><code>s[0]*31^(n-1) + s[1]*31^(n-2) + ... + s[n-1]
+</code></pre><p>使用 int 算法，这里 s[i] 是字符串的第 i 个字符，n 是字符串的长度，^ 表示求幂。（空字符串的哈希值为 0。） </p>
 <h3 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h3><p>根据设定的哈希函数H(key)和所选中的处理冲突的方法，将一组关键字映射到一个有限的、地址连续的地址集(区间)上并以关键字在地址集中的“象”作为相应记录在表中的存储位置，这种表被称为哈希表。</p>
 <p>数组的特点是：寻址容易，插入和删除困难；而链表的特点是：寻址困难，插入和删除容易。那么我们能不能综合两者的特性，做出一种寻址容易，插入删除也容易的数据结构？答案是肯定的，这就是的哈希表</p>
 <h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>HashMap是基于Hashing（哈希）的原理，我们使用put(key,value)储存数据到HashMap中，使用get(key)从HashMap中得到此key对应的value。</p>
@@ -807,6 +810,7 @@ public class test {
 <p>大图：<a href="http://u6.gg/sEt97" target="_blank" rel="noopener">http://u6.gg/sEt97</a></p>
 <p><strong><em>注：图中并没有画出key的hashCode相同，equals也相同时，value覆盖的情况</em></strong></p>
 <p><del>我手写了一个简单的哈希表（也可以叫做HashMap），不过我没有储存(key,value)数据，为追求简单只是储存了简单的int类型数据（单key，没有value。为了突出HashMap的原理和数据结构，等有空会再把(key,value)补上），详情：<a href="https://github.com/hanhanhanxu/MyHashTable" target="_blank" rel="noopener">https://github.com/hanhanhanxu/MyHashTable</a> (使用C++编写)</del></p>
+<p>这个是我自己写的java语言实现的HashMap，使用的数据结构也是数组+链表，这里面链表实现方式很特别，而且插入时是头插法，目前实现了put,get,toString方法：<a href="https://github.com/hanhanhanxu/MyHashMap" target="_blank" rel="noopener">https://github.com/hanhanhanxu/MyHashMap</a></p>
 <h2 id="16、JSP九大隐式对象和四大域"><a href="#16、JSP九大隐式对象和四大域" class="headerlink" title="16、JSP九大隐式对象和四大域"></a>16、JSP九大隐式对象和四大域</h2><p><strong>九大隐式对象</strong></p>
 <ul>
 <li><p>1、request 客户端请求，此请求会包含来自GET/POST请求的参数通过它才能了解到客户的需求，然后做出响应。</p>
@@ -836,6 +840,35 @@ public class test {
 <p>session（当前会话；session域）、</p>
 <p>servletcontext（当前应用；application域）</p>
 <p><a href="https://imgchr.com/i/VYxUu6" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/04/VYxUu6.md.png" alt="VYxUu6.md.png"></a></p>
+<h2 id="17、java中的基本数据类型"><a href="#17、java中的基本数据类型" class="headerlink" title="17、java中的基本数据类型"></a>17、java中的基本数据类型</h2><p><strong>8中基本数据类型</strong></p>
+<blockquote>
+</blockquote>
+<pre><code>数据类型        默认值        大小（二进制位数）    范围
+byte         0            8（1字节）            -128~127
+short         0            16（2字节）
+int            0            32（4字节）
+long        0            64（8字节）
+
+float        0.0d        32
+double        0.0d        64
+
+char        \u0000        16
+
+boolean     false        1
+</code></pre><blockquote>
+</blockquote>
+<p>byte Byte<br>short Short<br>int Integer<br>long Long<br>float Float<br>double Double<br>char Charset<br>boolean Boolean</p>
+<p>装箱和拆箱</p>
+<p>把基本数据类型转换为对应的包装类型<br>把包装类型转换为基本数据类型</p>
+<blockquote>
+</blockquote>
+<pre><code>Integer i = 1;
+int j = i;
+</code></pre><blockquote>
+</blockquote>
+<p>实际上是<br>Integer i = Integer.valueOf(1);    自动装箱    valueOf底层还是new Integer(1)<br>int j = i.intValue();            自动拆箱</p>
+<p>Q:为什么有了基本数据类型之后还要有包装类型<br>A:Java是一个面向对象的语言，而基本的数据类型，不具备面向对象的特性。</p>
+<p>缓存：对象缓存，Integer i = 1;Integer j = 1; i==j  返回true ，因为1已经缓存了(valueOf)，用的是用一个</p>
 
       
     </div>
@@ -1132,7 +1165,7 @@ public class test {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、单例设计模式"><span class="nav-number">1.</span> <span class="nav-text">1、单例设计模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、类初始化和实例（对象）初始化"><span class="nav-number">2.</span> <span class="nav-text">2、类初始化和实例（对象）初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、Spring中bean的作用域"><span class="nav-number">3.</span> <span class="nav-text">3、Spring中bean的作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、数据库"><span class="nav-number">4.</span> <span class="nav-text">4、数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-数据库事务的4大特性：（ACID）"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 数据库事务的4大特性：（ACID）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-事务传播行为（7）："><span class="nav-number">4.2.</span> <span class="nav-text">4.2 事务传播行为（7）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-事务隔离级别（4）：两个事务并发执行，数据库隔离各个事务的能力，使之不会相互影响"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 事务隔离级别（4）：两个事务并发执行，数据库隔离各个事务的能力，使之不会相互影响</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、GET与POST："><span class="nav-number">5.</span> <span class="nav-text">5、GET与POST：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、MyBatis中当实体类中的属性名-lastName-和表中的字段名-last-name-不一样，怎么办？"><span class="nav-number">6.</span> <span class="nav-text">6、MyBatis中当实体类中的属性名(lastName)和表中的字段名(last_name)不一样，怎么办？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、Git相关"><span class="nav-number">7.</span> <span class="nav-text">7、Git相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-分支相关命令"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 分支相关命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-实际应用"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 实际应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8、HTTP协议的8种请求类型介绍"><span class="nav-number">8.</span> <span class="nav-text">8、HTTP协议的8种请求类型介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9、SSL四次握手，TCP三次握手"><span class="nav-number">9.</span> <span class="nav-text">9、SSL四次握手，TCP三次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10、HTTP有关缓存的几个字段"><span class="nav-number">10.</span> <span class="nav-text">10、HTTP有关缓存的几个字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11、基于TCP-IP协议的应用层协议有哪些"><span class="nav-number">11.</span> <span class="nav-text">11、基于TCP/IP协议的应用层协议有哪些</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12、Mybatis中-占位符-和-拼接符-的区别"><span class="nav-number">12.</span> <span class="nav-text">12、Mybatis中#{}占位符 和 ${}拼接符 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13、gc垃圾回收器"><span class="nav-number">13.</span> <span class="nav-text">13、gc垃圾回收器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14、java中的volatile关键字"><span class="nav-number">14.</span> <span class="nav-text">14、java中的volatile关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15、Hash表和Hash算法-HashMap"><span class="nav-number">15.</span> <span class="nav-text">15、Hash表和Hash算法,HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是哈希算法？"><span class="nav-number">15.1.</span> <span class="nav-text">什么是哈希算法？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哈希表"><span class="nav-number">15.2.</span> <span class="nav-text">哈希表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap"><span class="nav-number">15.3.</span> <span class="nav-text">HashMap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16、JSP九大隐式对象和四大域"><span class="nav-number">16.</span> <span class="nav-text">16、JSP九大隐式对象和四大域</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、单例设计模式"><span class="nav-number">1.</span> <span class="nav-text">1、单例设计模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、类初始化和实例（对象）初始化"><span class="nav-number">2.</span> <span class="nav-text">2、类初始化和实例（对象）初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、Spring中bean的作用域"><span class="nav-number">3.</span> <span class="nav-text">3、Spring中bean的作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、数据库"><span class="nav-number">4.</span> <span class="nav-text">4、数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-数据库事务的4大特性：（ACID）"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 数据库事务的4大特性：（ACID）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-事务传播行为（7）："><span class="nav-number">4.2.</span> <span class="nav-text">4.2 事务传播行为（7）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-事务隔离级别（4）：两个事务并发执行，数据库隔离各个事务的能力，使之不会相互影响"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 事务隔离级别（4）：两个事务并发执行，数据库隔离各个事务的能力，使之不会相互影响</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、GET与POST："><span class="nav-number">5.</span> <span class="nav-text">5、GET与POST：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、MyBatis中当实体类中的属性名-lastName-和表中的字段名-last-name-不一样，怎么办？"><span class="nav-number">6.</span> <span class="nav-text">6、MyBatis中当实体类中的属性名(lastName)和表中的字段名(last_name)不一样，怎么办？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、Git相关"><span class="nav-number">7.</span> <span class="nav-text">7、Git相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-分支相关命令"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 分支相关命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-实际应用"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 实际应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8、HTTP协议的8种请求类型介绍"><span class="nav-number">8.</span> <span class="nav-text">8、HTTP协议的8种请求类型介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9、SSL四次握手，TCP三次握手"><span class="nav-number">9.</span> <span class="nav-text">9、SSL四次握手，TCP三次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10、HTTP有关缓存的几个字段"><span class="nav-number">10.</span> <span class="nav-text">10、HTTP有关缓存的几个字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11、基于TCP-IP协议的应用层协议有哪些"><span class="nav-number">11.</span> <span class="nav-text">11、基于TCP/IP协议的应用层协议有哪些</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12、Mybatis中-占位符-和-拼接符-的区别"><span class="nav-number">12.</span> <span class="nav-text">12、Mybatis中#{}占位符 和 ${}拼接符 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13、gc垃圾回收器"><span class="nav-number">13.</span> <span class="nav-text">13、gc垃圾回收器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14、java中的volatile关键字"><span class="nav-number">14.</span> <span class="nav-text">14、java中的volatile关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15、Hash表和Hash算法-HashMap"><span class="nav-number">15.</span> <span class="nav-text">15、Hash表和Hash算法,HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是哈希算法？"><span class="nav-number">15.1.</span> <span class="nav-text">什么是哈希算法？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哈希表"><span class="nav-number">15.2.</span> <span class="nav-text">哈希表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap"><span class="nav-number">15.3.</span> <span class="nav-text">HashMap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16、JSP九大隐式对象和四大域"><span class="nav-number">16.</span> <span class="nav-text">16、JSP九大隐式对象和四大域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17、java中的基本数据类型"><span class="nav-number">17.</span> <span class="nav-text">17、java中的基本数据类型</span></a></li></ol></div>
             
 
           </div>
@@ -1206,7 +1239,7 @@ public class test {
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共38.3k字</span>
+  <span class="post-count">博客全站共39.3k字</span>
 </div>
         
 
