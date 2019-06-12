@@ -107,7 +107,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/10/VyZyL9.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/10/VylyUH.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/10/Vy8U8s.md.png">
-<meta property="og:updated_time" content="2019-06-11T07:58:09.281Z">
+<meta property="og:updated_time" content="2019-06-12T08:16:57.532Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hash">
 <meta name="twitter:description" content="Hash表和Hash算法,HashMap什么是哈希算法？Hash，一般翻译做“散列”，也有直接音译为“哈希”的，就是把任意长度的输入（又叫做预映射， pre-image），通过散列算法，变换成固定长度的输出，该输出就是散列值。（就是通过算法，将任意长度的输入转化为固定长度的输出。当然可能会有不同的输入经过算法运算后得到相同的输出。这叫做冲突） 这种转换是一种压缩映射，也就是，散列值的空间通常远小于">
@@ -425,7 +425,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.9k
+                  3.1k
                 </span>
               
 
@@ -441,7 +441,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7
+                  11
                 </span>
               
             </div>
@@ -569,6 +569,45 @@ public class test {
 <p><strong><em>注：图中并没有画出key的hashCode相同，equals也相同时，value覆盖的情况</em></strong></p>
 <p><del>我手写了一个简单的哈希表（也可以叫做HashMap），不过我没有储存(key,value)数据，为追求简单只是储存了简单的int类型数据（单key，没有value。为了突出HashMap的原理和数据结构，等有空会再把(key,value)补上），详情：<a href="https://github.com/hanhanhanxu/MyHashTable" target="_blank" rel="noopener">https://github.com/hanhanhanxu/MyHashTable</a> (使用C++编写)</del></p>
 <p>这个是我自己写的java语言实现的HashMap，使用的数据结构也是数组+链表，这里面链表实现方式很特别，而且插入时是头插法，目前实现了put,get,toString方法：<a href="https://github.com/hanhanhanxu/MyHashMap" target="_blank" rel="noopener">https://github.com/hanhanhanxu/MyHashMap</a></p>
+<p><strong>介绍下HashMap及其实现原理</strong></p>
+<p>HashMap是线程不安全<br>实现方式：<br>数组加链表的实现方式<br>数组中的每一项是一个链表，通过计算存入对象的key的hashCode来计算对象储存在数组中的位置，用链表来解决散列冲突，链表中的节点存储的是键值对，当出现重复的key时，key使用原来的，value使用新来的。</p>
+<p><strong>填充因子的作用</strong></p>
+<p>默认0.75 当hashmap的填充达到75%的时候，会进行扩容。当然这个值我们可以初始化。但如果没有什么特殊要求，不要进行更改。</p>
+<p><strong>hashmap的resize扩容机制 </strong></p>
+<p>当hashmap中的元素越来越多的时候，碰撞的几率也就越来越高（因为数组的长度是固定的），所以为了提高查询的效率，就要对hashmap的数组进行扩容，数组扩容这个操作也会出现在ArrayList中，所以这是一个通用的操作，很多人对它的性能表示过怀疑，不过想想我们的“均摊”原理，就释然了，而在hashmap数组扩容之后，最消耗性能的点就出现了：原数组中的数据必须重新计算其在新数组中的位置，并放进去，这就是resize。 </p>
+<p>那么hashmap什么时候进行扩容呢？当hashmap中的元素个数超过数组大小<em>loadFactor时，就会进行数组扩容，loadFactor的默认值为0.75，也就是说，默认情况下，数组大小为16，那么当hashmap中元素个数超过16</em>0.75=12的时候，就把数组的大小扩展为2<em>16=32，即扩大一倍，然后重新计算每个元素在数组中的位置，而这是一个非常消耗性能的操作，所以如果我们已经预知hashmap中元素的个数，那么预设元素的个数能够有效的提高hashmap的性能。比如说，我们有1000个元素new HashMap(1000), 但是理论上来讲new HashMap(1024)更合适，不过上面annegu已经说过，即使是1000，hashmap也自动会将其设置为1024。 但是new HashMap(1024)还不是更合适的，因为0.75</em>1000 &lt; 1000, 也就是说为了让0.75 * size &gt; 1000, 我们必须这样new HashMap(2048)才最合适，既考虑了&amp;的问题，也避免了resize的问题。 </p>
+<hr>
+<p>1.Hashmap在插入元素过多的时候需要进行Resize，<br>Resize的条件是 HashMap.Size &gt;= Capacity <em> LoadFactor。（默认：原来容量</em>0.75）</p>
+<p>2.Hashmap的Resize包含<strong>扩容</strong>和<strong>ReHash</strong>两个步骤，<strong>ReHash在并发的情况下可能会形成链表环</strong>。</p>
+<ul>
+<li><p>扩容<br>创建一个新的Entry空数组，长度是原数组的2倍。</p>
+</li>
+<li><p>ReHash<br>遍历原Entry数组，把所有的Entry重新Hash到新数组。为什么要重新Hash呢？因为长度扩大以后，Hash的规则也随之改变。</p>
+</li>
+</ul>
+<p><a href="https://blog.csdn.net/HNUST_LIZEMING/article/details/89334204" target="_blank" rel="noopener">https://blog.csdn.net/HNUST_LIZEMING/article/details/89334204</a></p>
+<p><strong>为什么HashMap容量都是2的幂次方</strong></p>
+<p>因为得到索引时 可以通过按位与(&amp;)操作来计算余数，比求模(%)更快，而且充分散列，减少碰撞</p>
+<p>我们可以看到在hashmap中要找到某个元素，需要根据key的hash值来求得对应数组中的位置。如何计算这个位置就是hash算法。前面说过hashmap的数据结构是数组和链表的结合，所以我们当然希望这个hashmap里面的元素位置尽量的分布均匀些，尽量使得每个位置上的元素数量只有一个，那么当我们用hash算法求得这个位置的时候，马上就可以知道对应位置的元素就是我们要的，而不用再去遍历链表。 </p>
+<p>所以我们首先想到的就是把hashcode对数组长度取模运算，这样一来，元素的分布相对来说是比较均匀的。但是，“模”运算的消耗还是比较大的，能不能找一种更快速，消耗更小的方式那？</p>
+<blockquote>
+</blockquote>
+<pre><code>static int indexFor(int h, int length) {  
+   return h &amp; (length-1);  
+   }  
+</code></pre><blockquote>
+</blockquote>
+<p>当容量是2^n时，h &amp; (length -1) == h % length。</p>
+<p>但这里让length为2的n次方，并不仅仅是要h &amp; (length -1)的结果和h % length相等这么简单</p>
+<p>使用与操作运算速度更快，而且如果不是2的n此方的话，h &amp; (length -1)的就结果并不能够充分散列，有较大几率出现重复元素，，有的索引位置可能永远不会用到</p>
+<p>参考链接:<a href="https://blog.csdn.net/gududedabai/article/details/85784161" target="_blank" rel="noopener">https://blog.csdn.net/gududedabai/article/details/85784161</a></p>
+<p>参考链接:<a href="https://www.iteye.com/topic/539465" target="_blank" rel="noopener">https://www.iteye.com/topic/539465</a></p>
+<p><strong>多线程hashMap进行put时出现死循环的情况</strong></p>
+<p><a href="https://www.cnblogs.com/wfq9330/p/9023892.html" target="_blank" rel="noopener">https://www.cnblogs.com/wfq9330/p/9023892.html</a></p>
+<h2 id="ConcurrentHashMap线程安全"><a href="#ConcurrentHashMap线程安全" class="headerlink" title="ConcurrentHashMap线程安全"></a>ConcurrentHashMap线程安全</h2><p>分段锁思想来降低并发场景下的锁定发生频率</p>
+<p>1.7 分段加锁</p>
+<p>1.8 CAS自旋锁  乐观锁 并发度较高时，性能较一般</p>
+<p>引入红黑树，解决哈希冲突时链表的顺序查找问题， 红黑树的启用条件与链表长度和Map总容量有关，默认链表&gt;8 容量&gt;64时转换为红黑树方式</p>
 
       
     </div>
@@ -668,6 +707,10 @@ public class test {
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/06/12/Design_Mode-单例模式/" rel="prev" title="设计模式之单例模式">
+                设计模式之单例模式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -750,7 +793,7 @@ public class test {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -761,7 +804,7 @@ public class test {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -772,7 +815,7 @@ public class test {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -861,7 +904,7 @@ public class test {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hash表和Hash算法-HashMap"><span class="nav-number">1.</span> <span class="nav-text">Hash表和Hash算法,HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是哈希算法？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是哈希算法？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哈希表"><span class="nav-number">1.2.</span> <span class="nav-text">哈希表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap"><span class="nav-number">1.3.</span> <span class="nav-text">HashMap</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hash表和Hash算法-HashMap"><span class="nav-number">1.</span> <span class="nav-text">Hash表和Hash算法,HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是哈希算法？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是哈希算法？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哈希表"><span class="nav-number">1.2.</span> <span class="nav-text">哈希表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap"><span class="nav-number">1.3.</span> <span class="nav-text">HashMap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ConcurrentHashMap线程安全"><span class="nav-number">2.</span> <span class="nav-text">ConcurrentHashMap线程安全</span></a></li></ol></div>
             
 
           </div>
@@ -935,7 +978,7 @@ public class test {
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共39.3k字</span>
+  <span class="post-count">博客全站共41.2k字</span>
 </div>
         
 
