@@ -107,7 +107,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/10/VyZyL9.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/10/VylyUH.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/10/Vy8U8s.md.png">
-<meta property="og:updated_time" content="2019-06-12T08:16:57.532Z">
+<meta property="og:updated_time" content="2019-06-12T08:50:14.321Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hash">
 <meta name="twitter:description" content="Hash表和Hash算法,HashMap什么是哈希算法？Hash，一般翻译做“散列”，也有直接音译为“哈希”的，就是把任意长度的输入（又叫做预映射， pre-image），通过散列算法，变换成固定长度的输出，该输出就是散列值。（就是通过算法，将任意长度的输入转化为固定长度的输出。当然可能会有不同的输入经过算法运算后得到相同的输出。这叫做冲突） 这种转换是一种压缩映射，也就是，散列值的空间通常远小于">
@@ -425,7 +425,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.1k
+                  3.2k
                 </span>
               
 
@@ -604,6 +604,8 @@ public class test {
 <p>参考链接:<a href="https://www.iteye.com/topic/539465" target="_blank" rel="noopener">https://www.iteye.com/topic/539465</a></p>
 <p><strong>多线程hashMap进行put时出现死循环的情况</strong></p>
 <p><a href="https://www.cnblogs.com/wfq9330/p/9023892.html" target="_blank" rel="noopener">https://www.cnblogs.com/wfq9330/p/9023892.html</a></p>
+<p><strong>HashMap在JDK1.7和1.8种有什么变化</strong></p>
+<p>主要还是HashMap中链长度大于8时采取红黑树的结构存储。(1.7的时候是链表结构)<br>红黑树，除了添加，效率高于链表结构。</p>
 <h2 id="ConcurrentHashMap线程安全"><a href="#ConcurrentHashMap线程安全" class="headerlink" title="ConcurrentHashMap线程安全"></a>ConcurrentHashMap线程安全</h2><p>分段锁思想来降低并发场景下的锁定发生频率</p>
 <p>1.7 分段加锁</p>
 <p>1.8 CAS自旋锁  乐观锁 并发度较高时，性能较一般</p>
@@ -793,7 +795,7 @@ public class test {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -804,7 +806,7 @@ public class test {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -815,7 +817,7 @@ public class test {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -978,7 +980,7 @@ public class test {
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共41.2k字</span>
+  <span class="post-count">博客全站共41.4k字</span>
 </div>
         
 

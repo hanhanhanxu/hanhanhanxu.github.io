@@ -117,7 +117,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/10/Vy8U8s.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/04/VYLjsO.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/04/VYxUu6.md.png">
-<meta property="og:updated_time" content="2019-06-11T07:57:20.316Z">
+<meta property="og:updated_time" content="2019-06-12T09:01:17.136Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试题大全">
 <meta name="twitter:description" content="1、单例设计模式饿汉式：类加载时创建，不存在线程安全问题  直接初始化  枚举  静态代码块（适合复杂实例化）   懒汉式：类使用时创建，存在线程安全问题  getInstance方式（线程不安全）  加锁外层加if判断（线程安全）  静态内部类（线程安全且简洁）（静态内部类在使用时创建，不随着外部类加载而加载）   2、类初始化和实例（对象）初始化main方法所在的类需要初始化 类初始化（加载类">
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  5.6k
+                  5.8k
                 </span>
               
 
@@ -869,6 +869,27 @@ int j = i;
 <p>实际上是<br>Integer i = Integer.valueOf(1);    自动装箱    valueOf底层还是new Integer(1)<br>int j = i.intValue();            自动拆箱</p>
 <p>Q:为什么有了基本数据类型之后还要有包装类型<br>A:Java是一个面向对象的语言，而基本的数据类型，不具备面向对象的特性。</p>
 <p>缓存：对象缓存，Integer i = 1;Integer j = 1; i==j  返回true ，因为1已经缓存了(valueOf)，用的是用一个</p>
+<h2 id="18、java1-8新特性"><a href="#18、java1-8新特性" class="headerlink" title="18、java1.8新特性"></a>18、java1.8新特性</h2><ul>
+<li>Lambda表达式</li>
+<li>函数式接口</li>
+<li>*方法引用和构造器调用</li>
+<li>Stream API</li>
+<li>接口中的默认方法和静态方法</li>
+<li>新时间日期API</li>
+</ul>
+<h2 id="19、java-V1-9-1-10新特性"><a href="#19、java-V1-9-1-10新特性" class="headerlink" title="19、java V1.9-1.10新特性"></a>19、java V1.9-1.10新特性</h2><ul>
+<li>模块系统</li>
+<li>默认G1回收器</li>
+<li>接口私有方法</li>
+<li>局部变量推断</li>
+<li>Graal编译器    </li>
+</ul>
+<h2 id="19、java-V1-11-新特性-以后长期支持版本"><a href="#19、java-V1-11-新特性-以后长期支持版本" class="headerlink" title="19、java V1.11 新特性 以后长期支持版本"></a>19、java V1.11 新特性 以后长期支持版本</h2><ul>
+<li>ZGC垃圾回收器</li>
+<li>字符串API增强</li>
+<li>内置HTTP Client</li>
+</ul>
+<h2 id="20、一次完整的http请求过程是怎样的"><a href="#20、一次完整的http请求过程是怎样的" class="headerlink" title="20、一次完整的http请求过程是怎样的"></a>20、一次完整的http请求过程是怎样的</h2><p>DNS解析，TCP建连，HTTP请求，HTTP相应</p>
 
       
     </div>
@@ -1054,7 +1075,7 @@ int j = i;
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1065,7 +1086,7 @@ int j = i;
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1076,7 +1097,7 @@ int j = i;
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1165,7 +1186,7 @@ int j = i;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、单例设计模式"><span class="nav-number">1.</span> <span class="nav-text">1、单例设计模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、类初始化和实例（对象）初始化"><span class="nav-number">2.</span> <span class="nav-text">2、类初始化和实例（对象）初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、Spring中bean的作用域"><span class="nav-number">3.</span> <span class="nav-text">3、Spring中bean的作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、数据库"><span class="nav-number">4.</span> <span class="nav-text">4、数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-数据库事务的4大特性：（ACID）"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 数据库事务的4大特性：（ACID）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-事务传播行为（7）："><span class="nav-number">4.2.</span> <span class="nav-text">4.2 事务传播行为（7）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-事务隔离级别（4）：两个事务并发执行，数据库隔离各个事务的能力，使之不会相互影响"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 事务隔离级别（4）：两个事务并发执行，数据库隔离各个事务的能力，使之不会相互影响</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、GET与POST："><span class="nav-number">5.</span> <span class="nav-text">5、GET与POST：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、MyBatis中当实体类中的属性名-lastName-和表中的字段名-last-name-不一样，怎么办？"><span class="nav-number">6.</span> <span class="nav-text">6、MyBatis中当实体类中的属性名(lastName)和表中的字段名(last_name)不一样，怎么办？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、Git相关"><span class="nav-number">7.</span> <span class="nav-text">7、Git相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-分支相关命令"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 分支相关命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-实际应用"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 实际应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8、HTTP协议的8种请求类型介绍"><span class="nav-number">8.</span> <span class="nav-text">8、HTTP协议的8种请求类型介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9、SSL四次握手，TCP三次握手"><span class="nav-number">9.</span> <span class="nav-text">9、SSL四次握手，TCP三次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10、HTTP有关缓存的几个字段"><span class="nav-number">10.</span> <span class="nav-text">10、HTTP有关缓存的几个字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11、基于TCP-IP协议的应用层协议有哪些"><span class="nav-number">11.</span> <span class="nav-text">11、基于TCP/IP协议的应用层协议有哪些</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12、Mybatis中-占位符-和-拼接符-的区别"><span class="nav-number">12.</span> <span class="nav-text">12、Mybatis中#{}占位符 和 ${}拼接符 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13、gc垃圾回收器"><span class="nav-number">13.</span> <span class="nav-text">13、gc垃圾回收器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14、java中的volatile关键字"><span class="nav-number">14.</span> <span class="nav-text">14、java中的volatile关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15、Hash表和Hash算法-HashMap"><span class="nav-number">15.</span> <span class="nav-text">15、Hash表和Hash算法,HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是哈希算法？"><span class="nav-number">15.1.</span> <span class="nav-text">什么是哈希算法？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哈希表"><span class="nav-number">15.2.</span> <span class="nav-text">哈希表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap"><span class="nav-number">15.3.</span> <span class="nav-text">HashMap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16、JSP九大隐式对象和四大域"><span class="nav-number">16.</span> <span class="nav-text">16、JSP九大隐式对象和四大域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17、java中的基本数据类型"><span class="nav-number">17.</span> <span class="nav-text">17、java中的基本数据类型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、单例设计模式"><span class="nav-number">1.</span> <span class="nav-text">1、单例设计模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、类初始化和实例（对象）初始化"><span class="nav-number">2.</span> <span class="nav-text">2、类初始化和实例（对象）初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、Spring中bean的作用域"><span class="nav-number">3.</span> <span class="nav-text">3、Spring中bean的作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、数据库"><span class="nav-number">4.</span> <span class="nav-text">4、数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-数据库事务的4大特性：（ACID）"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 数据库事务的4大特性：（ACID）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-事务传播行为（7）："><span class="nav-number">4.2.</span> <span class="nav-text">4.2 事务传播行为（7）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-事务隔离级别（4）：两个事务并发执行，数据库隔离各个事务的能力，使之不会相互影响"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 事务隔离级别（4）：两个事务并发执行，数据库隔离各个事务的能力，使之不会相互影响</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、GET与POST："><span class="nav-number">5.</span> <span class="nav-text">5、GET与POST：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、MyBatis中当实体类中的属性名-lastName-和表中的字段名-last-name-不一样，怎么办？"><span class="nav-number">6.</span> <span class="nav-text">6、MyBatis中当实体类中的属性名(lastName)和表中的字段名(last_name)不一样，怎么办？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、Git相关"><span class="nav-number">7.</span> <span class="nav-text">7、Git相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-分支相关命令"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 分支相关命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-实际应用"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 实际应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8、HTTP协议的8种请求类型介绍"><span class="nav-number">8.</span> <span class="nav-text">8、HTTP协议的8种请求类型介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9、SSL四次握手，TCP三次握手"><span class="nav-number">9.</span> <span class="nav-text">9、SSL四次握手，TCP三次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10、HTTP有关缓存的几个字段"><span class="nav-number">10.</span> <span class="nav-text">10、HTTP有关缓存的几个字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11、基于TCP-IP协议的应用层协议有哪些"><span class="nav-number">11.</span> <span class="nav-text">11、基于TCP/IP协议的应用层协议有哪些</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12、Mybatis中-占位符-和-拼接符-的区别"><span class="nav-number">12.</span> <span class="nav-text">12、Mybatis中#{}占位符 和 ${}拼接符 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13、gc垃圾回收器"><span class="nav-number">13.</span> <span class="nav-text">13、gc垃圾回收器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14、java中的volatile关键字"><span class="nav-number">14.</span> <span class="nav-text">14、java中的volatile关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15、Hash表和Hash算法-HashMap"><span class="nav-number">15.</span> <span class="nav-text">15、Hash表和Hash算法,HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是哈希算法？"><span class="nav-number">15.1.</span> <span class="nav-text">什么是哈希算法？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哈希表"><span class="nav-number">15.2.</span> <span class="nav-text">哈希表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap"><span class="nav-number">15.3.</span> <span class="nav-text">HashMap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16、JSP九大隐式对象和四大域"><span class="nav-number">16.</span> <span class="nav-text">16、JSP九大隐式对象和四大域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17、java中的基本数据类型"><span class="nav-number">17.</span> <span class="nav-text">17、java中的基本数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18、java1-8新特性"><span class="nav-number">18.</span> <span class="nav-text">18、java1.8新特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19、java-V1-9-1-10新特性"><span class="nav-number">19.</span> <span class="nav-text">19、java V1.9-1.10新特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19、java-V1-11-新特性-以后长期支持版本"><span class="nav-number">20.</span> <span class="nav-text">19、java V1.11 新特性 以后长期支持版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20、一次完整的http请求过程是怎样的"><span class="nav-number">21.</span> <span class="nav-text">20、一次完整的http请求过程是怎样的</span></a></li></ol></div>
             
 
           </div>
@@ -1239,7 +1260,7 @@ int j = i;
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共41.2k字</span>
+  <span class="post-count">博客全站共41.4k字</span>
 </div>
         
 
