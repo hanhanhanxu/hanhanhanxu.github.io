@@ -109,7 +109,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/05/VUmMVg.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/05/VUmrGR.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/05/VUmsR1.md.png">
-<meta property="og:updated_time" content="2019-06-05T09:16:05.549Z">
+<meta property="og:updated_time" content="2019-06-13T11:44:52.652Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git基本使用">
 <meta name="twitter:description" content="Git官网教程:https://dwz.cn/sA7e1ThX 廖雪峰老师教程:https://dwz.cn/a9u02G3G 一、第一次提交1、Github创建仓库： 2、本地创建文件夹，创建文件，Git bash heregit init git add –A(将更改添加到stage区) git commit –m “first commit”（将更改提交，注：没有提交到Github，提交到m">
@@ -427,7 +427,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  403
+                  525
                 </span>
               
 
@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -472,15 +472,19 @@
 <p>git commit –m “first commit”<br>（将更改提交，注：没有提交到Github，提交到master区）</p>
 <p><img src="https://s2.ax1x.com/2019/06/05/VUeKhR.png" alt="VUeKhR.png"></p>
 <p>git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:hanhanhanxu/testGitx.git<br>（将本地的仓库关联到github上）</p>
-<p>git push -u origin master<br>（推送提交，推送到Github上）</p>
+<p>git push -u origin master<br>（推送提交，推送到Github上，-u参数：把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。）</p>
 <h1 id="二、第二次提交"><a href="#二、第二次提交" class="headerlink" title="二、第二次提交"></a>二、第二次提交</h1><p>本地文件夹testGit里的内容发生了改变，我们想要将这个改变提交到Github上。</p>
 <p>进入testGit文件夹：</p>
 <p>右键Git Bash here</p>
 <p>git add –A</p>
 <p>git commit –m “second commit”</p>
-<p>git push -u origin master</p>
+<p>git push origin master<br>本地master分支的最新修改推送至GitHub</p>
 <p><a href="https://imgchr.com/i/VUmMVg" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/05/VUmMVg.md.png" alt="VUmMVg.md.png"></a></p>
 <p><strong><em>注：若文件夹为空，则不会被提交上Github</em></strong></p>
+<p>有时github上有readme.md文件，但是本地没有，这样一来git push 推送的时候就会报错。<br>使用这个命令</p>
+<p>git pull –rebase origin master</p>
+<p>将github上的东西和本地就行合并</p>
+<p>运行完后本地出现readme.md文件，然后再推送就行了。</p>
 <h1 id="三、命令"><a href="#三、命令" class="headerlink" title="三、命令"></a>三、命令</h1><blockquote>
 </blockquote>
 <pre><code>git init
@@ -698,7 +702,7 @@ git push -u origin master
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -709,7 +713,7 @@ git push -u origin master
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -872,7 +876,7 @@ git push -u origin master
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共41.4k字</span>
+  <span class="post-count">博客全站共48.2k字</span>
 </div>
         
 
