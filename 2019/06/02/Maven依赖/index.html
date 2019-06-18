@@ -96,18 +96,18 @@
 
 
 
-<meta name="description" content="maven仓库，查找坐标:https://mvnrepository.com/ springboot父工程依赖     &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.0.4">
+<meta name="description" content="maven仓库，查找坐标:https://mvnrepository.com/ Spring依赖   &amp;lt;dependency&amp;gt;     &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;     &amp;lt;artifactId&amp;gt;spring-context&amp;lt;/artifactId&amp;gt;     &amp;lt;version&amp;gt;">
 <meta name="keywords" content="工具">
 <meta property="og:type" content="article">
 <meta property="og:title" content="maven依赖">
-<meta property="og:url" content="http://hanhanhanxu.github.io/2019/06/02/注解/index.html">
+<meta property="og:url" content="http://hanhanhanxu.github.io/2019/06/02/Maven依赖/index.html">
 <meta property="og:site_name" content="旭">
-<meta property="og:description" content="maven仓库，查找坐标:https://mvnrepository.com/ springboot父工程依赖     &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.0.4">
+<meta property="og:description" content="maven仓库，查找坐标:https://mvnrepository.com/ Spring依赖   &amp;lt;dependency&amp;gt;     &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;     &amp;lt;artifactId&amp;gt;spring-context&amp;lt;/artifactId&amp;gt;     &amp;lt;version&amp;gt;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-02T02:18:32.141Z">
+<meta property="og:updated_time" content="2019-06-17T13:31:59.097Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="maven依赖">
-<meta name="twitter:description" content="maven仓库，查找坐标:https://mvnrepository.com/ springboot父工程依赖     &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.0.4">
+<meta name="twitter:description" content="maven仓库，查找坐标:https://mvnrepository.com/ Spring依赖   &amp;lt;dependency&amp;gt;     &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;     &amp;lt;artifactId&amp;gt;spring-context&amp;lt;/artifactId&amp;gt;     &amp;lt;version&amp;gt;">
 
 
 
@@ -137,7 +137,7 @@
 
 
 
-  <link rel="canonical" href="http://hanhanhanxu.github.io/2019/06/02/注解/">
+  <link rel="canonical" href="http://hanhanhanxu.github.io/2019/06/02/Maven依赖/">
 
 
 
@@ -327,7 +327,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hanhanhanxu.github.io/2019/06/02/注解/">
+    <link itemprop="mainEntityOfPage" href="http://hanhanhanxu.github.io/2019/06/02/Maven依赖/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Han Xu">
@@ -396,7 +396,7 @@
 
           
           
-             <span id="/2019/06/02/注解/" class="leancloud_visitors" data-flag-title="maven依赖">
+             <span id="/2019/06/02/Maven依赖/" class="leancloud_visitors" data-flag-title="maven依赖">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -421,7 +421,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  327
+                  375
                 </span>
               
 
@@ -437,7 +437,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -459,12 +459,27 @@
 
       
         <h2 id="maven仓库，查找坐标-https-mvnrepository-com"><a href="#maven仓库，查找坐标-https-mvnrepository-com" class="headerlink" title="maven仓库，查找坐标:https://mvnrepository.com/"></a>maven仓库，查找坐标:<a href="https://mvnrepository.com/" target="_blank" rel="noopener">https://mvnrepository.com/</a></h2><ul>
-<li>springboot父工程依赖<blockquote>
+<li><p>Spring依赖</p>
+<blockquote>
 </blockquote>
-  <parent> <pre><code>&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
+    &lt;version&gt;5.0.9.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre><blockquote>
+</blockquote>
+<p>SpringContext中包含了Spring核心依赖Context Beans Core ExpressionLanguage和aop</p>
+</li>
+<li><p>springboot父工程依赖</p>
+<blockquote>
+</blockquote>
+<p>  <parent> </parent></p>
+<pre><code>&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
 &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
 &lt;version&gt;2.0.4.RELEASE&lt;/version&gt;
-</code></pre>  </parent> <blockquote>
+</code></pre><p>   </p>
+<blockquote>
 </blockquote>
 </li>
 </ul>
@@ -936,7 +951,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共48.9k字</span>
+  <span class="post-count">博客全站共49.3k字</span>
 </div>
         
 
