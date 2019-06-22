@@ -117,7 +117,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/10/Vy8U8s.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/04/VYLjsO.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/04/VYxUu6.md.png">
-<meta property="og:updated_time" content="2019-06-22T06:22:35.740Z">
+<meta property="og:updated_time" content="2019-06-22T06:28:49.632Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试题大全">
 <meta name="twitter:description" content="1、单例设计模式饿汉式：类加载时创建，不存在线程安全问题  直接初始化  枚举  静态代码块（适合复杂实例化）   懒汉式：类使用时创建，存在线程安全问题  getInstance方式（线程不安全）  加锁外层加if判断（线程安全）  静态内部类（线程安全且简洁）（静态内部类在使用时创建，不随着外部类加载而加载）   2、类初始化和实例（对象）初始化main方法所在的类需要初始化 类初始化（加载类">
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  7.4k
+                  7.5k
                 </span>
               
 
@@ -970,6 +970,8 @@ int j = i;
 </blockquote>
 <p>计算机<strong>存储信息的最小单位</strong>是<strong>位</strong>(bit) 8位 = 1个字节    8bit = 1Byte(B)     1024Byte = 1kb</p>
 <p>计算机中<strong>存储容量的最小单位</strong>是<strong>字节</strong> （存储器中所包含存储单元的数量称为存储容量，其计量基本单位是字节）</p>
+<p><strong>java中怎样查看字符串的字节大小？</strong></p>
+<p><strong>答</strong>：字符串的字节大小可查，但是结果不固定。因为字符串是经过编码后得到的，如果想要看某字符串占多少字节，要先对字符串进行解码，而解码又可以指定解码的字符集，使用不同字符集进行解码，得到的字节大小不同。</p>
 <p>String.length()返回的是此字符串（字符序列）的长度，并不是此字符串的字节大小。如果字符串是中文，对于不同字符编码，中文长度一样（我：1 我是：2），将中文通过响应编码解码后得到的字节大小不一样</p>
 <blockquote>
 </blockquote>
@@ -1381,7 +1383,7 @@ for (byte by:unicodes){
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共50.5k字</span>
+  <span class="post-count">博客全站共50.7k字</span>
 </div>
         
 
