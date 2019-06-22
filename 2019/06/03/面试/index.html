@@ -117,7 +117,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/10/Vy8U8s.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/04/VYLjsO.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/04/VYxUu6.md.png">
-<meta property="og:updated_time" content="2019-06-18T03:11:34.875Z">
+<meta property="og:updated_time" content="2019-06-22T06:22:35.740Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试题大全">
 <meta name="twitter:description" content="1、单例设计模式饿汉式：类加载时创建，不存在线程安全问题  直接初始化  枚举  静态代码块（适合复杂实例化）   懒汉式：类使用时创建，存在线程安全问题  getInstance方式（线程不安全）  加锁外层加if判断（线程安全）  静态内部类（线程安全且简洁）（静态内部类在使用时创建，不随着外部类加载而加载）   2、类初始化和实例（对象）初始化main方法所在的类需要初始化 类初始化（加载类">
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  6.1k
+                  7.4k
                 </span>
               
 
@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  23
+                  28
                 </span>
               
             </div>
@@ -840,7 +840,13 @@ public class test {
 <p>session（当前会话；session域）、</p>
 <p>servletcontext（当前应用；application域）</p>
 <p><a href="https://imgchr.com/i/VYxUu6" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/04/VYxUu6.md.png" alt="VYxUu6.md.png"></a></p>
-<h2 id="17、java中的基本数据类型"><a href="#17、java中的基本数据类型" class="headerlink" title="17、java中的基本数据类型"></a>17、java中的基本数据类型</h2><p><strong>8中基本数据类型</strong></p>
+<h2 id="17、java中的基本数据类型"><a href="#17、java中的基本数据类型" class="headerlink" title="17、java中的基本数据类型"></a>17、java中的基本数据类型</h2><blockquote>
+</blockquote>
+<p>计算机中最小的数据单位是位(bit，不可再分割) 8位 = 1个字节 8bit = 1Byte(B) 1024Byte = 1kb</p>
+<p>计算机中储存数据最小的单位是字节（最基本单位，不可能一位一位的储存数据，8位构成一个字节，用字节储存数据，java中byte类型数据占1个字节，int类型数据占4个字节）</p>
+<blockquote>
+</blockquote>
+<p><strong>8中基本数据类型</strong></p>
 <blockquote>
 </blockquote>
 <pre><code>数据类型        默认值        大小（二进制位数）    范围
@@ -854,7 +860,7 @@ double        0.0d        64
 
 char        \u0000        16
 
-boolean     false        1
+boolean     false        1    ？ 1bit还是1Byte
 </code></pre><blockquote>
 </blockquote>
 <p>byte Byte<br>short Short<br>int Integer<br>long Long<br>float Float<br>double Double<br>char Charset<br>boolean Boolean</p>
@@ -906,6 +912,8 @@ int j = i;
 <blockquote>
 </blockquote>
 <p>scope叫做作用域，将bean的作用域由singleton变为prototype，是解决Spring单例bean线程不安全最浅显的方法</p>
+<p><strong>Spring的AOP的应用</strong></p>
+<p>事务管理，日志处理，安全验证</p>
 <p><strong>注解装配在Spring中默认是关闭的</strong>，所以需要在Spring的核心配置文件中配置一下，才能使用基于注解的装配模型：</p>
 <blockquote>
 </blockquote>
@@ -930,6 +938,78 @@ int j = i;
 </blockquote>
 <p>使用SpringMVC作为系统的整体架构，负责MVC分离，控制业务跳转，利用Mybatis框架对持久层提供支持，Spring做管理，管理SpringMVC和Mybatis。</p>
 <blockquote>
+</blockquote>
+<h2 id="22、字符集和字符编码以及java中各阶段的编码方式"><a href="#22、字符集和字符编码以及java中各阶段的编码方式" class="headerlink" title="22、字符集和字符编码以及java中各阶段的编码方式"></a>22、字符集和字符编码以及java中各阶段的编码方式</h2><p>字符集和字符编码：</p>
+<p><a href="https://www.cnblogs.com/defias/p/3436517.html" target="_blank" rel="noopener">https://www.cnblogs.com/defias/p/3436517.html</a></p>
+<p><a href="https://www.cnblogs.com/xdyixia/p/9114145.html" target="_blank" rel="noopener">https://www.cnblogs.com/xdyixia/p/9114145.html</a></p>
+<p><strong>字符集</strong>：一张表，表中储存了所需用到的所有单个字符，如a,b,c,d,1,2,3…  我 中 韩 1 2 3 a b c。常见字符集有ASCII字符集，GBXXXX系列字符集（GB2312，GBK），BIG5字符集等等<br>每个国家都可以有自己国家的一套字符集，只储存自己国家的字符，而互联网是全世界的，互通全世界时，会出现字符缺少的问题（我 这个字符在ASCII字符集中不存在），所以为了统一，创造出了Unicode字符集<br>Unicode（统一码、万国码、单一码、标准万国码）是业界的一种标准，它可以使电脑得以体现世界上数十种文字的系统。</p>
+<p><strong>字符编码</strong>：定义一套规则，将a如何编码为数字代码，如何将数字代码解码为a。计算机不能储存a，所以必须将字符集中的各个字符转换为计算机可以接受的数字系统的数，例如101011这样的数字代码，然后进行储存。<br>常见的字符编码方案：UTF-32/ UTF-16/ UTF-8等</p>
+<p><strong>通常特定的字符集采用特定的编码方式（即一种字符集对应一种字符编码（例如：ASCII、IOS-8859-1、GB2312、GBK，都是即表示了字符集又表示了对应的字符编码），但Unicode不是，它采用现代的模型）</strong></p>
+<blockquote>
+</blockquote>
+<p>java语言使用Unicode字符集</p>
+<p>编码：</p>
+<ul>
+<li><p>Java源码文件，*.java，可以是任意字符编码，如GBK，UTF-8</p>
+</li>
+<li><p>Class文件，*.class，采用的是一种改进的UTF-8编码（Modified UTF-8）</p>
+</li>
+<li><p>JVM，内存中使用UTF-16编码</p>
+</li>
+</ul>
+<p>Java编译器需要正确的读取源码，消除编码差异，然后编译成UTF-8编码的Class文件。比如javac，默认情况下它会取操作系统的编码，可以使用参数-encoding指定源码文件的字符编码。JVM加载Class文件，把其中的字符或字符串转成UTF-16编码序列。</p>
+<blockquote>
+</blockquote>
+<p>E:\0面试&gt;javac demo.java -encoding GBK</p>
+<p>E:\0面试&gt;java demo<br>111111</p>
+<h2 id="23、位bit与字节Byte以及java中字符串的大小"><a href="#23、位bit与字节Byte以及java中字符串的大小" class="headerlink" title="23、位bit与字节Byte以及java中字符串的大小"></a>23、位bit与字节Byte以及java中字符串的大小</h2><blockquote>
+</blockquote>
+<p>比特 二进制中的一位，信息的最小单位</p>
+<p>字节 通常用作计算机信息计量单位，不分数据类型</p>
+<blockquote>
+</blockquote>
+<p>计算机<strong>存储信息的最小单位</strong>是<strong>位</strong>(bit) 8位 = 1个字节    8bit = 1Byte(B)     1024Byte = 1kb</p>
+<p>计算机中<strong>存储容量的最小单位</strong>是<strong>字节</strong> （存储器中所包含存储单元的数量称为存储容量，其计量基本单位是字节）</p>
+<p>String.length()返回的是此字符串（字符序列）的长度，并不是此字符串的字节大小。如果字符串是中文，对于不同字符编码，中文长度一样（我：1 我是：2），将中文通过响应编码解码后得到的字节大小不一样</p>
+<blockquote>
+</blockquote>
+<pre><code>ASCII编码 1个字符占1个字节
+ISO-8859-1编码 1个中文占1个字节
+GBK编码 1个中文占2个字节
+Unicode编码 1个中文或英文都占2个字节
+UTF-8编码 1个中文占3个字节
+</code></pre><blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<pre><code>String s2 = &quot;我是&quot;;
+
+System.out.println(s2.length());//1 长度≠大小
+
+System.out.println(&quot;--------------------&quot;);
+
+//getBytes:使用给定的 charset字符集 将此 String 编码到 byte 序列，并将结果存储到新的 byte 数组。
+System.out.println(s2.getBytes(&quot;ISO-8859-1&quot;).length);//1个中文占一个字节
+System.out.println(s2.getBytes(&quot;GBK&quot;).length);//1个中文占两个字节
+System.out.println(s2.getBytes(&quot;UTF-8&quot;).length);//1个中文占三个字节
+System.out.println(s2.getBytes(&quot;Unicode&quot;).length);//我 4  我是 6  。说明前面有两个标识，表明是字符串
+
+System.out.println(&quot;--------------------&quot;);
+
+System.out.println(s2.getBytes(&quot;ISO-8859-1&quot;));//1个中文占一个字节
+System.out.println(s2.getBytes(&quot;GBK&quot;));//1个中文占两个字节
+System.out.println(s2.getBytes(&quot;UTF-8&quot;));//1个中文占三个字节
+System.out.println(s2.getBytes(&quot;Unicode&quot;));//1个中文/英文占四个字节
+
+System.out.println(&quot;--------------------&quot;);
+
+byte[] unicodes = s2.getBytes(&quot;Unicode&quot;);
+
+for (byte by:unicodes){
+    System.out.println(by);
+}
+//如果使用Uniocode字符集，则得到的byte序列中，前两位固定字节位-2 -1，可能是标识这是字符串
+</code></pre><blockquote>
 </blockquote>
 
       
@@ -1227,7 +1307,7 @@ int j = i;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、单例设计模式"><span class="nav-number">1.</span> <span class="nav-text">1、单例设计模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、类初始化和实例（对象）初始化"><span class="nav-number">2.</span> <span class="nav-text">2、类初始化和实例（对象）初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、Spring中bean的作用域"><span class="nav-number">3.</span> <span class="nav-text">3、Spring中bean的作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、数据库"><span class="nav-number">4.</span> <span class="nav-text">4、数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-数据库事务的4大特性：（ACID）"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 数据库事务的4大特性：（ACID）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-事务传播行为（7）："><span class="nav-number">4.2.</span> <span class="nav-text">4.2 事务传播行为（7）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-事务隔离级别（4）：两个事务并发执行，数据库隔离各个事务的能力，使之不会相互影响"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 事务隔离级别（4）：两个事务并发执行，数据库隔离各个事务的能力，使之不会相互影响</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、GET与POST："><span class="nav-number">5.</span> <span class="nav-text">5、GET与POST：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、MyBatis中当实体类中的属性名-lastName-和表中的字段名-last-name-不一样，怎么办？"><span class="nav-number">6.</span> <span class="nav-text">6、MyBatis中当实体类中的属性名(lastName)和表中的字段名(last_name)不一样，怎么办？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、Git相关"><span class="nav-number">7.</span> <span class="nav-text">7、Git相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-分支相关命令"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 分支相关命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-实际应用"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 实际应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8、HTTP协议的8种请求类型介绍"><span class="nav-number">8.</span> <span class="nav-text">8、HTTP协议的8种请求类型介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9、SSL四次握手，TCP三次握手"><span class="nav-number">9.</span> <span class="nav-text">9、SSL四次握手，TCP三次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10、HTTP有关缓存的几个字段"><span class="nav-number">10.</span> <span class="nav-text">10、HTTP有关缓存的几个字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11、基于TCP-IP协议的应用层协议有哪些"><span class="nav-number">11.</span> <span class="nav-text">11、基于TCP/IP协议的应用层协议有哪些</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12、Mybatis中-占位符-和-拼接符-的区别"><span class="nav-number">12.</span> <span class="nav-text">12、Mybatis中#{}占位符 和 ${}拼接符 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13、gc垃圾回收器"><span class="nav-number">13.</span> <span class="nav-text">13、gc垃圾回收器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14、java中的volatile关键字"><span class="nav-number">14.</span> <span class="nav-text">14、java中的volatile关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15、Hash表和Hash算法-HashMap"><span class="nav-number">15.</span> <span class="nav-text">15、Hash表和Hash算法,HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是哈希算法？"><span class="nav-number">15.1.</span> <span class="nav-text">什么是哈希算法？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哈希表"><span class="nav-number">15.2.</span> <span class="nav-text">哈希表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap"><span class="nav-number">15.3.</span> <span class="nav-text">HashMap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16、JSP九大隐式对象和四大域"><span class="nav-number">16.</span> <span class="nav-text">16、JSP九大隐式对象和四大域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17、java中的基本数据类型"><span class="nav-number">17.</span> <span class="nav-text">17、java中的基本数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18、java1-8新特性"><span class="nav-number">18.</span> <span class="nav-text">18、java1.8新特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19、java-V1-9-1-10新特性"><span class="nav-number">19.</span> <span class="nav-text">19、java V1.9-1.10新特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19、java-V1-11-新特性-以后长期支持版本"><span class="nav-number">20.</span> <span class="nav-text">19、java V1.11 新特性 以后长期支持版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20、一次完整的http请求过程是怎样的"><span class="nav-number">21.</span> <span class="nav-text">20、一次完整的http请求过程是怎样的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#21、谈谈你对Spring的理解"><span class="nav-number">22.</span> <span class="nav-text">21、谈谈你对Spring的理解</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、单例设计模式"><span class="nav-number">1.</span> <span class="nav-text">1、单例设计模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、类初始化和实例（对象）初始化"><span class="nav-number">2.</span> <span class="nav-text">2、类初始化和实例（对象）初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、Spring中bean的作用域"><span class="nav-number">3.</span> <span class="nav-text">3、Spring中bean的作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、数据库"><span class="nav-number">4.</span> <span class="nav-text">4、数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-数据库事务的4大特性：（ACID）"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 数据库事务的4大特性：（ACID）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-事务传播行为（7）："><span class="nav-number">4.2.</span> <span class="nav-text">4.2 事务传播行为（7）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-事务隔离级别（4）：两个事务并发执行，数据库隔离各个事务的能力，使之不会相互影响"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 事务隔离级别（4）：两个事务并发执行，数据库隔离各个事务的能力，使之不会相互影响</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、GET与POST："><span class="nav-number">5.</span> <span class="nav-text">5、GET与POST：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、MyBatis中当实体类中的属性名-lastName-和表中的字段名-last-name-不一样，怎么办？"><span class="nav-number">6.</span> <span class="nav-text">6、MyBatis中当实体类中的属性名(lastName)和表中的字段名(last_name)不一样，怎么办？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、Git相关"><span class="nav-number">7.</span> <span class="nav-text">7、Git相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-分支相关命令"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 分支相关命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-实际应用"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 实际应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8、HTTP协议的8种请求类型介绍"><span class="nav-number">8.</span> <span class="nav-text">8、HTTP协议的8种请求类型介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9、SSL四次握手，TCP三次握手"><span class="nav-number">9.</span> <span class="nav-text">9、SSL四次握手，TCP三次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10、HTTP有关缓存的几个字段"><span class="nav-number">10.</span> <span class="nav-text">10、HTTP有关缓存的几个字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11、基于TCP-IP协议的应用层协议有哪些"><span class="nav-number">11.</span> <span class="nav-text">11、基于TCP/IP协议的应用层协议有哪些</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12、Mybatis中-占位符-和-拼接符-的区别"><span class="nav-number">12.</span> <span class="nav-text">12、Mybatis中#{}占位符 和 ${}拼接符 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13、gc垃圾回收器"><span class="nav-number">13.</span> <span class="nav-text">13、gc垃圾回收器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14、java中的volatile关键字"><span class="nav-number">14.</span> <span class="nav-text">14、java中的volatile关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15、Hash表和Hash算法-HashMap"><span class="nav-number">15.</span> <span class="nav-text">15、Hash表和Hash算法,HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是哈希算法？"><span class="nav-number">15.1.</span> <span class="nav-text">什么是哈希算法？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哈希表"><span class="nav-number">15.2.</span> <span class="nav-text">哈希表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap"><span class="nav-number">15.3.</span> <span class="nav-text">HashMap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16、JSP九大隐式对象和四大域"><span class="nav-number">16.</span> <span class="nav-text">16、JSP九大隐式对象和四大域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17、java中的基本数据类型"><span class="nav-number">17.</span> <span class="nav-text">17、java中的基本数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18、java1-8新特性"><span class="nav-number">18.</span> <span class="nav-text">18、java1.8新特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19、java-V1-9-1-10新特性"><span class="nav-number">19.</span> <span class="nav-text">19、java V1.9-1.10新特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19、java-V1-11-新特性-以后长期支持版本"><span class="nav-number">20.</span> <span class="nav-text">19、java V1.11 新特性 以后长期支持版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20、一次完整的http请求过程是怎样的"><span class="nav-number">21.</span> <span class="nav-text">20、一次完整的http请求过程是怎样的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#21、谈谈你对Spring的理解"><span class="nav-number">22.</span> <span class="nav-text">21、谈谈你对Spring的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#22、字符集和字符编码以及java中各阶段的编码方式"><span class="nav-number">23.</span> <span class="nav-text">22、字符集和字符编码以及java中各阶段的编码方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#23、位bit与字节Byte以及java中字符串的大小"><span class="nav-number">24.</span> <span class="nav-text">23、位bit与字节Byte以及java中字符串的大小</span></a></li></ol></div>
             
 
           </div>
@@ -1301,7 +1381,7 @@ int j = i;
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共49.3k字</span>
+  <span class="post-count">博客全站共50.5k字</span>
 </div>
         
 
