@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="HanXu,韩旭,韩旭的个人博客,韩旭的github,javaweb">
+  <meta name="keywords" content="MySQL,">
 
 
 
@@ -96,16 +96,21 @@
 
 
 
-<meta name="description" content="Knowing is not enough, we must apply. Willing is not enough, we must do.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="旭">
-<meta property="og:url" content="http://hanhanhanxu.github.io/tags/教程/index.html">
+<meta name="description" content="engine引擎InnoDB :mysql中show engines\G（或者show engines;） 查看MySQL支持的引擎，5.5.5之后默认引擎改为InnoDB,不过我的5.5.32也是默认InnoDB引擎alter table test_InnoDB engine = MyISAM; //修改数据表的引擎 ， 修改后show create table test_InnoDB; 查处的">
+<meta name="keywords" content="MySQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL复杂查询">
+<meta property="og:url" content="http://hanhanhanxu.github.io/2019/06/23/MySQL/index.html">
 <meta property="og:site_name" content="旭">
-<meta property="og:description" content="Knowing is not enough, we must apply. Willing is not enough, we must do.">
+<meta property="og:description" content="engine引擎InnoDB :mysql中show engines\G（或者show engines;） 查看MySQL支持的引擎，5.5.5之后默认引擎改为InnoDB,不过我的5.5.32也是默认InnoDB引擎alter table test_InnoDB engine = MyISAM; //修改数据表的引擎 ， 修改后show create table test_InnoDB; 查处的">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/23/ZCbop6.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/06/23/ZPwFsg.md.png">
+<meta property="og:updated_time" content="2019-06-23T10:58:28.279Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="旭">
-<meta name="twitter:description" content="Knowing is not enough, we must apply. Willing is not enough, we must do.">
+<meta name="twitter:title" content="MySQL复杂查询">
+<meta name="twitter:description" content="engine引擎InnoDB :mysql中show engines\G（或者show engines;） 查看MySQL支持的引擎，5.5.5之后默认引擎改为InnoDB,不过我的5.5.32也是默认InnoDB引擎alter table test_InnoDB engine = MyISAM; //修改数据表的引擎 ， 修改后show create table test_InnoDB; 查处的">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/06/23/ZCbop6.png">
 
 
 
@@ -135,7 +140,7 @@
 
 
 
-  <link rel="canonical" href="http://hanhanhanxu.github.io/tags/教程/">
+  <link rel="canonical" href="http://hanhanhanxu.github.io/2019/06/23/MySQL/">
 
 
 
@@ -164,7 +169,7 @@
     })();
 </script>
 
-  <title>标签: 教程 | 旭</title>
+  <title>MySQL复杂查询 | 旭</title>
   
 
 
@@ -195,7 +200,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -311,290 +316,324 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>教程<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hanhanhanxu.github.io/2019/06/23/MySQL/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Han Xu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旭">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/06/10/Hash/" itemprop="url">
-              
-                <span itemprop="name">Hash</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">MySQL复杂查询</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-10T11:03:24+08:00" content="2019-06-10">
-          06-10
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-23T13:39:09+08:00">
+                2019-06-23
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/06/23/MySQL/" class="leancloud_visitors" data-flag-title="MySQL复杂查询">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  920
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/05/Git使用/" itemprop="url">
-              
-                <span itemprop="name">Git基本使用</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-05T16:53:17+08:00" content="2019-06-05">
-          06-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/02/Swagger/" itemprop="url">
-              
-                <span itemprop="name">Swagger简单使用</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-02T09:35:10+08:00" content="2019-06-02">
-          06-02
-        </time>
-      </div>
-
-    </header>
-  </article>
+        <h1 id="engine引擎InnoDB"><a href="#engine引擎InnoDB" class="headerlink" title="engine引擎InnoDB :"></a>engine引擎InnoDB :</h1><p>mysql中show engines\G（或者show engines;） 查看MySQL支持的引擎，5.5.5之后默认引擎改为InnoDB,不过我的5.5.32也是默认InnoDB引擎<br>alter table test_InnoDB engine = MyISAM; //修改数据表的引擎 ， 修改后show create table test_InnoDB; 查处的引擎是修改后的</p>
+<p>MySQL中InnoDB引擎的特点：<br>支持事务；行级锁定；支持外键约束,不支持全文索引,5.5之前支持,后面不再支持；具有非常高效的缓存特性；支持分区,表空间；和MyISAM相比,InnoDB对于硬件资源要求比较高<br>Innodb 支持事务，支持行级锁，更好的恢复性，高并发下性能更好（因为行级锁，锁定当前行）<br>使用场景：支持事务的业务；高并发；数据读写及更新比较频繁（微博）；数据一致性要求高的业务（转账,充值）</p>
+<h1 id="auto-primary自增字段"><a href="#auto-primary自增字段" class="headerlink" title="auto_primary自增字段 :"></a>auto_primary自增字段 :</h1><p>mysql中不必将自增列设置为主键，只是自增列必须为key，添加unique属性即可（不添加会创建表失败），像下面这样就可以。<br>create table test_auto2 (id int auto_increment unique, name varchar(32) primary key , aaa int);</p>
+<p>AUTO_INCREMENT类型主键不用手动维护,默认从1开始<br> insert into test_ip2 (name,ip) values (‘ccc’ ,789 );<br>Query OK, 1 row affected (0.01 sec)</p>
+<p>mysql&gt; select * from test_ip2;<br>+—-+——+—–+<br>| id | name | ip  |<br>+—-+——+—–+<br>|  1 | ccc  | 789 |<br>+—-+——+—–+<br>1 row in set (0.00 sec)</p>
+<h1 id="ip转换int函数inet-aton"><a href="#ip转换int函数inet-aton" class="headerlink" title="ip转换int函数inet_aton :"></a>ip转换int函数inet_aton :</h1><p>mysql中储存Ip:<br>CREATE TABLE test_ip (<br> <code>id</code> int AUTO_INCREMENT,<br> <code>name</code> varchar(32) NOT NULL,<br> <code>ip</code> int(10) unsigned NOT NULL,<br> PRIMARY KEY (<code>id</code>)<br>) engine = innodb ;</p>
+<p>insert into test_ip values (1, ‘aaa’ , 123 );<br>insert into test_ip values (2, ‘bbb’ ,456 );<br>insert into test_ip (name,ip) values (‘ccc’ ,789 );</p>
+<p>insert into test_ip (name,ip) values ( ‘ddd’ , inet_aton(‘127.0.0.1’));  // 必须严格是inet_aton(‘a.b.c.d’)一个空格也不能多，单引号也不能少</p>
+<p>select id , name , inet_ntoa(ip) as ip from test_ip;</p>
+<p>修改字段属性<br>alter table test_varcharN modify name varchar(12);</p>
+<h1 id="分页："><a href="#分页：" class="headerlink" title="分页："></a>分页：</h1><p>int cur = 2 ;//当前页<br>int pagesize = 10 ;//页面大小<br>select <em> from test_data limit (cur-1)</em>pagesize,pagesize ;</p>
+<h1 id="连接（联合）查询"><a href="#连接（联合）查询" class="headerlink" title="连接（联合）查询"></a>连接（联合）查询</h1><blockquote>
+</blockquote>
+<pre><code>create table tab_cates(
+    id int auto_increment primary key,
+    cate_name varchar(20) not null,
+    parent_id int not null);
 
 
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/29/SpringCloud07/" itemprop="url">
-              
-                <span itemprop="name">Zuul网关</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-29T11:41:09+08:00" content="2019-05-29">
-          05-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/28/SpringCloud06/" itemprop="url">
-              
-                <span itemprop="name">Feign 更好的服务调用方式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-28T11:55:33+08:00" content="2019-05-28">
-          05-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/27/SpringCloud05/" itemprop="url">
-              
-                <span itemprop="name">Hystrix熔断器</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-27T17:04:27+08:00" content="2019-05-27">
-          05-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/26/SpringCloud04/" itemprop="url">
-              
-                <span itemprop="name">负载均衡Ribbon</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-26T21:04:46+08:00" content="2019-05-26">
-          05-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/26/SpringCloud03/" itemprop="url">
-              
-                <span itemprop="name">SpringCloud搭建eureka注册中心集群</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-26T10:47:40+08:00" content="2019-05-26">
-          05-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/24/SpringCloud02/" itemprop="url">
-              
-                <span itemprop="name">SpringCloud利用eureka注册中心注册服务实现动态获取服务</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-24T09:11:15+08:00" content="2019-05-24">
-          05-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/21/SpringBoot03/" itemprop="url">
-              
-                <span itemprop="name">认识微服务</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-21T18:03:55+08:00" content="2019-05-21">
-          05-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+insert into tab_cates(cate_name, parent_id) values(&apos;数码产品&apos;, 0);
+insert into tab_cates(cate_name, parent_id) values(&apos;家用产品&apos;, 0);
+insert into tab_cates(cate_name, parent_id) values(&apos;笔记本&apos;, 1);
+insert into tab_cates(cate_name, parent_id) values(&apos;智能手机&apos;, 1);
+insert into tab_cates(cate_name, parent_id) values(&apos;电器&apos;, 2);
+insert into tab_cates(cate_name, parent_id) values(&apos;家具&apos;, 2);
+insert into tab_cates(cate_name, parent_id) values(&apos;冰箱&apos;, 5);
+insert into tab_cates(cate_name, parent_id) values(&apos;洗衣机&apos;, 5);
+insert into tab_cates(cate_name, parent_id) values(&apos;汽车品牌&apos;, 0);
+insert into tab_cates(cate_name, parent_id) values(&apos;别克&apos;, 9);
+insert into tab_cates(cate_name, parent_id) values(&apos;宝马&apos;, 9);
+insert into tab_cates(cate_name, parent_id) values(&apos;雪佛兰&apos;, 9);
+insert into tab_cates(cate_name, parent_id) values(&apos;家纺&apos;, 0);
+</code></pre><blockquote>
+</blockquote>
+<p>select * from tab_cates;</p>
+<p><img src="https://s2.ax1x.com/2019/06/23/ZCbop6.png" alt="ZCbop6.png"></p>
+<h2 id="内连接"><a href="#内连接" class="headerlink" title="内连接"></a>内连接</h2><p>inner join</p>
+<blockquote>
+</blockquote>
+<p>select c.id , c.cate_name , p.cate_name from tab_cates c inner join tab_cates p on c.parent_id = p.id;</p>
+<blockquote>
+</blockquote>
+<p><a href="https://imgchr.com/i/ZPwFsg" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/06/23/ZPwFsg.md.png" alt="ZPwFsg.md.png"></a></p>
+<h2 id="外连接"><a href="#外连接" class="headerlink" title="外连接"></a>外连接</h2><h3 id="左外连接"><a href="#左外连接" class="headerlink" title="左外连接"></a>左外连接</h3><p>left join</p>
+<h3 id="右外连接"><a href="#右外连接" class="headerlink" title="右外连接"></a>右外连接</h3><p>right join</p>
+<h2 id="全连接"><a href="#全连接" class="headerlink" title="全连接"></a>全连接</h2><p>full join</p>
+<h1 id="insert-into-select"><a href="#insert-into-select" class="headerlink" title="insert into select"></a>insert into select</h1><p>insert into test_copy (name,cate) select c.cate_name , p.cate_name from tab_cates c inner join tab_cates p on c.parent_id = p.id;</p>
+<h1 id="视图view"><a href="#视图view" class="headerlink" title="视图view"></a>视图view</h1><p>create view view_test_copy as select a.id , a.cate_name , b.cate from tab_cates a , test_copy b where a.cate_name = b.name ;</p>
+<p><a href="https://www.cnblogs.com/sustudy/p/4166714.html" target="_blank" rel="noopener">https://www.cnblogs.com/sustudy/p/4166714.html</a></p>
+<h1 id="sql优化"><a href="#sql优化" class="headerlink" title="sql优化"></a>sql优化</h1><p>1）应尽量避免在 where 子句中使用!=或&lt;&gt;操作符，否则将引擎放弃使用索引而进行全表扫描。</p>
+<blockquote>
+</blockquote>
+<p>2）应尽量避免在 where 子句中对字段进行 null 值判断，否则将导致引擎放弃使用索引而进行全表扫描，<br>如：<br>select id from t where num is null<br>可以在num上设置默认值0，确保表中num列没有null值，然后这样查询：<br>select id from t where num=0</p>
+<p>3）很多时候用 exists 代替 in 是一个好的选择</p>
+<p>4）用Where子句替换HAVING 子句 因为HAVING 只会在检索出所有记录之后才对结果集进行过滤</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>insist,on the road</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Han Xu 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Han Xu 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:26px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+	  
+	</div>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MySQL/" rel="tag"><i class="fa fa-tag"></i> MySQL</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/12/HTTP/" rel="next" title="HTTP协议">
+                <i class="fa fa-chevron-left"></i> HTTP协议
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/tags/教程/page/2/">2</a><a class="extend next" rel="next" href="/tags/教程/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -602,6 +641,15 @@
 
 
           
+
+  
+	<div id="gitalk-container"></div>
+  
+  
+  
+
+
+
 
         </div>
         
@@ -622,8 +670,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -741,6 +798,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#engine引擎InnoDB"><span class="nav-number">1.</span> <span class="nav-text">engine引擎InnoDB :</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#auto-primary自增字段"><span class="nav-number">2.</span> <span class="nav-text">auto_primary自增字段 :</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ip转换int函数inet-aton"><span class="nav-number">3.</span> <span class="nav-text">ip转换int函数inet_aton :</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分页："><span class="nav-number">4.</span> <span class="nav-text">分页：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#连接（联合）查询"><span class="nav-number">5.</span> <span class="nav-text">连接（联合）查询</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内连接"><span class="nav-number">5.1.</span> <span class="nav-text">内连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外连接"><span class="nav-number">5.2.</span> <span class="nav-text">外连接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#左外连接"><span class="nav-number">5.2.1.</span> <span class="nav-text">左外连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#右外连接"><span class="nav-number">5.2.2.</span> <span class="nav-text">右外连接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全连接"><span class="nav-number">5.3.</span> <span class="nav-text">全连接</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#insert-into-select"><span class="nav-number">6.</span> <span class="nav-text">insert into select</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#视图view"><span class="nav-number">7.</span> <span class="nav-text">视图view</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sql优化"><span class="nav-number">8.</span> <span class="nav-text">sql优化</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -920,6 +993,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -960,6 +1037,21 @@
 
 
 
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '93b01fb3f0489f2eb6be',
+          clientSecret: '107cd730d425572a1f9daede4dffc4aa257feb59',
+          repo: 'hanhanhanxu.github.io',
+          owner: 'hanhanhanxu',
+          admin: ['hanhanhanxu'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
 
 
   
