@@ -115,7 +115,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/11/09/MmueLd.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/11/09/MmGBM6.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/11/09/MmJYOf.md.png">
-<meta property="og:updated_time" content="2019-11-09T08:41:27.017Z">
+<meta property="og:updated_time" content="2019-11-17T15:22:39.922Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA中的多线程">
 <meta name="twitter:description" content="创建线程的三种方法  1、继承Thread类，重写run()方法，调用start()方法执行。 2、实现Runnable接口，实现run()方法，创建Thread对象时传入Runnable的子类对象，调用start()方法执行。 3、实现Callable接口，实现call()方法，可返回结果并允许此方法抛出异常。实例化FutureTask类时，将实现Callable接口的类的对象作为参数传入，然后">
@@ -433,7 +433,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.2k
+                  3.4k
                 </span>
               
 
@@ -449,7 +449,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  14
+                  15
                 </span>
               
             </div>
@@ -574,6 +574,8 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> MuliThread.pool;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.ExecutionException;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.ExecutorService;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.Executors;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.Future;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 利用线程做任务：加法运算</span></span><br><span class="line"><span class="comment"> * 通过Future实现有返回结果的线程</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Practice</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ExecutionException, InterruptedException </span>&#123;</span><br><span class="line">        <span class="comment">//得到线程池</span></span><br><span class="line">        ExecutorService pool = Executors.newFixedThreadPool(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//自定义线程任务</span></span><br><span class="line">        MyNumCallable mNC = <span class="keyword">new</span> MyNumCallable(<span class="number">6</span>,<span class="number">8</span>);</span><br><span class="line">        MyCallable myC = <span class="keyword">new</span> MyCallable(<span class="string">"另一个任务"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//开启多线程执行任务</span></span><br><span class="line">        Future result = pool.submit(mNC);</span><br><span class="line">        pool.submit(myC);</span><br><span class="line">        <span class="comment">//在计算结果的时候还能执行线程myC的任务</span></span><br><span class="line"></span><br><span class="line">        Integer i = (Integer) result.get();</span><br><span class="line">        System.out.println(<span class="string">"结果是："</span> + i);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//关闭线程池</span></span><br><span class="line">        pool.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>多线程并发执行：</p>
 <p><a href="https://imgchr.com/i/MmJYOf" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/11/09/MmJYOf.md.png" alt="MmJYOf.md.png"></a></p>
+<h1 id="线程常用方法"><a href="#线程常用方法" class="headerlink" title="线程常用方法"></a>线程常用方法</h1><p><code>Thread</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">join() <span class="comment">//等待该线程终止</span></span><br><span class="line">   </span><br><span class="line">   <span class="comment">//挂起线程的意思：线程会自动的释放掉占有的线程资源锁，以便于其他线程可以获取道线程资源执行他们的任务</span></span><br><span class="line">   <span class="comment">//挂起，相当于让线程睡觉，不让他干活；唤醒，相当于叫醒他，让他继续执行任务。（也不一定是一唤醒就执行任务，还需要抢到线程资源）</span></span><br><span class="line">       </span><br><span class="line">   wait()<span class="comment">//挂起线程</span></span><br><span class="line">   notify()/notifyAll()<span class="comment">//唤醒线程</span></span><br><span class="line">       </span><br><span class="line">   park()<span class="comment">//挂起线程</span></span><br><span class="line">   unpark()<span class="comment">//唤醒线程</span></span><br><span class="line">       </span><br><span class="line">   sleep()<span class="comment">//也能将线程挂起，睡眠时间过了后会自动唤醒线程</span></span><br><span class="line">   interrupt()<span class="comment">//主动唤醒睡眠的线程</span></span><br><span class="line">   </span><br><span class="line">   suspend()<span class="comment">//已过时，会引发死锁  挂起线程</span></span><br><span class="line">   resume()<span class="comment">//已过时，会引发死锁	唤醒线程</span></span><br></pre></td></tr></table></figure>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>上述三种方式中，1、2两种方式run()均不能存在返回值，不能抛出异常。</p>
 <p>由于1方式是直接继承Thread类，JAVA是单继承，继承此类后就不能继承其他类了，所以比较不灵活。</p>
 <p>而2方式是实现接口，一个类实现此接口后也可实现其他接口。</p>
@@ -668,8 +670,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/17/十大排序算法/" rel="next" title="十大排序算法">
-                <i class="fa fa-chevron-left"></i> 十大排序算法
+              <a href="/2019/10/17/面向对象设计原则/" rel="next" title="面向对象设计原则">
+                <i class="fa fa-chevron-left"></i> 面向对象设计原则
               </a>
             
           </div>
@@ -764,7 +766,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -775,7 +777,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -891,7 +893,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建线程的三种方法"><span class="nav-number">1.</span> <span class="nav-text">创建线程的三种方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多线程执行过程"><span class="nav-number">2.</span> <span class="nav-text">多线程执行过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Thread"><span class="nav-number">3.</span> <span class="nav-text">Thread</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#匿名内部类"><span class="nav-number">3.0.1.</span> <span class="nav-text">匿名内部类</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Runnable"><span class="nav-number">4.</span> <span class="nav-text">Runnable</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#匿名内部类-1"><span class="nav-number">4.0.1.</span> <span class="nav-text">匿名内部类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Callable"><span class="nav-number">5.</span> <span class="nav-text">Callable</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FutureTask的应用："><span class="nav-number">5.0.1.</span> <span class="nav-text">FutureTask的应用：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ExecutorService"><span class="nav-number">6.</span> <span class="nav-text">ExecutorService</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线程池结合Fature"><span class="nav-number">6.1.</span> <span class="nav-text">线程池结合Fature</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建线程的三种方法"><span class="nav-number">1.</span> <span class="nav-text">创建线程的三种方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多线程执行过程"><span class="nav-number">2.</span> <span class="nav-text">多线程执行过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Thread"><span class="nav-number">3.</span> <span class="nav-text">Thread</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#匿名内部类"><span class="nav-number">3.0.1.</span> <span class="nav-text">匿名内部类</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Runnable"><span class="nav-number">4.</span> <span class="nav-text">Runnable</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#匿名内部类-1"><span class="nav-number">4.0.1.</span> <span class="nav-text">匿名内部类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Callable"><span class="nav-number">5.</span> <span class="nav-text">Callable</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FutureTask的应用："><span class="nav-number">5.0.1.</span> <span class="nav-text">FutureTask的应用：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ExecutorService"><span class="nav-number">6.</span> <span class="nav-text">ExecutorService</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线程池结合Fature"><span class="nav-number">6.1.</span> <span class="nav-text">线程池结合Fature</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线程常用方法"><span class="nav-number">7.</span> <span class="nav-text">线程常用方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li></div>
             
 
           </div>
@@ -965,7 +967,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共82.6k字</span>
+  <span class="post-count">博客全站共85.3k字</span>
 </div>
         
 
