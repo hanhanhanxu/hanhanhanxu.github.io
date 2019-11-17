@@ -108,7 +108,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/11/15/MdTT7n.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/11/16/M0Q461.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/11/11/MQP7LR.md.png">
-<meta property="og:updated_time" content="2019-11-17T14:52:29.076Z">
+<meta property="og:updated_time" content="2019-11-17T15:03:39.946Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="11月面试复习">
 <meta name="twitter:description" content="写在前面：JAVA神书： 《java编程思想》（Thinking in Java） 《java核心技术》 Spring是业务层框架 WEB层                业务层        持久层 SpringMvc        Spring        SpringJDBC 这些都是Spring的一部分，Spring一站式开发，他在所有层面都给你提供了解决方案。 IOC  Di    为">
@@ -426,7 +426,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  12.3k
+                  12.7k
                 </span>
               
 
@@ -442,7 +442,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  54
+                  55
                 </span>
               
             </div>
@@ -698,6 +698,13 @@
 <li>扩容<br>创建一个新的Entry空数组，长度是原数组的2倍。</li>
 <li>ReHash<br>遍历原Entry数组，把所有的Entry重新Hash到新数组。为什么要重新Hash呢？因为长度扩大以后，Hash的规则也随之改变。</li>
 </ul>
+<p><strong>为什么HashMap是线程不安全的？</strong></p>
+<p>不安全原因：</p>
+<p>(1)在put的时候，因为该方法不是同步的，假如有两个线程A,B它们的put的key的hash值相同，不论是从头插入还是从尾插入，假如A获取了插入位置为x，但是还未插入，此时B也计算出待插入位置为x，则不论AB插入的先后顺序肯定有一个会丢失</p>
+<p>(2)在扩容的时候，jdk1.8之前是采用头插法，当两个线程同时检测到hashmap需要扩容，在进行同时扩容的时候有可能会造成链表的循环，主要原因就是，采用头插法，新链表与旧链表的顺序是反的，在<strong>JDK1.8后采用尾插法</strong>就不会出现这种问题，同时1.8的链表长度如果大于8就会转变成红黑树。</p>
+<p><strong>为什么ConcurrentHashMap是线程安全的？</strong></p>
+<p>ConcurrentHashMap采用锁分段技术，<strong>将整个Hash桶进行了分段segment，也就是将这个大的数组分成了几个小的片段segment</strong>，而且每个小的片段segment上面都有锁存在，那么在插入元素的时候就需要先找到应该插入到哪一个片段segment，然后再在这个片段上面进行插入，而且这里还需要获取segment锁。</p>
+<p>ConcurrentHashMap让锁的粒度更精细一些，并发性能更好。</p>
 <h4 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h4><blockquote>
 <p>线程安全（所有操作在方法上面加上<code>synchronized</code>关键字），低效，不支持Null值和Null键</p>
 </blockquote>
@@ -1195,7 +1202,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共82.3k字</span>
+  <span class="post-count">博客全站共82.6k字</span>
 </div>
         
 
