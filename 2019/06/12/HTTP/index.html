@@ -112,7 +112,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/13/VhCR9P.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/13/VhKRdP.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/13/VhMpQJ.png">
-<meta property="og:updated_time" content="2019-06-15T04:28:55.758Z">
+<meta property="og:updated_time" content="2019-11-20T06:16:06.819Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP协议">
 <meta name="twitter:description" content="OSI是一个有关于计算机网络体系的概念模型，定义了网络互联的7层框架结构。作用：在此标准下，将世界范围内的计算机互连为网络。  TCP/IP是一个网络通信模型，它参考4层模型（简化的OSI），是4层协议的集合。称为TCP/IP协议族。作用：将数据应该如何封装、定址、传输、路由以及在目的地如何接收，都加以标准化，是OSI的实现。  HTTP是超文本传输协议，一个基于TCP/IP通信协议来传输数据">
@@ -196,10 +196,16 @@
 </div>
 
 <!--音乐播放器-->
-<link rel="stylesheet" href="/dist/APlayer.min.css">
+<!--<link rel="stylesheet" href="/dist/APlayer.min.css">
 <div id="aplayer"></div>
 <script type="text/javascript" src="/dist/APlayer.min.js"></script>
-<script type="text/javascript" src="/dist/music.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>-->
+<script>
+    var xlm_wid='15361';
+    var xlm_url='https://www.xianliao.me/';
+</script>
+<script type="text/javascript" charset="UTF-8" src="https://www.xianliao.me/embed.js"></script>
+                                                
 
   
   
@@ -716,7 +722,7 @@ Content-Type: text/html; charset=UTF-8
       &lt;head&gt;&lt;/head&gt;
       &lt;body&gt;
             &lt;!--body goes here--&gt;
-      &lt;/body&gt;
+      &lt;/body&gt; 
 &lt;/html&gt;
 </code></pre><blockquote>
 </blockquote>
@@ -796,9 +802,11 @@ Content-Type: text/html; charset=UTF-8
 </blockquote>
 <p><strong>PUT</strong></p>
 <blockquote>
+<p>向指定资源位置上传其最新内容。</p>
 </blockquote>
-<p>向指定资源位置上传其最新内容。<br>DELETE<br>请求服务器删除Request-URI所标识的资源。</p>
+<p><strong>DELETE</strong></p>
 <blockquote>
+<p>请求服务器删除Request-URI所标识的资源。</p>
 </blockquote>
 <p><strong>TRACE</strong></p>
 <blockquote>
@@ -912,7 +920,6 @@ application/atom+xml
 <p><strong>MIME type</strong>不仅用在HTTP协议，还可以用在其他地方，比如HTML网页。</p>
 <p><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><br><!-- 等同于 --></p>
 <meta charset="utf-8"> 
-
 
 <p><strong>Content-Encoding 字段</strong></p>
 <p>由于发送的数据可以是任何格式，因此可以把数据压缩后再发送。<strong>Content-Encoding</strong>字段说明数据的压缩方法。</p>
