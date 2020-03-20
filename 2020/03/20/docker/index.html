@@ -100,7 +100,7 @@
 <meta name="keywords" content="docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker">
-<meta property="og:url" content="http://hanhanhanxu.github.io/2020/03/20/1、安装docker/index.html">
+<meta property="og:url" content="http://hanhanhanxu.github.io/2020/03/20/docker/index.html">
 <meta property="og:site_name" content="旭">
 <meta property="og:description" content="1、安装Docker一、课程方式安装Docker12345678910# 1、yum 包更新到最新 yum update# 2、安装需要的软件包， yum-util 提供yum-config-manager功能，另外两个是devicemapper驱动依赖的 yum install -y yum-utils device-mapper-persistent-data lvm2# 3、 设置yum源y">
 <meta property="og:locale" content="zh-Hans">
@@ -152,7 +152,7 @@
 
 
 
-  <link rel="canonical" href="http://hanhanhanxu.github.io/2020/03/20/1、安装docker/">
+  <link rel="canonical" href="http://hanhanhanxu.github.io/2020/03/20/docker/">
 
 
 
@@ -348,7 +348,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hanhanhanxu.github.io/2020/03/20/1、安装docker/">
+    <link itemprop="mainEntityOfPage" href="http://hanhanhanxu.github.io/2020/03/20/docker/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Han Xu">
@@ -417,7 +417,7 @@
 
           
           
-             <span id="/2020/03/20/1、安装docker/" class="leancloud_visitors" data-flag-title="Docker">
+             <span id="/2020/03/20/docker/" class="leancloud_visitors" data-flag-title="Docker">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -739,7 +739,7 @@
 <p>每一条指令构建一层，基于基础镜像， 最终构建出一个新的镜像</p>
 <h4 id="定义Dockerfile，发布springboot项目"><a href="#定义Dockerfile，发布springboot项目" class="headerlink" title="定义Dockerfile，发布springboot项目"></a>定义Dockerfile，发布springboot项目</h4><p>实现步骤：</p>
 <p>①定义父镜像：FROM java:8</p>
-<p>②定义作者信息：MAINTAINER  itheima <a href="mailto:&#105;&#116;&#104;&#x65;&#105;&#x6d;&#97;&#64;&#x69;&#116;&#x63;&#97;&#x73;&#116;&#x2e;&#x63;&#110;" target="_blank" rel="noopener">&#105;&#116;&#104;&#x65;&#105;&#x6d;&#97;&#64;&#x69;&#116;&#x63;&#97;&#x73;&#116;&#x2e;&#x63;&#110;</a></p>
+<p>②定义作者信息：MAINTAINER  itheima <a href="mailto:&#x69;&#x74;&#x68;&#x65;&#x69;&#109;&#x61;&#64;&#105;&#x74;&#99;&#97;&#x73;&#x74;&#46;&#x63;&#x6e;" target="_blank" rel="noopener">&#x69;&#x74;&#x68;&#x65;&#x69;&#109;&#x61;&#64;&#105;&#x74;&#99;&#97;&#x73;&#x74;&#46;&#x63;&#x6e;</a></p>
 <p>③将jar包添加到容器： ADD springboot.jar app.jar</p>
 <p>④定义容器启动执行的命令：CMD java–jar app.jar</p>
 <p>⑤通过dockerfile构建镜像：docker bulid –f dockerfile 文件路径 –t 镜像名称:版本</p>
@@ -847,10 +847,6 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/03/20/2、docker应用部署/" rel="prev" title>
-                 <i class="fa fa-chevron-right"></i>
-              </a>
-            
           </div>
         </div>
       
@@ -933,7 +929,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1134,7 +1130,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共92.7k字</span>
+  <span class="post-count">博客全站共90.9k字</span>
 </div>
         
 
