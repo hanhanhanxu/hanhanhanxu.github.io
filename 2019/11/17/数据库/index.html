@@ -527,7 +527,7 @@
 </ul>
 <p><strong>由于事务的并发执行问题，引出解决方案：事务的隔离级别：</strong></p>
 <p><img src="https://s2.ax1x.com/2019/11/16/MBh6wn.png" alt="MBh6wn.png"></p>
-<p>读未提交 （解决幻读，不可重复读，脏读）   数据库执行效率会变低</p>
+<p>串行化 （解决幻读，不可重复读，脏读）   数据库执行效率会变低</p>
 <p><strong>读已提交</strong> （解决幻读，不可重复读） <strong>Oracle默认隔离级别 </strong>   <strong>常用</strong>  isolation=Isolation.READ_COMMITTED</p>
 <p><strong>可重复读</strong> （解决幻读）                         <strong>Mysql默认隔离级别</strong></p>
 <p>串行化 (不能解决问题)</p>
